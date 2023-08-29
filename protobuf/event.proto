@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+option go_package = "github.com/rautellin/bundora-proto/gen/go;proto";
+import "google/protobuf/timestamp.proto";
+
+service EventService {
+    rpc GetSentEvents(GetSentEventsRequest) returns (GetSentEventsResponse);
+    rpc GetReceivedEvents(GetReceivedEventsRequest) returns (GetReceivedEventsResponse);
+    rpc CreateEvent(CreateEventRequest) returns (CreateEventResponse);
+}
+
+message GetSentEventsRequest {
+    string user_id = 1;
+}
+
+message GetSentEventsResponse {
+    repeated EventModel events = 1;
+}
+
+message GetReceivedEventsRequest {
+    string user_id = 1;
+}
+
+message GetReceivedEventsResponse {
+    repeated EventModel events = 1;
+}
+
+message CreateEventRequest {
+    string user_id = 1;
+    EventType type = 2;
+    string message = 3;
+}
+
+message CreateEventResponse {
+    EventModel event = 1;
+}
+
+message EventModel {
+    string id = 1;
+    EventType type = 2;
+    google.protobuf.Timestamp created_at = 3;
+    optional string message = 4;
+}
+
+enum EventType {
+    EVENT_TYPE_UNSPECIFIED = 0;
+    EVENT_TYPE_CUSTOM = 1;
+    EVENT_TYPE_TEA = 2;
+    EVENT_TYPE_FOOD = 3;
+    EVENT_TYPE_HUG = 4;
+    EVENT_TYPE_ATTENTION = 5;
+    EVENT_TYPE_WAKEUP = 6;
+    EVENT_TYPE_TRASH = 7;
+    EVENT_TYPE_HELP = 8;
+}
+

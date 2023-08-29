@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option go_package = "github.com/rautellin/mindfuloop-proto/gen/go;proto";
+
+service ProfileService {
+    rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
+    rpc UpdateOnboardedCompleted(UpdateOnboardedCompletedRequest) returns (UpdateOnboardedCompletedResponse);
+}
+
+message ProfileModel {
+    string id = 1;
+    optional string fcm_token = 2;
+    bool is_onboarded = 4;
+}
+
+message GetProfileRequest {
+}
+
+message GetProfileResponse {
+    ProfileModel profile = 1;
+}
+
+message UpdateOnboardedCompletedRequest {
+    bool is_onboarded = 1;
+}
+
+message UpdateOnboardedCompletedResponse {
+    ProfileModel profile = 1;
+}
+
+
+
+
