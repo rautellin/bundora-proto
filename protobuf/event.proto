@@ -10,7 +10,6 @@ service EventService {
 }
 
 message GetSentEventsRequest {
-    string user_id = 1;
 }
 
 message GetSentEventsResponse {
@@ -18,7 +17,6 @@ message GetSentEventsResponse {
 }
 
 message GetReceivedEventsRequest {
-    string user_id = 1;
 }
 
 message GetReceivedEventsResponse {
@@ -26,9 +24,8 @@ message GetReceivedEventsResponse {
 }
 
 message CreateEventRequest {
-    string user_id = 1;
-    EventType type = 2;
-    string message = 3;
+    EventType type = 1;
+    optional string message = 2;
 }
 
 message CreateEventResponse {

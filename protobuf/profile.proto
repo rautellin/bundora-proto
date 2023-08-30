@@ -4,13 +4,13 @@ option go_package = "github.com/rautellin/mindfuloop-proto/gen/go;proto";
 
 service ProfileService {
     rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
-    rpc UpdateOnboardedCompleted(UpdateOnboardedCompletedRequest) returns (UpdateOnboardedCompletedResponse);
+    rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
 }
 
 message ProfileModel {
     string id = 1;
     optional string fcm_token = 2;
-    bool is_onboarded = 4;
+    CharacterType character_type = 3;
 }
 
 message GetProfileRequest {
@@ -20,14 +20,18 @@ message GetProfileResponse {
     ProfileModel profile = 1;
 }
 
-message UpdateOnboardedCompletedRequest {
-    bool is_onboarded = 1;
+message UpdateProfileRequest {
+    CharacterType character_type = 1;
 }
 
-message UpdateOnboardedCompletedResponse {
+message UpdateProfileResponse {
     ProfileModel profile = 1;
 }
 
-
+enum CharacterType {
+    CHARACTER_TYPE_UNSPECIFIED = 0;
+    CHARACTER_TYPE_HELPING = 1;
+    CHARACTER_TYPE_HELPLESS = 2;
+}
 
 
