@@ -21,7 +21,7 @@ cd protobuf
 # Generate Go code
 protoc --proto_path=$BUNDORA_PROTO_PATH/protobuf --go_out="$go_output_dir" --go_opt=paths=source_relative --go-grpc_out="$go_output_dir" --go-grpc_opt=paths=source_relative *.proto
 # Generate Dart code, include google/protobuf/timestamp.proto in the import path
-protoc -Iprotobuf --proto_path=$BUNDORA_PROTO_PATH/protobuf --dart_out=grpc:"$dart_output_dir" *.proto /timestamp.proto
+protoc -Iprotobuf --proto_path=$BUNDORA_PROTO_PATH/protobuf --dart_out=grpc:"$dart_output_dir" *.proto google/protobuf/timestamp.proto
 
 cd ..
 
