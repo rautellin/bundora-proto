@@ -19,8 +19,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	ProfileService_GetProfile_FullMethodName               = "/ProfileService/GetProfile"
-	ProfileService_UpdateOnboardedCompleted_FullMethodName = "/ProfileService/UpdateOnboardedCompleted"
+	ProfileService_GetProfile_FullMethodName    = "/ProfileService/GetProfile"
+	ProfileService_UpdateProfile_FullMethodName = "/ProfileService/UpdateProfile"
 )
 
 // ProfileServiceClient is the client API for ProfileService service.
@@ -28,7 +28,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ProfileServiceClient interface {
 	GetProfile(ctx context.Context, in *GetProfileRequest, opts ...grpc.CallOption) (*GetProfileResponse, error)
-	UpdateOnboardedCompleted(ctx context.Context, in *UpdateOnboardedCompletedRequest, opts ...grpc.CallOption) (*UpdateOnboardedCompletedResponse, error)
+	UpdateProfile(ctx context.Context, in *UpdateProfileRequest, opts ...grpc.CallOption) (*UpdateProfileResponse, error)
 }
 
 type profileServiceClient struct {
@@ -48,9 +48,9 @@ func (c *profileServiceClient) GetProfile(ctx context.Context, in *GetProfileReq
 	return out, nil
 }
 
-func (c *profileServiceClient) UpdateOnboardedCompleted(ctx context.Context, in *UpdateOnboardedCompletedRequest, opts ...grpc.CallOption) (*UpdateOnboardedCompletedResponse, error) {
-	out := new(UpdateOnboardedCompletedResponse)
-	err := c.cc.Invoke(ctx, ProfileService_UpdateOnboardedCompleted_FullMethodName, in, out, opts...)
+func (c *profileServiceClient) UpdateProfile(ctx context.Context, in *UpdateProfileRequest, opts ...grpc.CallOption) (*UpdateProfileResponse, error) {
+	out := new(UpdateProfileResponse)
+	err := c.cc.Invoke(ctx, ProfileService_UpdateProfile_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +62,7 @@ func (c *profileServiceClient) UpdateOnboardedCompleted(ctx context.Context, in 
 // for forward compatibility
 type ProfileServiceServer interface {
 	GetProfile(context.Context, *GetProfileRequest) (*GetProfileResponse, error)
-	UpdateOnboardedCompleted(context.Context, *UpdateOnboardedCompletedRequest) (*UpdateOnboardedCompletedResponse, error)
+	UpdateProfile(context.Context, *UpdateProfileRequest) (*UpdateProfileResponse, error)
 	mustEmbedUnimplementedProfileServiceServer()
 }
 
@@ -73,8 +73,8 @@ type UnimplementedProfileServiceServer struct {
 func (UnimplementedProfileServiceServer) GetProfile(context.Context, *GetProfileRequest) (*GetProfileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetProfile not implemented")
 }
-func (UnimplementedProfileServiceServer) UpdateOnboardedCompleted(context.Context, *UpdateOnboardedCompletedRequest) (*UpdateOnboardedCompletedResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateOnboardedCompleted not implemented")
+func (UnimplementedProfileServiceServer) UpdateProfile(context.Context, *UpdateProfileRequest) (*UpdateProfileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateProfile not implemented")
 }
 func (UnimplementedProfileServiceServer) mustEmbedUnimplementedProfileServiceServer() {}
 
@@ -107,20 +107,20 @@ func _ProfileService_GetProfile_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ProfileService_UpdateOnboardedCompleted_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateOnboardedCompletedRequest)
+func _ProfileService_UpdateProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateProfileRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ProfileServiceServer).UpdateOnboardedCompleted(ctx, in)
+		return srv.(ProfileServiceServer).UpdateProfile(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ProfileService_UpdateOnboardedCompleted_FullMethodName,
+		FullMethod: ProfileService_UpdateProfile_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProfileServiceServer).UpdateOnboardedCompleted(ctx, req.(*UpdateOnboardedCompletedRequest))
+		return srv.(ProfileServiceServer).UpdateProfile(ctx, req.(*UpdateProfileRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -137,8 +137,8 @@ var ProfileService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ProfileService_GetProfile_Handler,
 		},
 		{
-			MethodName: "UpdateOnboardedCompleted",
-			Handler:    _ProfileService_UpdateOnboardedCompleted_Handler,
+			MethodName: "UpdateProfile",
+			Handler:    _ProfileService_UpdateProfile_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
