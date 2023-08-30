@@ -23,6 +23,9 @@ class EventType extends $pb.ProtobufEnum {
   static const EventType EVENT_TYPE_WAKEUP = EventType._(6, _omitEnumNames ? '' : 'EVENT_TYPE_WAKEUP');
   static const EventType EVENT_TYPE_TRASH = EventType._(7, _omitEnumNames ? '' : 'EVENT_TYPE_TRASH');
   static const EventType EVENT_TYPE_HELP = EventType._(8, _omitEnumNames ? '' : 'EVENT_TYPE_HELP');
+  static const EventType EVENT_TYPE_MISS_YOU = EventType._(9, _omitEnumNames ? '' : 'EVENT_TYPE_MISS_YOU');
+  static const EventType EVENT_TYPE_GOOD_NIGHT = EventType._(10, _omitEnumNames ? '' : 'EVENT_TYPE_GOOD_NIGHT');
+  static const EventType EVENT_TYPE_GOOD_MORNING = EventType._(11, _omitEnumNames ? '' : 'EVENT_TYPE_GOOD_MORNING');
 
   static const $core.List<EventType> values = <EventType> [
     EVENT_TYPE_UNSPECIFIED,
@@ -34,6 +37,9 @@ class EventType extends $pb.ProtobufEnum {
     EVENT_TYPE_WAKEUP,
     EVENT_TYPE_TRASH,
     EVENT_TYPE_HELP,
+    EVENT_TYPE_MISS_YOU,
+    EVENT_TYPE_GOOD_NIGHT,
+    EVENT_TYPE_GOOD_MORNING,
   ];
 
   static final $core.Map<$core.int, EventType> _byValue = $pb.ProtobufEnum.initByValue(values);
