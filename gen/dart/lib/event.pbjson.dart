@@ -39,14 +39,11 @@ final $typed_data.Uint8List eventTypeDescriptor = $convert.base64Decode(
 @$core.Deprecated('Use getSentEventsRequestDescriptor instead')
 const GetSentEventsRequest$json = {
   '1': 'GetSentEventsRequest',
-  '2': [
-    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-  ],
 };
 
 /// Descriptor for `GetSentEventsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getSentEventsRequestDescriptor = $convert.base64Decode(
-    'ChRHZXRTZW50RXZlbnRzUmVxdWVzdBIXCgd1c2VyX2lkGAEgASgJUgZ1c2VySWQ=');
+    'ChRHZXRTZW50RXZlbnRzUmVxdWVzdA==');
 
 @$core.Deprecated('Use getSentEventsResponseDescriptor instead')
 const GetSentEventsResponse$json = {
@@ -64,14 +61,11 @@ final $typed_data.Uint8List getSentEventsResponseDescriptor = $convert.base64Dec
 @$core.Deprecated('Use getReceivedEventsRequestDescriptor instead')
 const GetReceivedEventsRequest$json = {
   '1': 'GetReceivedEventsRequest',
-  '2': [
-    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-  ],
 };
 
 /// Descriptor for `GetReceivedEventsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getReceivedEventsRequestDescriptor = $convert.base64Decode(
-    'ChhHZXRSZWNlaXZlZEV2ZW50c1JlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCVIGdXNlcklk');
+    'ChhHZXRSZWNlaXZlZEV2ZW50c1JlcXVlc3Q=');
 
 @$core.Deprecated('Use getReceivedEventsResponseDescriptor instead')
 const GetReceivedEventsResponse$json = {
@@ -90,16 +84,18 @@ final $typed_data.Uint8List getReceivedEventsResponseDescriptor = $convert.base6
 const CreateEventRequest$json = {
   '1': 'CreateEventRequest',
   '2': [
-    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {'1': 'type', '3': 2, '4': 1, '5': 14, '6': '.EventType', '10': 'type'},
-    {'1': 'message', '3': 3, '4': 1, '5': 9, '10': 'message'},
+    {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.EventType', '10': 'type'},
+    {'1': 'message', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'message', '17': true},
+  ],
+  '8': [
+    {'1': '_message'},
   ],
 };
 
 /// Descriptor for `CreateEventRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createEventRequestDescriptor = $convert.base64Decode(
-    'ChJDcmVhdGVFdmVudFJlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCVIGdXNlcklkEh4KBHR5cGUYAi'
-    'ABKA4yCi5FdmVudFR5cGVSBHR5cGUSGAoHbWVzc2FnZRgDIAEoCVIHbWVzc2FnZQ==');
+    'ChJDcmVhdGVFdmVudFJlcXVlc3QSHgoEdHlwZRgBIAEoDjIKLkV2ZW50VHlwZVIEdHlwZRIdCg'
+    'dtZXNzYWdlGAIgASgJSABSB21lc3NhZ2WIAQFCCgoIX21lc3NhZ2U=');
 
 @$core.Deprecated('Use createEventResponseDescriptor instead')
 const CreateEventResponse$json = {
@@ -114,6 +110,31 @@ final $typed_data.Uint8List createEventResponseDescriptor = $convert.base64Decod
     'ChNDcmVhdGVFdmVudFJlc3BvbnNlEiEKBWV2ZW50GAEgASgLMgsuRXZlbnRNb2RlbFIFZXZlbn'
     'Q=');
 
+@$core.Deprecated('Use acknowledgeEventRequestDescriptor instead')
+const AcknowledgeEventRequest$json = {
+  '1': 'AcknowledgeEventRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `AcknowledgeEventRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List acknowledgeEventRequestDescriptor = $convert.base64Decode(
+    'ChdBY2tub3dsZWRnZUV2ZW50UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
+
+@$core.Deprecated('Use acknowledgeEventResponseDescriptor instead')
+const AcknowledgeEventResponse$json = {
+  '1': 'AcknowledgeEventResponse',
+  '2': [
+    {'1': 'event', '3': 1, '4': 1, '5': 11, '6': '.EventModel', '10': 'event'},
+  ],
+};
+
+/// Descriptor for `AcknowledgeEventResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List acknowledgeEventResponseDescriptor = $convert.base64Decode(
+    'ChhBY2tub3dsZWRnZUV2ZW50UmVzcG9uc2USIQoFZXZlbnQYASABKAsyCy5FdmVudE1vZGVsUg'
+    'VldmVudA==');
+
 @$core.Deprecated('Use eventModelDescriptor instead')
 const EventModel$json = {
   '1': 'EventModel',
@@ -122,6 +143,8 @@ const EventModel$json = {
     {'1': 'type', '3': 2, '4': 1, '5': 14, '6': '.EventType', '10': 'type'},
     {'1': 'created_at', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
     {'1': 'message', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'message', '17': true},
+    {'1': 'created_by', '3': 5, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'acknowledged', '3': 6, '4': 1, '5': 8, '10': 'acknowledged'},
   ],
   '8': [
     {'1': '_message'},
@@ -132,5 +155,7 @@ const EventModel$json = {
 final $typed_data.Uint8List eventModelDescriptor = $convert.base64Decode(
     'CgpFdmVudE1vZGVsEg4KAmlkGAEgASgJUgJpZBIeCgR0eXBlGAIgASgOMgouRXZlbnRUeXBlUg'
     'R0eXBlEjkKCmNyZWF0ZWRfYXQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglj'
-    'cmVhdGVkQXQSHQoHbWVzc2FnZRgEIAEoCUgAUgdtZXNzYWdliAEBQgoKCF9tZXNzYWdl');
+    'cmVhdGVkQXQSHQoHbWVzc2FnZRgEIAEoCUgAUgdtZXNzYWdliAEBEh0KCmNyZWF0ZWRfYnkYBS'
+    'ABKAlSCWNyZWF0ZWRCeRIiCgxhY2tub3dsZWRnZWQYBiABKAhSDGFja25vd2xlZGdlZEIKCghf'
+    'bWVzc2FnZQ==');
 

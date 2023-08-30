@@ -22,6 +22,7 @@ const (
 	EventService_GetSentEvents_FullMethodName     = "/EventService/GetSentEvents"
 	EventService_GetReceivedEvents_FullMethodName = "/EventService/GetReceivedEvents"
 	EventService_CreateEvent_FullMethodName       = "/EventService/CreateEvent"
+	EventService_AcknowledgeEvent_FullMethodName  = "/EventService/AcknowledgeEvent"
 )
 
 // EventServiceClient is the client API for EventService service.
@@ -31,6 +32,7 @@ type EventServiceClient interface {
 	GetSentEvents(ctx context.Context, in *GetSentEventsRequest, opts ...grpc.CallOption) (*GetSentEventsResponse, error)
 	GetReceivedEvents(ctx context.Context, in *GetReceivedEventsRequest, opts ...grpc.CallOption) (*GetReceivedEventsResponse, error)
 	CreateEvent(ctx context.Context, in *CreateEventRequest, opts ...grpc.CallOption) (*CreateEventResponse, error)
+	AcknowledgeEvent(ctx context.Context, in *AcknowledgeEventRequest, opts ...grpc.CallOption) (*AcknowledgeEventResponse, error)
 }
 
 type eventServiceClient struct {
@@ -68,6 +70,15 @@ func (c *eventServiceClient) CreateEvent(ctx context.Context, in *CreateEventReq
 	return out, nil
 }
 
+func (c *eventServiceClient) AcknowledgeEvent(ctx context.Context, in *AcknowledgeEventRequest, opts ...grpc.CallOption) (*AcknowledgeEventResponse, error) {
+	out := new(AcknowledgeEventResponse)
+	err := c.cc.Invoke(ctx, EventService_AcknowledgeEvent_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EventServiceServer is the server API for EventService service.
 // All implementations must embed UnimplementedEventServiceServer
 // for forward compatibility
@@ -75,6 +86,7 @@ type EventServiceServer interface {
 	GetSentEvents(context.Context, *GetSentEventsRequest) (*GetSentEventsResponse, error)
 	GetReceivedEvents(context.Context, *GetReceivedEventsRequest) (*GetReceivedEventsResponse, error)
 	CreateEvent(context.Context, *CreateEventRequest) (*CreateEventResponse, error)
+	AcknowledgeEvent(context.Context, *AcknowledgeEventRequest) (*AcknowledgeEventResponse, error)
 	mustEmbedUnimplementedEventServiceServer()
 }
 
@@ -90,6 +102,9 @@ func (UnimplementedEventServiceServer) GetReceivedEvents(context.Context, *GetRe
 }
 func (UnimplementedEventServiceServer) CreateEvent(context.Context, *CreateEventRequest) (*CreateEventResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateEvent not implemented")
+}
+func (UnimplementedEventServiceServer) AcknowledgeEvent(context.Context, *AcknowledgeEventRequest) (*AcknowledgeEventResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AcknowledgeEvent not implemented")
 }
 func (UnimplementedEventServiceServer) mustEmbedUnimplementedEventServiceServer() {}
 
@@ -158,6 +173,24 @@ func _EventService_CreateEvent_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EventService_AcknowledgeEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AcknowledgeEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EventServiceServer).AcknowledgeEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EventService_AcknowledgeEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EventServiceServer).AcknowledgeEvent(ctx, req.(*AcknowledgeEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // EventService_ServiceDesc is the grpc.ServiceDesc for EventService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -176,6 +209,10 @@ var EventService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateEvent",
 			Handler:    _EventService_CreateEvent_Handler,
+		},
+		{
+			MethodName: "AcknowledgeEvent",
+			Handler:    _EventService_AcknowledgeEvent_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

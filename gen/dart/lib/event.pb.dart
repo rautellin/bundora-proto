@@ -25,7 +25,6 @@ class GetSentEventsRequest extends $pb.GeneratedMessage {
   factory GetSentEventsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSentEventsRequest', createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'userId')
     ..hasRequiredFields = false
   ;
 
@@ -49,15 +48,6 @@ class GetSentEventsRequest extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static GetSentEventsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSentEventsRequest>(create);
   static GetSentEventsRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get userId => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set userId($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasUserId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearUserId() => clearField(1);
 }
 
 class GetSentEventsResponse extends $pb.GeneratedMessage {
@@ -103,7 +93,6 @@ class GetReceivedEventsRequest extends $pb.GeneratedMessage {
   factory GetReceivedEventsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetReceivedEventsRequest', createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'userId')
     ..hasRequiredFields = false
   ;
 
@@ -127,15 +116,6 @@ class GetReceivedEventsRequest extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static GetReceivedEventsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetReceivedEventsRequest>(create);
   static GetReceivedEventsRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get userId => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set userId($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasUserId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearUserId() => clearField(1);
 }
 
 class GetReceivedEventsResponse extends $pb.GeneratedMessage {
@@ -181,9 +161,8 @@ class CreateEventRequest extends $pb.GeneratedMessage {
   factory CreateEventRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateEventRequest', createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'userId')
-    ..e<EventType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: EventType.EVENT_TYPE_UNSPECIFIED, valueOf: EventType.valueOf, enumValues: EventType.values)
-    ..aOS(3, _omitFieldNames ? '' : 'message')
+    ..e<EventType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: EventType.EVENT_TYPE_UNSPECIFIED, valueOf: EventType.valueOf, enumValues: EventType.values)
+    ..aOS(2, _omitFieldNames ? '' : 'message')
     ..hasRequiredFields = false
   ;
 
@@ -209,31 +188,22 @@ class CreateEventRequest extends $pb.GeneratedMessage {
   static CreateEventRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get userId => $_getSZ(0);
+  EventType get type => $_getN(0);
   @$pb.TagNumber(1)
-  set userId($core.String v) { $_setString(0, v); }
+  set type(EventType v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasUserId() => $_has(0);
+  $core.bool hasType() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUserId() => clearField(1);
+  void clearType() => clearField(1);
 
   @$pb.TagNumber(2)
-  EventType get type => $_getN(1);
+  $core.String get message => $_getSZ(1);
   @$pb.TagNumber(2)
-  set type(EventType v) { setField(2, v); }
+  set message($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasType() => $_has(1);
+  $core.bool hasMessage() => $_has(1);
   @$pb.TagNumber(2)
-  void clearType() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get message => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set message($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasMessage() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearMessage() => clearField(3);
+  void clearMessage() => clearField(2);
 }
 
 class CreateEventResponse extends $pb.GeneratedMessage {
@@ -280,6 +250,92 @@ class CreateEventResponse extends $pb.GeneratedMessage {
   EventModel ensureEvent() => $_ensure(0);
 }
 
+class AcknowledgeEventRequest extends $pb.GeneratedMessage {
+  factory AcknowledgeEventRequest() => create();
+  AcknowledgeEventRequest._() : super();
+  factory AcknowledgeEventRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AcknowledgeEventRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AcknowledgeEventRequest', createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AcknowledgeEventRequest clone() => AcknowledgeEventRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AcknowledgeEventRequest copyWith(void Function(AcknowledgeEventRequest) updates) => super.copyWith((message) => updates(message as AcknowledgeEventRequest)) as AcknowledgeEventRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AcknowledgeEventRequest create() => AcknowledgeEventRequest._();
+  AcknowledgeEventRequest createEmptyInstance() => create();
+  static $pb.PbList<AcknowledgeEventRequest> createRepeated() => $pb.PbList<AcknowledgeEventRequest>();
+  @$core.pragma('dart2js:noInline')
+  static AcknowledgeEventRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AcknowledgeEventRequest>(create);
+  static AcknowledgeEventRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
+class AcknowledgeEventResponse extends $pb.GeneratedMessage {
+  factory AcknowledgeEventResponse() => create();
+  AcknowledgeEventResponse._() : super();
+  factory AcknowledgeEventResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AcknowledgeEventResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AcknowledgeEventResponse', createEmptyInstance: create)
+    ..aOM<EventModel>(1, _omitFieldNames ? '' : 'event', subBuilder: EventModel.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AcknowledgeEventResponse clone() => AcknowledgeEventResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AcknowledgeEventResponse copyWith(void Function(AcknowledgeEventResponse) updates) => super.copyWith((message) => updates(message as AcknowledgeEventResponse)) as AcknowledgeEventResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AcknowledgeEventResponse create() => AcknowledgeEventResponse._();
+  AcknowledgeEventResponse createEmptyInstance() => create();
+  static $pb.PbList<AcknowledgeEventResponse> createRepeated() => $pb.PbList<AcknowledgeEventResponse>();
+  @$core.pragma('dart2js:noInline')
+  static AcknowledgeEventResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AcknowledgeEventResponse>(create);
+  static AcknowledgeEventResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EventModel get event => $_getN(0);
+  @$pb.TagNumber(1)
+  set event(EventModel v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasEvent() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEvent() => clearField(1);
+  @$pb.TagNumber(1)
+  EventModel ensureEvent() => $_ensure(0);
+}
+
 class EventModel extends $pb.GeneratedMessage {
   factory EventModel() => create();
   EventModel._() : super();
@@ -291,6 +347,8 @@ class EventModel extends $pb.GeneratedMessage {
     ..e<EventType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: EventType.EVENT_TYPE_UNSPECIFIED, valueOf: EventType.valueOf, enumValues: EventType.values)
     ..aOM<$4.Timestamp>(3, _omitFieldNames ? '' : 'createdAt', subBuilder: $4.Timestamp.create)
     ..aOS(4, _omitFieldNames ? '' : 'message')
+    ..aOS(5, _omitFieldNames ? '' : 'createdBy')
+    ..aOB(6, _omitFieldNames ? '' : 'acknowledged')
     ..hasRequiredFields = false
   ;
 
@@ -352,6 +410,24 @@ class EventModel extends $pb.GeneratedMessage {
   $core.bool hasMessage() => $_has(3);
   @$pb.TagNumber(4)
   void clearMessage() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get createdBy => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set createdBy($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasCreatedBy() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCreatedBy() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get acknowledged => $_getBF(5);
+  @$pb.TagNumber(6)
+  set acknowledged($core.bool v) { $_setBool(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasAcknowledged() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAcknowledged() => clearField(6);
 }
 
 

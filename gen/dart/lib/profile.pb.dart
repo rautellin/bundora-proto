@@ -13,6 +13,10 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import 'profile.pbenum.dart';
+
+export 'profile.pbenum.dart';
+
 class ProfileModel extends $pb.GeneratedMessage {
   factory ProfileModel() => create();
   ProfileModel._() : super();
@@ -22,7 +26,7 @@ class ProfileModel extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProfileModel', createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'fcmToken')
-    ..aOB(4, _omitFieldNames ? '' : 'isOnboarded')
+    ..e<CharacterType>(3, _omitFieldNames ? '' : 'characterType', $pb.PbFieldType.OE, defaultOrMaker: CharacterType.CHARACTER_TYPE_UNSPECIFIED, valueOf: CharacterType.valueOf, enumValues: CharacterType.values)
     ..hasRequiredFields = false
   ;
 
@@ -65,14 +69,14 @@ class ProfileModel extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearFcmToken() => clearField(2);
 
-  @$pb.TagNumber(4)
-  $core.bool get isOnboarded => $_getBF(2);
-  @$pb.TagNumber(4)
-  set isOnboarded($core.bool v) { $_setBool(2, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasIsOnboarded() => $_has(2);
-  @$pb.TagNumber(4)
-  void clearIsOnboarded() => clearField(4);
+  @$pb.TagNumber(3)
+  CharacterType get characterType => $_getN(2);
+  @$pb.TagNumber(3)
+  set characterType(CharacterType v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCharacterType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCharacterType() => clearField(3);
 }
 
 class GetProfileRequest extends $pb.GeneratedMessage {
@@ -151,14 +155,14 @@ class GetProfileResponse extends $pb.GeneratedMessage {
   ProfileModel ensureProfile() => $_ensure(0);
 }
 
-class UpdateOnboardedCompletedRequest extends $pb.GeneratedMessage {
-  factory UpdateOnboardedCompletedRequest() => create();
-  UpdateOnboardedCompletedRequest._() : super();
-  factory UpdateOnboardedCompletedRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateOnboardedCompletedRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+class UpdateProfileRequest extends $pb.GeneratedMessage {
+  factory UpdateProfileRequest() => create();
+  UpdateProfileRequest._() : super();
+  factory UpdateProfileRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateProfileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateOnboardedCompletedRequest', createEmptyInstance: create)
-    ..aOB(1, _omitFieldNames ? '' : 'isOnboarded')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateProfileRequest', createEmptyInstance: create)
+    ..e<CharacterType>(1, _omitFieldNames ? '' : 'characterType', $pb.PbFieldType.OE, defaultOrMaker: CharacterType.CHARACTER_TYPE_UNSPECIFIED, valueOf: CharacterType.valueOf, enumValues: CharacterType.values)
     ..hasRequiredFields = false
   ;
 
@@ -166,40 +170,40 @@ class UpdateOnboardedCompletedRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  UpdateOnboardedCompletedRequest clone() => UpdateOnboardedCompletedRequest()..mergeFromMessage(this);
+  UpdateProfileRequest clone() => UpdateProfileRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateOnboardedCompletedRequest copyWith(void Function(UpdateOnboardedCompletedRequest) updates) => super.copyWith((message) => updates(message as UpdateOnboardedCompletedRequest)) as UpdateOnboardedCompletedRequest;
+  UpdateProfileRequest copyWith(void Function(UpdateProfileRequest) updates) => super.copyWith((message) => updates(message as UpdateProfileRequest)) as UpdateProfileRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static UpdateOnboardedCompletedRequest create() => UpdateOnboardedCompletedRequest._();
-  UpdateOnboardedCompletedRequest createEmptyInstance() => create();
-  static $pb.PbList<UpdateOnboardedCompletedRequest> createRepeated() => $pb.PbList<UpdateOnboardedCompletedRequest>();
+  static UpdateProfileRequest create() => UpdateProfileRequest._();
+  UpdateProfileRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateProfileRequest> createRepeated() => $pb.PbList<UpdateProfileRequest>();
   @$core.pragma('dart2js:noInline')
-  static UpdateOnboardedCompletedRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateOnboardedCompletedRequest>(create);
-  static UpdateOnboardedCompletedRequest? _defaultInstance;
+  static UpdateProfileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateProfileRequest>(create);
+  static UpdateProfileRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.bool get isOnboarded => $_getBF(0);
+  CharacterType get characterType => $_getN(0);
   @$pb.TagNumber(1)
-  set isOnboarded($core.bool v) { $_setBool(0, v); }
+  set characterType(CharacterType v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasIsOnboarded() => $_has(0);
+  $core.bool hasCharacterType() => $_has(0);
   @$pb.TagNumber(1)
-  void clearIsOnboarded() => clearField(1);
+  void clearCharacterType() => clearField(1);
 }
 
-class UpdateOnboardedCompletedResponse extends $pb.GeneratedMessage {
-  factory UpdateOnboardedCompletedResponse() => create();
-  UpdateOnboardedCompletedResponse._() : super();
-  factory UpdateOnboardedCompletedResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateOnboardedCompletedResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+class UpdateProfileResponse extends $pb.GeneratedMessage {
+  factory UpdateProfileResponse() => create();
+  UpdateProfileResponse._() : super();
+  factory UpdateProfileResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateProfileResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateOnboardedCompletedResponse', createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateProfileResponse', createEmptyInstance: create)
     ..aOM<ProfileModel>(1, _omitFieldNames ? '' : 'profile', subBuilder: ProfileModel.create)
     ..hasRequiredFields = false
   ;
@@ -208,22 +212,22 @@ class UpdateOnboardedCompletedResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  UpdateOnboardedCompletedResponse clone() => UpdateOnboardedCompletedResponse()..mergeFromMessage(this);
+  UpdateProfileResponse clone() => UpdateProfileResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateOnboardedCompletedResponse copyWith(void Function(UpdateOnboardedCompletedResponse) updates) => super.copyWith((message) => updates(message as UpdateOnboardedCompletedResponse)) as UpdateOnboardedCompletedResponse;
+  UpdateProfileResponse copyWith(void Function(UpdateProfileResponse) updates) => super.copyWith((message) => updates(message as UpdateProfileResponse)) as UpdateProfileResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static UpdateOnboardedCompletedResponse create() => UpdateOnboardedCompletedResponse._();
-  UpdateOnboardedCompletedResponse createEmptyInstance() => create();
-  static $pb.PbList<UpdateOnboardedCompletedResponse> createRepeated() => $pb.PbList<UpdateOnboardedCompletedResponse>();
+  static UpdateProfileResponse create() => UpdateProfileResponse._();
+  UpdateProfileResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateProfileResponse> createRepeated() => $pb.PbList<UpdateProfileResponse>();
   @$core.pragma('dart2js:noInline')
-  static UpdateOnboardedCompletedResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateOnboardedCompletedResponse>(create);
-  static UpdateOnboardedCompletedResponse? _defaultInstance;
+  static UpdateProfileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateProfileResponse>(create);
+  static UpdateProfileResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   ProfileModel get profile => $_getN(0);

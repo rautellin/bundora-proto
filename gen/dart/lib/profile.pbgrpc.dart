@@ -25,10 +25,10 @@ class ProfileServiceClient extends $grpc.Client {
       '/ProfileService/GetProfile',
       ($3.GetProfileRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $3.GetProfileResponse.fromBuffer(value));
-  static final _$updateOnboardedCompleted = $grpc.ClientMethod<$3.UpdateOnboardedCompletedRequest, $3.UpdateOnboardedCompletedResponse>(
-      '/ProfileService/UpdateOnboardedCompleted',
-      ($3.UpdateOnboardedCompletedRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $3.UpdateOnboardedCompletedResponse.fromBuffer(value));
+  static final _$updateProfile = $grpc.ClientMethod<$3.UpdateProfileRequest, $3.UpdateProfileResponse>(
+      '/ProfileService/UpdateProfile',
+      ($3.UpdateProfileRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $3.UpdateProfileResponse.fromBuffer(value));
 
   ProfileServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -40,8 +40,8 @@ class ProfileServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getProfile, request, options: options);
   }
 
-  $grpc.ResponseFuture<$3.UpdateOnboardedCompletedResponse> updateOnboardedCompleted($3.UpdateOnboardedCompletedRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updateOnboardedCompleted, request, options: options);
+  $grpc.ResponseFuture<$3.UpdateProfileResponse> updateProfile($3.UpdateProfileRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateProfile, request, options: options);
   }
 }
 
@@ -57,23 +57,23 @@ abstract class ProfileServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $3.GetProfileRequest.fromBuffer(value),
         ($3.GetProfileResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$3.UpdateOnboardedCompletedRequest, $3.UpdateOnboardedCompletedResponse>(
-        'UpdateOnboardedCompleted',
-        updateOnboardedCompleted_Pre,
+    $addMethod($grpc.ServiceMethod<$3.UpdateProfileRequest, $3.UpdateProfileResponse>(
+        'UpdateProfile',
+        updateProfile_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $3.UpdateOnboardedCompletedRequest.fromBuffer(value),
-        ($3.UpdateOnboardedCompletedResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $3.UpdateProfileRequest.fromBuffer(value),
+        ($3.UpdateProfileResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$3.GetProfileResponse> getProfile_Pre($grpc.ServiceCall call, $async.Future<$3.GetProfileRequest> request) async {
     return getProfile(call, await request);
   }
 
-  $async.Future<$3.UpdateOnboardedCompletedResponse> updateOnboardedCompleted_Pre($grpc.ServiceCall call, $async.Future<$3.UpdateOnboardedCompletedRequest> request) async {
-    return updateOnboardedCompleted(call, await request);
+  $async.Future<$3.UpdateProfileResponse> updateProfile_Pre($grpc.ServiceCall call, $async.Future<$3.UpdateProfileRequest> request) async {
+    return updateProfile(call, await request);
   }
 
   $async.Future<$3.GetProfileResponse> getProfile($grpc.ServiceCall call, $3.GetProfileRequest request);
-  $async.Future<$3.UpdateOnboardedCompletedResponse> updateOnboardedCompleted($grpc.ServiceCall call, $3.UpdateOnboardedCompletedRequest request);
+  $async.Future<$3.UpdateProfileResponse> updateProfile($grpc.ServiceCall call, $3.UpdateProfileRequest request);
 }
