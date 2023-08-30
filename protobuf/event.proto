@@ -7,6 +7,7 @@ service EventService {
     rpc GetSentEvents(GetSentEventsRequest) returns (GetSentEventsResponse);
     rpc GetReceivedEvents(GetReceivedEventsRequest) returns (GetReceivedEventsResponse);
     rpc CreateEvent(CreateEventRequest) returns (CreateEventResponse);
+    rpc AcknowledgeEvent(AcknowledgeEventRequest) returns (AcknowledgeEventResponse);
 }
 
 message GetSentEventsRequest {
@@ -32,11 +33,21 @@ message CreateEventResponse {
     EventModel event = 1;
 }
 
+message AcknowledgeEventRequest {
+    string id = 1;
+}
+
+message AcknowledgeEventResponse {
+    EventModel event = 1;
+}
+
 message EventModel {
     string id = 1;
     EventType type = 2;
     google.protobuf.Timestamp created_at = 3;
     optional string message = 4;
+    string created_by = 5;
+    bool acknowledged = 6;
 }
 
 enum EventType {
