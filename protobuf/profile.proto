@@ -5,12 +5,15 @@ option go_package = "github.com/rautellin/mindfuloop-proto/gen/go;proto";
 service ProfileService {
     rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
     rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
+    rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
 }
 
 message ProfileModel {
     string id = 1;
-    optional string fcm_token = 2;
-    CharacterType character_type = 3;
+    CharacterType character_type = 2;
+    bool onboarding_completed = 3;
+    optional string fcm_token = 4;
+    optional string partner_id = 5;
 }
 
 message GetProfileRequest {
@@ -21,10 +24,24 @@ message GetProfileResponse {
 }
 
 message UpdateProfileRequest {
-    CharacterType character_type = 1;
+    optional CharacterType character_type = 1;
+    optional bool onboarding_completed = 2;
+    optional string fcm_token = 3;
+    optional string partner_id = 4;
 }
 
 message UpdateProfileResponse {
+    ProfileModel profile = 1;
+}
+
+message CreateProfileRequest {
+    optional CharacterType character_type = 1;
+    optional bool onboarding_completed = 2;
+    optional string fcm_token = 3;
+    optional string partner_id = 4;
+}
+
+message CreateProfileResponse {
     ProfileModel profile = 1;
 }
 

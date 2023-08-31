@@ -29,6 +29,10 @@ class ProfileServiceClient extends $grpc.Client {
       '/ProfileService/UpdateProfile',
       ($3.UpdateProfileRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $3.UpdateProfileResponse.fromBuffer(value));
+  static final _$createProfile = $grpc.ClientMethod<$3.CreateProfileRequest, $3.CreateProfileResponse>(
+      '/ProfileService/CreateProfile',
+      ($3.CreateProfileRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $3.CreateProfileResponse.fromBuffer(value));
 
   ProfileServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -42,6 +46,10 @@ class ProfileServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$3.UpdateProfileResponse> updateProfile($3.UpdateProfileRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateProfile, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$3.CreateProfileResponse> createProfile($3.CreateProfileRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createProfile, request, options: options);
   }
 }
 
@@ -64,6 +72,13 @@ abstract class ProfileServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $3.UpdateProfileRequest.fromBuffer(value),
         ($3.UpdateProfileResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$3.CreateProfileRequest, $3.CreateProfileResponse>(
+        'CreateProfile',
+        createProfile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $3.CreateProfileRequest.fromBuffer(value),
+        ($3.CreateProfileResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$3.GetProfileResponse> getProfile_Pre($grpc.ServiceCall call, $async.Future<$3.GetProfileRequest> request) async {
@@ -74,6 +89,11 @@ abstract class ProfileServiceBase extends $grpc.Service {
     return updateProfile(call, await request);
   }
 
+  $async.Future<$3.CreateProfileResponse> createProfile_Pre($grpc.ServiceCall call, $async.Future<$3.CreateProfileRequest> request) async {
+    return createProfile(call, await request);
+  }
+
   $async.Future<$3.GetProfileResponse> getProfile($grpc.ServiceCall call, $3.GetProfileRequest request);
   $async.Future<$3.UpdateProfileResponse> updateProfile($grpc.ServiceCall call, $3.UpdateProfileRequest request);
+  $async.Future<$3.CreateProfileResponse> createProfile($grpc.ServiceCall call, $3.CreateProfileRequest request);
 }

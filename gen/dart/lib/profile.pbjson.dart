@@ -33,19 +33,24 @@ const ProfileModel$json = {
   '1': 'ProfileModel',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'fcm_token', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'fcmToken', '17': true},
-    {'1': 'character_type', '3': 3, '4': 1, '5': 14, '6': '.CharacterType', '10': 'characterType'},
+    {'1': 'character_type', '3': 2, '4': 1, '5': 14, '6': '.CharacterType', '10': 'characterType'},
+    {'1': 'onboarding_completed', '3': 3, '4': 1, '5': 8, '10': 'onboardingCompleted'},
+    {'1': 'fcm_token', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'fcmToken', '17': true},
+    {'1': 'partner_id', '3': 5, '4': 1, '5': 9, '9': 1, '10': 'partnerId', '17': true},
   ],
   '8': [
     {'1': '_fcm_token'},
+    {'1': '_partner_id'},
   ],
 };
 
 /// Descriptor for `ProfileModel`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List profileModelDescriptor = $convert.base64Decode(
-    'CgxQcm9maWxlTW9kZWwSDgoCaWQYASABKAlSAmlkEiAKCWZjbV90b2tlbhgCIAEoCUgAUghmY2'
-    '1Ub2tlbogBARI1Cg5jaGFyYWN0ZXJfdHlwZRgDIAEoDjIOLkNoYXJhY3RlclR5cGVSDWNoYXJh'
-    'Y3RlclR5cGVCDAoKX2ZjbV90b2tlbg==');
+    'CgxQcm9maWxlTW9kZWwSDgoCaWQYASABKAlSAmlkEjUKDmNoYXJhY3Rlcl90eXBlGAIgASgOMg'
+    '4uQ2hhcmFjdGVyVHlwZVINY2hhcmFjdGVyVHlwZRIxChRvbmJvYXJkaW5nX2NvbXBsZXRlZBgD'
+    'IAEoCFITb25ib2FyZGluZ0NvbXBsZXRlZBIgCglmY21fdG9rZW4YBCABKAlIAFIIZmNtVG9rZW'
+    '6IAQESIgoKcGFydG5lcl9pZBgFIAEoCUgBUglwYXJ0bmVySWSIAQFCDAoKX2ZjbV90b2tlbkIN'
+    'CgtfcGFydG5lcl9pZA==');
 
 @$core.Deprecated('Use getProfileRequestDescriptor instead')
 const GetProfileRequest$json = {
@@ -73,14 +78,27 @@ final $typed_data.Uint8List getProfileResponseDescriptor = $convert.base64Decode
 const UpdateProfileRequest$json = {
   '1': 'UpdateProfileRequest',
   '2': [
-    {'1': 'character_type', '3': 1, '4': 1, '5': 14, '6': '.CharacterType', '10': 'characterType'},
+    {'1': 'character_type', '3': 1, '4': 1, '5': 14, '6': '.CharacterType', '9': 0, '10': 'characterType', '17': true},
+    {'1': 'onboarding_completed', '3': 2, '4': 1, '5': 8, '9': 1, '10': 'onboardingCompleted', '17': true},
+    {'1': 'fcm_token', '3': 3, '4': 1, '5': 9, '9': 2, '10': 'fcmToken', '17': true},
+    {'1': 'partner_id', '3': 4, '4': 1, '5': 9, '9': 3, '10': 'partnerId', '17': true},
+  ],
+  '8': [
+    {'1': '_character_type'},
+    {'1': '_onboarding_completed'},
+    {'1': '_fcm_token'},
+    {'1': '_partner_id'},
   ],
 };
 
 /// Descriptor for `UpdateProfileRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateProfileRequestDescriptor = $convert.base64Decode(
-    'ChRVcGRhdGVQcm9maWxlUmVxdWVzdBI1Cg5jaGFyYWN0ZXJfdHlwZRgBIAEoDjIOLkNoYXJhY3'
-    'RlclR5cGVSDWNoYXJhY3RlclR5cGU=');
+    'ChRVcGRhdGVQcm9maWxlUmVxdWVzdBI6Cg5jaGFyYWN0ZXJfdHlwZRgBIAEoDjIOLkNoYXJhY3'
+    'RlclR5cGVIAFINY2hhcmFjdGVyVHlwZYgBARI2ChRvbmJvYXJkaW5nX2NvbXBsZXRlZBgCIAEo'
+    'CEgBUhNvbmJvYXJkaW5nQ29tcGxldGVkiAEBEiAKCWZjbV90b2tlbhgDIAEoCUgCUghmY21Ub2'
+    'tlbogBARIiCgpwYXJ0bmVyX2lkGAQgASgJSANSCXBhcnRuZXJJZIgBAUIRCg9fY2hhcmFjdGVy'
+    'X3R5cGVCFwoVX29uYm9hcmRpbmdfY29tcGxldGVkQgwKCl9mY21fdG9rZW5CDQoLX3BhcnRuZX'
+    'JfaWQ=');
 
 @$core.Deprecated('Use updateProfileResponseDescriptor instead')
 const UpdateProfileResponse$json = {
@@ -93,5 +111,44 @@ const UpdateProfileResponse$json = {
 /// Descriptor for `UpdateProfileResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateProfileResponseDescriptor = $convert.base64Decode(
     'ChVVcGRhdGVQcm9maWxlUmVzcG9uc2USJwoHcHJvZmlsZRgBIAEoCzINLlByb2ZpbGVNb2RlbF'
+    'IHcHJvZmlsZQ==');
+
+@$core.Deprecated('Use createProfileRequestDescriptor instead')
+const CreateProfileRequest$json = {
+  '1': 'CreateProfileRequest',
+  '2': [
+    {'1': 'character_type', '3': 1, '4': 1, '5': 14, '6': '.CharacterType', '9': 0, '10': 'characterType', '17': true},
+    {'1': 'onboarding_completed', '3': 2, '4': 1, '5': 8, '9': 1, '10': 'onboardingCompleted', '17': true},
+    {'1': 'fcm_token', '3': 3, '4': 1, '5': 9, '9': 2, '10': 'fcmToken', '17': true},
+    {'1': 'partner_id', '3': 4, '4': 1, '5': 9, '9': 3, '10': 'partnerId', '17': true},
+  ],
+  '8': [
+    {'1': '_character_type'},
+    {'1': '_onboarding_completed'},
+    {'1': '_fcm_token'},
+    {'1': '_partner_id'},
+  ],
+};
+
+/// Descriptor for `CreateProfileRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createProfileRequestDescriptor = $convert.base64Decode(
+    'ChRDcmVhdGVQcm9maWxlUmVxdWVzdBI6Cg5jaGFyYWN0ZXJfdHlwZRgBIAEoDjIOLkNoYXJhY3'
+    'RlclR5cGVIAFINY2hhcmFjdGVyVHlwZYgBARI2ChRvbmJvYXJkaW5nX2NvbXBsZXRlZBgCIAEo'
+    'CEgBUhNvbmJvYXJkaW5nQ29tcGxldGVkiAEBEiAKCWZjbV90b2tlbhgDIAEoCUgCUghmY21Ub2'
+    'tlbogBARIiCgpwYXJ0bmVyX2lkGAQgASgJSANSCXBhcnRuZXJJZIgBAUIRCg9fY2hhcmFjdGVy'
+    'X3R5cGVCFwoVX29uYm9hcmRpbmdfY29tcGxldGVkQgwKCl9mY21fdG9rZW5CDQoLX3BhcnRuZX'
+    'JfaWQ=');
+
+@$core.Deprecated('Use createProfileResponseDescriptor instead')
+const CreateProfileResponse$json = {
+  '1': 'CreateProfileResponse',
+  '2': [
+    {'1': 'profile', '3': 1, '4': 1, '5': 11, '6': '.ProfileModel', '10': 'profile'},
+  ],
+};
+
+/// Descriptor for `CreateProfileResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createProfileResponseDescriptor = $convert.base64Decode(
+    'ChVDcmVhdGVQcm9maWxlUmVzcG9uc2USJwoHcHJvZmlsZRgBIAEoCzINLlByb2ZpbGVNb2RlbF'
     'IHcHJvZmlsZQ==');
 

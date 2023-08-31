@@ -25,8 +25,10 @@ class ProfileModel extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProfileModel', createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOS(2, _omitFieldNames ? '' : 'fcmToken')
-    ..e<CharacterType>(3, _omitFieldNames ? '' : 'characterType', $pb.PbFieldType.OE, defaultOrMaker: CharacterType.CHARACTER_TYPE_UNSPECIFIED, valueOf: CharacterType.valueOf, enumValues: CharacterType.values)
+    ..e<CharacterType>(2, _omitFieldNames ? '' : 'characterType', $pb.PbFieldType.OE, defaultOrMaker: CharacterType.CHARACTER_TYPE_UNSPECIFIED, valueOf: CharacterType.valueOf, enumValues: CharacterType.values)
+    ..aOB(3, _omitFieldNames ? '' : 'onboardingCompleted')
+    ..aOS(4, _omitFieldNames ? '' : 'fcmToken')
+    ..aOS(5, _omitFieldNames ? '' : 'partnerId')
     ..hasRequiredFields = false
   ;
 
@@ -61,22 +63,40 @@ class ProfileModel extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get fcmToken => $_getSZ(1);
+  CharacterType get characterType => $_getN(1);
   @$pb.TagNumber(2)
-  set fcmToken($core.String v) { $_setString(1, v); }
+  set characterType(CharacterType v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasFcmToken() => $_has(1);
+  $core.bool hasCharacterType() => $_has(1);
   @$pb.TagNumber(2)
-  void clearFcmToken() => clearField(2);
+  void clearCharacterType() => clearField(2);
 
   @$pb.TagNumber(3)
-  CharacterType get characterType => $_getN(2);
+  $core.bool get onboardingCompleted => $_getBF(2);
   @$pb.TagNumber(3)
-  set characterType(CharacterType v) { setField(3, v); }
+  set onboardingCompleted($core.bool v) { $_setBool(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasCharacterType() => $_has(2);
+  $core.bool hasOnboardingCompleted() => $_has(2);
   @$pb.TagNumber(3)
-  void clearCharacterType() => clearField(3);
+  void clearOnboardingCompleted() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get fcmToken => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set fcmToken($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasFcmToken() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFcmToken() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get partnerId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set partnerId($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasPartnerId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPartnerId() => clearField(5);
 }
 
 class GetProfileRequest extends $pb.GeneratedMessage {
@@ -163,6 +183,9 @@ class UpdateProfileRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateProfileRequest', createEmptyInstance: create)
     ..e<CharacterType>(1, _omitFieldNames ? '' : 'characterType', $pb.PbFieldType.OE, defaultOrMaker: CharacterType.CHARACTER_TYPE_UNSPECIFIED, valueOf: CharacterType.valueOf, enumValues: CharacterType.values)
+    ..aOB(2, _omitFieldNames ? '' : 'onboardingCompleted')
+    ..aOS(3, _omitFieldNames ? '' : 'fcmToken')
+    ..aOS(4, _omitFieldNames ? '' : 'partnerId')
     ..hasRequiredFields = false
   ;
 
@@ -195,6 +218,33 @@ class UpdateProfileRequest extends $pb.GeneratedMessage {
   $core.bool hasCharacterType() => $_has(0);
   @$pb.TagNumber(1)
   void clearCharacterType() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get onboardingCompleted => $_getBF(1);
+  @$pb.TagNumber(2)
+  set onboardingCompleted($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOnboardingCompleted() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOnboardingCompleted() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get fcmToken => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set fcmToken($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasFcmToken() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFcmToken() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get partnerId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set partnerId($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasPartnerId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPartnerId() => clearField(4);
 }
 
 class UpdateProfileResponse extends $pb.GeneratedMessage {
@@ -228,6 +278,122 @@ class UpdateProfileResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static UpdateProfileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateProfileResponse>(create);
   static UpdateProfileResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ProfileModel get profile => $_getN(0);
+  @$pb.TagNumber(1)
+  set profile(ProfileModel v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasProfile() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProfile() => clearField(1);
+  @$pb.TagNumber(1)
+  ProfileModel ensureProfile() => $_ensure(0);
+}
+
+class CreateProfileRequest extends $pb.GeneratedMessage {
+  factory CreateProfileRequest() => create();
+  CreateProfileRequest._() : super();
+  factory CreateProfileRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateProfileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateProfileRequest', createEmptyInstance: create)
+    ..e<CharacterType>(1, _omitFieldNames ? '' : 'characterType', $pb.PbFieldType.OE, defaultOrMaker: CharacterType.CHARACTER_TYPE_UNSPECIFIED, valueOf: CharacterType.valueOf, enumValues: CharacterType.values)
+    ..aOB(2, _omitFieldNames ? '' : 'onboardingCompleted')
+    ..aOS(3, _omitFieldNames ? '' : 'fcmToken')
+    ..aOS(4, _omitFieldNames ? '' : 'partnerId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateProfileRequest clone() => CreateProfileRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateProfileRequest copyWith(void Function(CreateProfileRequest) updates) => super.copyWith((message) => updates(message as CreateProfileRequest)) as CreateProfileRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateProfileRequest create() => CreateProfileRequest._();
+  CreateProfileRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateProfileRequest> createRepeated() => $pb.PbList<CreateProfileRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateProfileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateProfileRequest>(create);
+  static CreateProfileRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  CharacterType get characterType => $_getN(0);
+  @$pb.TagNumber(1)
+  set characterType(CharacterType v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCharacterType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCharacterType() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get onboardingCompleted => $_getBF(1);
+  @$pb.TagNumber(2)
+  set onboardingCompleted($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOnboardingCompleted() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOnboardingCompleted() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get fcmToken => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set fcmToken($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasFcmToken() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFcmToken() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get partnerId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set partnerId($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasPartnerId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPartnerId() => clearField(4);
+}
+
+class CreateProfileResponse extends $pb.GeneratedMessage {
+  factory CreateProfileResponse() => create();
+  CreateProfileResponse._() : super();
+  factory CreateProfileResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateProfileResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateProfileResponse', createEmptyInstance: create)
+    ..aOM<ProfileModel>(1, _omitFieldNames ? '' : 'profile', subBuilder: ProfileModel.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateProfileResponse clone() => CreateProfileResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateProfileResponse copyWith(void Function(CreateProfileResponse) updates) => super.copyWith((message) => updates(message as CreateProfileResponse)) as CreateProfileResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateProfileResponse create() => CreateProfileResponse._();
+  CreateProfileResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateProfileResponse> createRepeated() => $pb.PbList<CreateProfileResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateProfileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateProfileResponse>(create);
+  static CreateProfileResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   ProfileModel get profile => $_getN(0);
