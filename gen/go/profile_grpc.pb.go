@@ -19,10 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	ProfileService_GetProfile_FullMethodName     = "/ProfileService/GetProfile"
-	ProfileService_UpdateProfile_FullMethodName  = "/ProfileService/UpdateProfile"
-	ProfileService_CreateProfile_FullMethodName  = "/ProfileService/CreateProfile"
-	ProfileService_UpdateFCMToken_FullMethodName = "/ProfileService/UpdateFCMToken"
+	ProfileService_GetProfile_FullMethodName       = "/ProfileService/GetProfile"
+	ProfileService_UpdateProfile_FullMethodName    = "/ProfileService/UpdateProfile"
+	ProfileService_CreateProfile_FullMethodName    = "/ProfileService/CreateProfile"
+	ProfileService_UpdateFCMToken_FullMethodName   = "/ProfileService/UpdateFCMToken"
+	ProfileService_ConnectToPartner_FullMethodName = "/ProfileService/ConnectToPartner"
 )
 
 // ProfileServiceClient is the client API for ProfileService service.
@@ -33,6 +34,7 @@ type ProfileServiceClient interface {
 	UpdateProfile(ctx context.Context, in *UpdateProfileRequest, opts ...grpc.CallOption) (*UpdateProfileResponse, error)
 	CreateProfile(ctx context.Context, in *CreateProfileRequest, opts ...grpc.CallOption) (*CreateProfileResponse, error)
 	UpdateFCMToken(ctx context.Context, in *UpdateFCMTokenRequest, opts ...grpc.CallOption) (*UpdateFCMTokenResponse, error)
+	ConnectToPartner(ctx context.Context, in *ConnectToPartnerRequest, opts ...grpc.CallOption) (*ConnectToPartnerResponse, error)
 }
 
 type profileServiceClient struct {
@@ -79,6 +81,15 @@ func (c *profileServiceClient) UpdateFCMToken(ctx context.Context, in *UpdateFCM
 	return out, nil
 }
 
+func (c *profileServiceClient) ConnectToPartner(ctx context.Context, in *ConnectToPartnerRequest, opts ...grpc.CallOption) (*ConnectToPartnerResponse, error) {
+	out := new(ConnectToPartnerResponse)
+	err := c.cc.Invoke(ctx, ProfileService_ConnectToPartner_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ProfileServiceServer is the server API for ProfileService service.
 // All implementations must embed UnimplementedProfileServiceServer
 // for forward compatibility
@@ -87,6 +98,7 @@ type ProfileServiceServer interface {
 	UpdateProfile(context.Context, *UpdateProfileRequest) (*UpdateProfileResponse, error)
 	CreateProfile(context.Context, *CreateProfileRequest) (*CreateProfileResponse, error)
 	UpdateFCMToken(context.Context, *UpdateFCMTokenRequest) (*UpdateFCMTokenResponse, error)
+	ConnectToPartner(context.Context, *ConnectToPartnerRequest) (*ConnectToPartnerResponse, error)
 	mustEmbedUnimplementedProfileServiceServer()
 }
 
@@ -105,6 +117,9 @@ func (UnimplementedProfileServiceServer) CreateProfile(context.Context, *CreateP
 }
 func (UnimplementedProfileServiceServer) UpdateFCMToken(context.Context, *UpdateFCMTokenRequest) (*UpdateFCMTokenResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateFCMToken not implemented")
+}
+func (UnimplementedProfileServiceServer) ConnectToPartner(context.Context, *ConnectToPartnerRequest) (*ConnectToPartnerResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ConnectToPartner not implemented")
 }
 func (UnimplementedProfileServiceServer) mustEmbedUnimplementedProfileServiceServer() {}
 
@@ -191,6 +206,24 @@ func _ProfileService_UpdateFCMToken_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ProfileService_ConnectToPartner_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ConnectToPartnerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProfileServiceServer).ConnectToPartner(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ProfileService_ConnectToPartner_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProfileServiceServer).ConnectToPartner(ctx, req.(*ConnectToPartnerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ProfileService_ServiceDesc is the grpc.ServiceDesc for ProfileService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -213,6 +246,10 @@ var ProfileService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateFCMToken",
 			Handler:    _ProfileService_UpdateFCMToken_Handler,
+		},
+		{
+			MethodName: "ConnectToPartner",
+			Handler:    _ProfileService_ConnectToPartner_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

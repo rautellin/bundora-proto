@@ -37,6 +37,10 @@ class ProfileServiceClient extends $grpc.Client {
       '/ProfileService/UpdateFCMToken',
       ($1.UpdateFCMTokenRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.UpdateFCMTokenResponse.fromBuffer(value));
+  static final _$connectToPartner = $grpc.ClientMethod<$1.ConnectToPartnerRequest, $1.ConnectToPartnerResponse>(
+      '/ProfileService/ConnectToPartner',
+      ($1.ConnectToPartnerRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.ConnectToPartnerResponse.fromBuffer(value));
 
   ProfileServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -58,6 +62,10 @@ class ProfileServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$1.UpdateFCMTokenResponse> updateFCMToken($1.UpdateFCMTokenRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateFCMToken, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.ConnectToPartnerResponse> connectToPartner($1.ConnectToPartnerRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$connectToPartner, request, options: options);
   }
 }
 
@@ -94,6 +102,13 @@ abstract class ProfileServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.UpdateFCMTokenRequest.fromBuffer(value),
         ($1.UpdateFCMTokenResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.ConnectToPartnerRequest, $1.ConnectToPartnerResponse>(
+        'ConnectToPartner',
+        connectToPartner_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.ConnectToPartnerRequest.fromBuffer(value),
+        ($1.ConnectToPartnerResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.GetProfileResponse> getProfile_Pre($grpc.ServiceCall call, $async.Future<$1.GetProfileRequest> request) async {
@@ -112,8 +127,13 @@ abstract class ProfileServiceBase extends $grpc.Service {
     return updateFCMToken(call, await request);
   }
 
+  $async.Future<$1.ConnectToPartnerResponse> connectToPartner_Pre($grpc.ServiceCall call, $async.Future<$1.ConnectToPartnerRequest> request) async {
+    return connectToPartner(call, await request);
+  }
+
   $async.Future<$1.GetProfileResponse> getProfile($grpc.ServiceCall call, $1.GetProfileRequest request);
   $async.Future<$1.UpdateProfileResponse> updateProfile($grpc.ServiceCall call, $1.UpdateProfileRequest request);
   $async.Future<$1.CreateProfileResponse> createProfile($grpc.ServiceCall call, $1.CreateProfileRequest request);
   $async.Future<$1.UpdateFCMTokenResponse> updateFCMToken($grpc.ServiceCall call, $1.UpdateFCMTokenRequest request);
+  $async.Future<$1.ConnectToPartnerResponse> connectToPartner($grpc.ServiceCall call, $1.ConnectToPartnerRequest request);
 }

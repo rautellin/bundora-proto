@@ -181,3 +181,28 @@ final $typed_data.Uint8List updateFCMTokenResponseDescriptor = $convert.base64De
     'ChZVcGRhdGVGQ01Ub2tlblJlc3BvbnNlEicKB3Byb2ZpbGUYASABKAsyDS5Qcm9maWxlTW9kZW'
     'xSB3Byb2ZpbGU=');
 
+@$core.Deprecated('Use connectToPartnerRequestDescriptor instead')
+const ConnectToPartnerRequest$json = {
+  '1': 'ConnectToPartnerRequest',
+  '2': [
+    {'1': 'passcode', '3': 1, '4': 1, '5': 5, '10': 'passcode'},
+  ],
+};
+
+/// Descriptor for `ConnectToPartnerRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List connectToPartnerRequestDescriptor = $convert.base64Decode(
+    'ChdDb25uZWN0VG9QYXJ0bmVyUmVxdWVzdBIaCghwYXNzY29kZRgBIAEoBVIIcGFzc2NvZGU=');
+
+@$core.Deprecated('Use connectToPartnerResponseDescriptor instead')
+const ConnectToPartnerResponse$json = {
+  '1': 'ConnectToPartnerResponse',
+  '2': [
+    {'1': 'profile', '3': 1, '4': 1, '5': 11, '6': '.ProfileModel', '10': 'profile'},
+  ],
+};
+
+/// Descriptor for `ConnectToPartnerResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List connectToPartnerResponseDescriptor = $convert.base64Decode(
+    'ChhDb25uZWN0VG9QYXJ0bmVyUmVzcG9uc2USJwoHcHJvZmlsZRgBIAEoCzINLlByb2ZpbGVNb2'
+    'RlbFIHcHJvZmlsZQ==');
+

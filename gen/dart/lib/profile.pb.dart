@@ -493,6 +493,92 @@ class UpdateFCMTokenResponse extends $pb.GeneratedMessage {
   ProfileModel ensureProfile() => $_ensure(0);
 }
 
+class ConnectToPartnerRequest extends $pb.GeneratedMessage {
+  factory ConnectToPartnerRequest() => create();
+  ConnectToPartnerRequest._() : super();
+  factory ConnectToPartnerRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ConnectToPartnerRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ConnectToPartnerRequest', createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'passcode', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ConnectToPartnerRequest clone() => ConnectToPartnerRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ConnectToPartnerRequest copyWith(void Function(ConnectToPartnerRequest) updates) => super.copyWith((message) => updates(message as ConnectToPartnerRequest)) as ConnectToPartnerRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ConnectToPartnerRequest create() => ConnectToPartnerRequest._();
+  ConnectToPartnerRequest createEmptyInstance() => create();
+  static $pb.PbList<ConnectToPartnerRequest> createRepeated() => $pb.PbList<ConnectToPartnerRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ConnectToPartnerRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ConnectToPartnerRequest>(create);
+  static ConnectToPartnerRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get passcode => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set passcode($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPasscode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPasscode() => clearField(1);
+}
+
+class ConnectToPartnerResponse extends $pb.GeneratedMessage {
+  factory ConnectToPartnerResponse() => create();
+  ConnectToPartnerResponse._() : super();
+  factory ConnectToPartnerResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ConnectToPartnerResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ConnectToPartnerResponse', createEmptyInstance: create)
+    ..aOM<ProfileModel>(1, _omitFieldNames ? '' : 'profile', subBuilder: ProfileModel.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ConnectToPartnerResponse clone() => ConnectToPartnerResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ConnectToPartnerResponse copyWith(void Function(ConnectToPartnerResponse) updates) => super.copyWith((message) => updates(message as ConnectToPartnerResponse)) as ConnectToPartnerResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ConnectToPartnerResponse create() => ConnectToPartnerResponse._();
+  ConnectToPartnerResponse createEmptyInstance() => create();
+  static $pb.PbList<ConnectToPartnerResponse> createRepeated() => $pb.PbList<ConnectToPartnerResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ConnectToPartnerResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ConnectToPartnerResponse>(create);
+  static ConnectToPartnerResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ProfileModel get profile => $_getN(0);
+  @$pb.TagNumber(1)
+  set profile(ProfileModel v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasProfile() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProfile() => clearField(1);
+  @$pb.TagNumber(1)
+  ProfileModel ensureProfile() => $_ensure(0);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
