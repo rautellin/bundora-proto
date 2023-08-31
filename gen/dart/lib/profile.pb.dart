@@ -407,6 +407,92 @@ class CreateProfileResponse extends $pb.GeneratedMessage {
   ProfileModel ensureProfile() => $_ensure(0);
 }
 
+class UpdateFCMTokenRequest extends $pb.GeneratedMessage {
+  factory UpdateFCMTokenRequest() => create();
+  UpdateFCMTokenRequest._() : super();
+  factory UpdateFCMTokenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateFCMTokenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateFCMTokenRequest', createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'fcmToken')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateFCMTokenRequest clone() => UpdateFCMTokenRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateFCMTokenRequest copyWith(void Function(UpdateFCMTokenRequest) updates) => super.copyWith((message) => updates(message as UpdateFCMTokenRequest)) as UpdateFCMTokenRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateFCMTokenRequest create() => UpdateFCMTokenRequest._();
+  UpdateFCMTokenRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateFCMTokenRequest> createRepeated() => $pb.PbList<UpdateFCMTokenRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateFCMTokenRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateFCMTokenRequest>(create);
+  static UpdateFCMTokenRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get fcmToken => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set fcmToken($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasFcmToken() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFcmToken() => clearField(1);
+}
+
+class UpdateFCMTokenResponse extends $pb.GeneratedMessage {
+  factory UpdateFCMTokenResponse() => create();
+  UpdateFCMTokenResponse._() : super();
+  factory UpdateFCMTokenResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateFCMTokenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateFCMTokenResponse', createEmptyInstance: create)
+    ..aOM<ProfileModel>(1, _omitFieldNames ? '' : 'profile', subBuilder: ProfileModel.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateFCMTokenResponse clone() => UpdateFCMTokenResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateFCMTokenResponse copyWith(void Function(UpdateFCMTokenResponse) updates) => super.copyWith((message) => updates(message as UpdateFCMTokenResponse)) as UpdateFCMTokenResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateFCMTokenResponse create() => UpdateFCMTokenResponse._();
+  UpdateFCMTokenResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateFCMTokenResponse> createRepeated() => $pb.PbList<UpdateFCMTokenResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateFCMTokenResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateFCMTokenResponse>(create);
+  static UpdateFCMTokenResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ProfileModel get profile => $_getN(0);
+  @$pb.TagNumber(1)
+  set profile(ProfileModel v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasProfile() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProfile() => clearField(1);
+  @$pb.TagNumber(1)
+  ProfileModel ensureProfile() => $_ensure(0);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

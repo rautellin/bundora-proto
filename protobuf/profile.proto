@@ -6,6 +6,7 @@ service ProfileService {
     rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
     rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
     rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
+    rpc UpdateFCMToken(UpdateFCMTokenRequest) returns (UpdateFCMTokenResponse);
 }
 
 message ProfileModel {
@@ -42,6 +43,14 @@ message CreateProfileRequest {
 }
 
 message CreateProfileResponse {
+    ProfileModel profile = 1;
+}
+
+message UpdateFCMTokenRequest {
+    optional string fcm_token = 1;
+}
+
+message UpdateFCMTokenResponse {
     ProfileModel profile = 1;
 }
 

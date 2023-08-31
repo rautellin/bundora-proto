@@ -152,3 +152,32 @@ final $typed_data.Uint8List createProfileResponseDescriptor = $convert.base64Dec
     'ChVDcmVhdGVQcm9maWxlUmVzcG9uc2USJwoHcHJvZmlsZRgBIAEoCzINLlByb2ZpbGVNb2RlbF'
     'IHcHJvZmlsZQ==');
 
+@$core.Deprecated('Use updateFCMTokenRequestDescriptor instead')
+const UpdateFCMTokenRequest$json = {
+  '1': 'UpdateFCMTokenRequest',
+  '2': [
+    {'1': 'fcm_token', '3': 1, '4': 1, '5': 9, '9': 0, '10': 'fcmToken', '17': true},
+  ],
+  '8': [
+    {'1': '_fcm_token'},
+  ],
+};
+
+/// Descriptor for `UpdateFCMTokenRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateFCMTokenRequestDescriptor = $convert.base64Decode(
+    'ChVVcGRhdGVGQ01Ub2tlblJlcXVlc3QSIAoJZmNtX3Rva2VuGAEgASgJSABSCGZjbVRva2VuiA'
+    'EBQgwKCl9mY21fdG9rZW4=');
+
+@$core.Deprecated('Use updateFCMTokenResponseDescriptor instead')
+const UpdateFCMTokenResponse$json = {
+  '1': 'UpdateFCMTokenResponse',
+  '2': [
+    {'1': 'profile', '3': 1, '4': 1, '5': 11, '6': '.ProfileModel', '10': 'profile'},
+  ],
+};
+
+/// Descriptor for `UpdateFCMTokenResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateFCMTokenResponseDescriptor = $convert.base64Decode(
+    'ChZVcGRhdGVGQ01Ub2tlblJlc3BvbnNlEicKB3Byb2ZpbGUYASABKAsyDS5Qcm9maWxlTW9kZW'
+    'xSB3Byb2ZpbGU=');
+
