@@ -149,7 +149,8 @@ const EventModel$json = {
     {'1': 'created_at', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
     {'1': 'message', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'message', '17': true},
     {'1': 'created_by', '3': 5, '4': 1, '5': 9, '10': 'createdBy'},
-    {'1': 'acknowledged', '3': 6, '4': 1, '5': 8, '10': 'acknowledged'},
+    {'1': 'created_for', '3': 6, '4': 1, '5': 9, '10': 'createdFor'},
+    {'1': 'acknowledged', '3': 7, '4': 1, '5': 8, '10': 'acknowledged'},
   ],
   '8': [
     {'1': '_message'},
@@ -161,6 +162,6 @@ final $typed_data.Uint8List eventModelDescriptor = $convert.base64Decode(
     'CgpFdmVudE1vZGVsEg4KAmlkGAEgASgJUgJpZBIeCgR0eXBlGAIgASgOMgouRXZlbnRUeXBlUg'
     'R0eXBlEjkKCmNyZWF0ZWRfYXQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglj'
     'cmVhdGVkQXQSHQoHbWVzc2FnZRgEIAEoCUgAUgdtZXNzYWdliAEBEh0KCmNyZWF0ZWRfYnkYBS'
-    'ABKAlSCWNyZWF0ZWRCeRIiCgxhY2tub3dsZWRnZWQYBiABKAhSDGFja25vd2xlZGdlZEIKCghf'
-    'bWVzc2FnZQ==');
+    'ABKAlSCWNyZWF0ZWRCeRIfCgtjcmVhdGVkX2ZvchgGIAEoCVIKY3JlYXRlZEZvchIiCgxhY2tu'
+    'b3dsZWRnZWQYByABKAhSDGFja25vd2xlZGdlZEIKCghfbWVzc2FnZQ==');
 

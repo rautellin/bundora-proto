@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'event.pbenum.dart';
-import 'google/protobuf/timestamp.pb.dart' as $4;
+import 'google/protobuf/timestamp.pb.dart' as $2;
 
 export 'event.pbenum.dart';
 
@@ -345,10 +345,11 @@ class EventModel extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EventModel', createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..e<EventType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: EventType.EVENT_TYPE_UNSPECIFIED, valueOf: EventType.valueOf, enumValues: EventType.values)
-    ..aOM<$4.Timestamp>(3, _omitFieldNames ? '' : 'createdAt', subBuilder: $4.Timestamp.create)
+    ..aOM<$2.Timestamp>(3, _omitFieldNames ? '' : 'createdAt', subBuilder: $2.Timestamp.create)
     ..aOS(4, _omitFieldNames ? '' : 'message')
     ..aOS(5, _omitFieldNames ? '' : 'createdBy')
-    ..aOB(6, _omitFieldNames ? '' : 'acknowledged')
+    ..aOS(6, _omitFieldNames ? '' : 'createdFor')
+    ..aOB(7, _omitFieldNames ? '' : 'acknowledged')
     ..hasRequiredFields = false
   ;
 
@@ -392,15 +393,15 @@ class EventModel extends $pb.GeneratedMessage {
   void clearType() => clearField(2);
 
   @$pb.TagNumber(3)
-  $4.Timestamp get createdAt => $_getN(2);
+  $2.Timestamp get createdAt => $_getN(2);
   @$pb.TagNumber(3)
-  set createdAt($4.Timestamp v) { setField(3, v); }
+  set createdAt($2.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCreatedAt() => $_has(2);
   @$pb.TagNumber(3)
   void clearCreatedAt() => clearField(3);
   @$pb.TagNumber(3)
-  $4.Timestamp ensureCreatedAt() => $_ensure(2);
+  $2.Timestamp ensureCreatedAt() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get message => $_getSZ(3);
@@ -421,13 +422,22 @@ class EventModel extends $pb.GeneratedMessage {
   void clearCreatedBy() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.bool get acknowledged => $_getBF(5);
+  $core.String get createdFor => $_getSZ(5);
   @$pb.TagNumber(6)
-  set acknowledged($core.bool v) { $_setBool(5, v); }
+  set createdFor($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasAcknowledged() => $_has(5);
+  $core.bool hasCreatedFor() => $_has(5);
   @$pb.TagNumber(6)
-  void clearAcknowledged() => clearField(6);
+  void clearCreatedFor() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get acknowledged => $_getBF(6);
+  @$pb.TagNumber(7)
+  set acknowledged($core.bool v) { $_setBool(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasAcknowledged() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAcknowledged() => clearField(7);
 }
 
 

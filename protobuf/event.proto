@@ -47,7 +47,8 @@ message EventModel {
     google.protobuf.Timestamp created_at = 3;
     optional string message = 4;
     string created_by = 5;
-    bool acknowledged = 6;
+    string created_for = 6;
+    bool acknowledged = 7;
 }
 
 enum EventType {

@@ -15,28 +15,28 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'event.pb.dart' as $1;
+import 'event.pb.dart' as $0;
 
 export 'event.pb.dart';
 
 @$pb.GrpcServiceName('EventService')
 class EventServiceClient extends $grpc.Client {
-  static final _$getSentEvents = $grpc.ClientMethod<$1.GetSentEventsRequest, $1.GetSentEventsResponse>(
+  static final _$getSentEvents = $grpc.ClientMethod<$0.GetSentEventsRequest, $0.GetSentEventsResponse>(
       '/EventService/GetSentEvents',
-      ($1.GetSentEventsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.GetSentEventsResponse.fromBuffer(value));
-  static final _$getReceivedEvents = $grpc.ClientMethod<$1.GetReceivedEventsRequest, $1.GetReceivedEventsResponse>(
+      ($0.GetSentEventsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.GetSentEventsResponse.fromBuffer(value));
+  static final _$getReceivedEvents = $grpc.ClientMethod<$0.GetReceivedEventsRequest, $0.GetReceivedEventsResponse>(
       '/EventService/GetReceivedEvents',
-      ($1.GetReceivedEventsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.GetReceivedEventsResponse.fromBuffer(value));
-  static final _$createEvent = $grpc.ClientMethod<$1.CreateEventRequest, $1.CreateEventResponse>(
+      ($0.GetReceivedEventsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.GetReceivedEventsResponse.fromBuffer(value));
+  static final _$createEvent = $grpc.ClientMethod<$0.CreateEventRequest, $0.CreateEventResponse>(
       '/EventService/CreateEvent',
-      ($1.CreateEventRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.CreateEventResponse.fromBuffer(value));
-  static final _$acknowledgeEvent = $grpc.ClientMethod<$1.AcknowledgeEventRequest, $1.AcknowledgeEventResponse>(
+      ($0.CreateEventRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.CreateEventResponse.fromBuffer(value));
+  static final _$acknowledgeEvent = $grpc.ClientMethod<$0.AcknowledgeEventRequest, $0.AcknowledgeEventResponse>(
       '/EventService/AcknowledgeEvent',
-      ($1.AcknowledgeEventRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.AcknowledgeEventResponse.fromBuffer(value));
+      ($0.AcknowledgeEventRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.AcknowledgeEventResponse.fromBuffer(value));
 
   EventServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -44,19 +44,19 @@ class EventServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$1.GetSentEventsResponse> getSentEvents($1.GetSentEventsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$0.GetSentEventsResponse> getSentEvents($0.GetSentEventsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getSentEvents, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.GetReceivedEventsResponse> getReceivedEvents($1.GetReceivedEventsRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$0.GetReceivedEventsResponse> getReceivedEvents($0.GetReceivedEventsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getReceivedEvents, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.CreateEventResponse> createEvent($1.CreateEventRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$0.CreateEventResponse> createEvent($0.CreateEventRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createEvent, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.AcknowledgeEventResponse> acknowledgeEvent($1.AcknowledgeEventRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$0.AcknowledgeEventResponse> acknowledgeEvent($0.AcknowledgeEventRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$acknowledgeEvent, request, options: options);
   }
 }
@@ -66,54 +66,54 @@ abstract class EventServiceBase extends $grpc.Service {
   $core.String get $name => 'EventService';
 
   EventServiceBase() {
-    $addMethod($grpc.ServiceMethod<$1.GetSentEventsRequest, $1.GetSentEventsResponse>(
+    $addMethod($grpc.ServiceMethod<$0.GetSentEventsRequest, $0.GetSentEventsResponse>(
         'GetSentEvents',
         getSentEvents_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.GetSentEventsRequest.fromBuffer(value),
-        ($1.GetSentEventsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.GetReceivedEventsRequest, $1.GetReceivedEventsResponse>(
+        ($core.List<$core.int> value) => $0.GetSentEventsRequest.fromBuffer(value),
+        ($0.GetSentEventsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetReceivedEventsRequest, $0.GetReceivedEventsResponse>(
         'GetReceivedEvents',
         getReceivedEvents_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.GetReceivedEventsRequest.fromBuffer(value),
-        ($1.GetReceivedEventsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.CreateEventRequest, $1.CreateEventResponse>(
+        ($core.List<$core.int> value) => $0.GetReceivedEventsRequest.fromBuffer(value),
+        ($0.GetReceivedEventsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateEventRequest, $0.CreateEventResponse>(
         'CreateEvent',
         createEvent_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.CreateEventRequest.fromBuffer(value),
-        ($1.CreateEventResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.AcknowledgeEventRequest, $1.AcknowledgeEventResponse>(
+        ($core.List<$core.int> value) => $0.CreateEventRequest.fromBuffer(value),
+        ($0.CreateEventResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AcknowledgeEventRequest, $0.AcknowledgeEventResponse>(
         'AcknowledgeEvent',
         acknowledgeEvent_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.AcknowledgeEventRequest.fromBuffer(value),
-        ($1.AcknowledgeEventResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $0.AcknowledgeEventRequest.fromBuffer(value),
+        ($0.AcknowledgeEventResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$1.GetSentEventsResponse> getSentEvents_Pre($grpc.ServiceCall call, $async.Future<$1.GetSentEventsRequest> request) async {
+  $async.Future<$0.GetSentEventsResponse> getSentEvents_Pre($grpc.ServiceCall call, $async.Future<$0.GetSentEventsRequest> request) async {
     return getSentEvents(call, await request);
   }
 
-  $async.Future<$1.GetReceivedEventsResponse> getReceivedEvents_Pre($grpc.ServiceCall call, $async.Future<$1.GetReceivedEventsRequest> request) async {
+  $async.Future<$0.GetReceivedEventsResponse> getReceivedEvents_Pre($grpc.ServiceCall call, $async.Future<$0.GetReceivedEventsRequest> request) async {
     return getReceivedEvents(call, await request);
   }
 
-  $async.Future<$1.CreateEventResponse> createEvent_Pre($grpc.ServiceCall call, $async.Future<$1.CreateEventRequest> request) async {
+  $async.Future<$0.CreateEventResponse> createEvent_Pre($grpc.ServiceCall call, $async.Future<$0.CreateEventRequest> request) async {
     return createEvent(call, await request);
   }
 
-  $async.Future<$1.AcknowledgeEventResponse> acknowledgeEvent_Pre($grpc.ServiceCall call, $async.Future<$1.AcknowledgeEventRequest> request) async {
+  $async.Future<$0.AcknowledgeEventResponse> acknowledgeEvent_Pre($grpc.ServiceCall call, $async.Future<$0.AcknowledgeEventRequest> request) async {
     return acknowledgeEvent(call, await request);
   }
 
-  $async.Future<$1.GetSentEventsResponse> getSentEvents($grpc.ServiceCall call, $1.GetSentEventsRequest request);
-  $async.Future<$1.GetReceivedEventsResponse> getReceivedEvents($grpc.ServiceCall call, $1.GetReceivedEventsRequest request);
-  $async.Future<$1.CreateEventResponse> createEvent($grpc.ServiceCall call, $1.CreateEventRequest request);
-  $async.Future<$1.AcknowledgeEventResponse> acknowledgeEvent($grpc.ServiceCall call, $1.AcknowledgeEventRequest request);
+  $async.Future<$0.GetSentEventsResponse> getSentEvents($grpc.ServiceCall call, $0.GetSentEventsRequest request);
+  $async.Future<$0.GetReceivedEventsResponse> getReceivedEvents($grpc.ServiceCall call, $0.GetReceivedEventsRequest request);
+  $async.Future<$0.CreateEventResponse> createEvent($grpc.ServiceCall call, $0.CreateEventRequest request);
+  $async.Future<$0.AcknowledgeEventResponse> acknowledgeEvent($grpc.ServiceCall call, $0.AcknowledgeEventRequest request);
 }
