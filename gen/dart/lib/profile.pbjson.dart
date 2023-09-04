@@ -52,6 +52,22 @@ final $typed_data.Uint8List profileModelDescriptor = $convert.base64Decode(
     '6IAQESIgoKcGFydG5lcl9pZBgFIAEoCUgBUglwYXJ0bmVySWSIAQFCDAoKX2ZjbV90b2tlbkIN'
     'CgtfcGFydG5lcl9pZA==');
 
+@$core.Deprecated('Use passcodeDescriptor instead')
+const Passcode$json = {
+  '1': 'Passcode',
+  '2': [
+    {'1': 'passcode', '3': 1, '4': 1, '5': 5, '10': 'passcode'},
+    {'1': 'created_by', '3': 2, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'created_at', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+  ],
+};
+
+/// Descriptor for `Passcode`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List passcodeDescriptor = $convert.base64Decode(
+    'CghQYXNzY29kZRIaCghwYXNzY29kZRgBIAEoBVIIcGFzc2NvZGUSHQoKY3JlYXRlZF9ieRgCIA'
+    'EoCVIJY3JlYXRlZEJ5EjkKCmNyZWF0ZWRfYXQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGlt'
+    'ZXN0YW1wUgljcmVhdGVkQXQ=');
+
 @$core.Deprecated('Use getProfileRequestDescriptor instead')
 const GetProfileRequest$json = {
   '1': 'GetProfileRequest',
@@ -181,28 +197,50 @@ final $typed_data.Uint8List updateFCMTokenResponseDescriptor = $convert.base64De
     'ChZVcGRhdGVGQ01Ub2tlblJlc3BvbnNlEicKB3Byb2ZpbGUYASABKAsyDS5Qcm9maWxlTW9kZW'
     'xSB3Byb2ZpbGU=');
 
-@$core.Deprecated('Use connectToPartnerRequestDescriptor instead')
-const ConnectToPartnerRequest$json = {
-  '1': 'ConnectToPartnerRequest',
+@$core.Deprecated('Use createPasscodeRequestDescriptor instead')
+const CreatePasscodeRequest$json = {
+  '1': 'CreatePasscodeRequest',
+};
+
+/// Descriptor for `CreatePasscodeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createPasscodeRequestDescriptor = $convert.base64Decode(
+    'ChVDcmVhdGVQYXNzY29kZVJlcXVlc3Q=');
+
+@$core.Deprecated('Use createPasscodeResponseDescriptor instead')
+const CreatePasscodeResponse$json = {
+  '1': 'CreatePasscodeResponse',
+  '2': [
+    {'1': 'passcode', '3': 1, '4': 1, '5': 11, '6': '.Passcode', '10': 'passcode'},
+  ],
+};
+
+/// Descriptor for `CreatePasscodeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createPasscodeResponseDescriptor = $convert.base64Decode(
+    'ChZDcmVhdGVQYXNzY29kZVJlc3BvbnNlEiUKCHBhc3Njb2RlGAEgASgLMgkuUGFzc2NvZGVSCH'
+    'Bhc3Njb2Rl');
+
+@$core.Deprecated('Use verifyPasscodeRequestDescriptor instead')
+const VerifyPasscodeRequest$json = {
+  '1': 'VerifyPasscodeRequest',
   '2': [
     {'1': 'passcode', '3': 1, '4': 1, '5': 5, '10': 'passcode'},
   ],
 };
 
-/// Descriptor for `ConnectToPartnerRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List connectToPartnerRequestDescriptor = $convert.base64Decode(
-    'ChdDb25uZWN0VG9QYXJ0bmVyUmVxdWVzdBIaCghwYXNzY29kZRgBIAEoBVIIcGFzc2NvZGU=');
+/// Descriptor for `VerifyPasscodeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List verifyPasscodeRequestDescriptor = $convert.base64Decode(
+    'ChVWZXJpZnlQYXNzY29kZVJlcXVlc3QSGgoIcGFzc2NvZGUYASABKAVSCHBhc3Njb2Rl');
 
-@$core.Deprecated('Use connectToPartnerResponseDescriptor instead')
-const ConnectToPartnerResponse$json = {
-  '1': 'ConnectToPartnerResponse',
+@$core.Deprecated('Use verifyPasscodeResponseDescriptor instead')
+const VerifyPasscodeResponse$json = {
+  '1': 'VerifyPasscodeResponse',
   '2': [
     {'1': 'profile', '3': 1, '4': 1, '5': 11, '6': '.ProfileModel', '10': 'profile'},
   ],
 };
 
-/// Descriptor for `ConnectToPartnerResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List connectToPartnerResponseDescriptor = $convert.base64Decode(
-    'ChhDb25uZWN0VG9QYXJ0bmVyUmVzcG9uc2USJwoHcHJvZmlsZRgBIAEoCzINLlByb2ZpbGVNb2'
-    'RlbFIHcHJvZmlsZQ==');
+/// Descriptor for `VerifyPasscodeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List verifyPasscodeResponseDescriptor = $convert.base64Decode(
+    'ChZWZXJpZnlQYXNzY29kZVJlc3BvbnNlEicKB3Byb2ZpbGUYASABKAsyDS5Qcm9maWxlTW9kZW'
+    'xSB3Byb2ZpbGU=');
 

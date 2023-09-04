@@ -1,13 +1,15 @@
 syntax = "proto3";
 
 option go_package = "github.com/rautellin/mindfuloop-proto/gen/go;proto";
+import "google/protobuf/timestamp.proto";
 
 service ProfileService {
     rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
     rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
     rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
     rpc UpdateFCMToken(UpdateFCMTokenRequest) returns (UpdateFCMTokenResponse);
-    rpc ConnectToPartner(ConnectToPartnerRequest) returns (ConnectToPartnerResponse);
+    rpc VerifyPasscode(VerifyPasscodeRequest) returns (VerifyPasscodeResponse);
+    rpc CreatePasscode(CreatePasscodeRequest) returns (CreatePasscodeResponse);
 }
 
 message ProfileModel {
@@ -16,6 +18,12 @@ message ProfileModel {
     bool onboarding_completed = 3;
     optional string fcm_token = 4;
     optional string partner_id = 5;
+}
+
+message Passcode {
+    int32 passcode = 1;
+    string created_by = 2;
+    google.protobuf.Timestamp created_at = 3;
 }
 
 message GetProfileRequest {
@@ -55,11 +63,18 @@ message UpdateFCMTokenResponse {
     ProfileModel profile = 1;
 }
 
-message ConnectToPartnerRequest {
+message CreatePasscodeRequest {
+}
+
+message CreatePasscodeResponse {
+    Passcode passcode = 1;
+}
+
+message VerifyPasscodeRequest {
     int32 passcode = 1;
 }
 
-message ConnectToPartnerResponse {
+message VerifyPasscodeResponse {
     ProfileModel profile = 1;
 }
 

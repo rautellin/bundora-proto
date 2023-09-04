@@ -13,6 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import 'google/protobuf/timestamp.pb.dart' as $2;
 import 'profile.pbenum.dart';
 
 export 'profile.pbenum.dart';
@@ -97,6 +98,70 @@ class ProfileModel extends $pb.GeneratedMessage {
   $core.bool hasPartnerId() => $_has(4);
   @$pb.TagNumber(5)
   void clearPartnerId() => clearField(5);
+}
+
+class Passcode extends $pb.GeneratedMessage {
+  factory Passcode() => create();
+  Passcode._() : super();
+  factory Passcode.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Passcode.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Passcode', createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'passcode', $pb.PbFieldType.O3)
+    ..aOS(2, _omitFieldNames ? '' : 'createdBy')
+    ..aOM<$2.Timestamp>(3, _omitFieldNames ? '' : 'createdAt', subBuilder: $2.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Passcode clone() => Passcode()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Passcode copyWith(void Function(Passcode) updates) => super.copyWith((message) => updates(message as Passcode)) as Passcode;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Passcode create() => Passcode._();
+  Passcode createEmptyInstance() => create();
+  static $pb.PbList<Passcode> createRepeated() => $pb.PbList<Passcode>();
+  @$core.pragma('dart2js:noInline')
+  static Passcode getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Passcode>(create);
+  static Passcode? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get passcode => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set passcode($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPasscode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPasscode() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get createdBy => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set createdBy($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCreatedBy() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCreatedBy() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $2.Timestamp get createdAt => $_getN(2);
+  @$pb.TagNumber(3)
+  set createdAt($2.Timestamp v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCreatedAt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCreatedAt() => clearField(3);
+  @$pb.TagNumber(3)
+  $2.Timestamp ensureCreatedAt() => $_ensure(2);
 }
 
 class GetProfileRequest extends $pb.GeneratedMessage {
@@ -493,13 +558,89 @@ class UpdateFCMTokenResponse extends $pb.GeneratedMessage {
   ProfileModel ensureProfile() => $_ensure(0);
 }
 
-class ConnectToPartnerRequest extends $pb.GeneratedMessage {
-  factory ConnectToPartnerRequest() => create();
-  ConnectToPartnerRequest._() : super();
-  factory ConnectToPartnerRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ConnectToPartnerRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+class CreatePasscodeRequest extends $pb.GeneratedMessage {
+  factory CreatePasscodeRequest() => create();
+  CreatePasscodeRequest._() : super();
+  factory CreatePasscodeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreatePasscodeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ConnectToPartnerRequest', createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreatePasscodeRequest', createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreatePasscodeRequest clone() => CreatePasscodeRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreatePasscodeRequest copyWith(void Function(CreatePasscodeRequest) updates) => super.copyWith((message) => updates(message as CreatePasscodeRequest)) as CreatePasscodeRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreatePasscodeRequest create() => CreatePasscodeRequest._();
+  CreatePasscodeRequest createEmptyInstance() => create();
+  static $pb.PbList<CreatePasscodeRequest> createRepeated() => $pb.PbList<CreatePasscodeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreatePasscodeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreatePasscodeRequest>(create);
+  static CreatePasscodeRequest? _defaultInstance;
+}
+
+class CreatePasscodeResponse extends $pb.GeneratedMessage {
+  factory CreatePasscodeResponse() => create();
+  CreatePasscodeResponse._() : super();
+  factory CreatePasscodeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreatePasscodeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreatePasscodeResponse', createEmptyInstance: create)
+    ..aOM<Passcode>(1, _omitFieldNames ? '' : 'passcode', subBuilder: Passcode.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreatePasscodeResponse clone() => CreatePasscodeResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreatePasscodeResponse copyWith(void Function(CreatePasscodeResponse) updates) => super.copyWith((message) => updates(message as CreatePasscodeResponse)) as CreatePasscodeResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreatePasscodeResponse create() => CreatePasscodeResponse._();
+  CreatePasscodeResponse createEmptyInstance() => create();
+  static $pb.PbList<CreatePasscodeResponse> createRepeated() => $pb.PbList<CreatePasscodeResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreatePasscodeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreatePasscodeResponse>(create);
+  static CreatePasscodeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Passcode get passcode => $_getN(0);
+  @$pb.TagNumber(1)
+  set passcode(Passcode v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPasscode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPasscode() => clearField(1);
+  @$pb.TagNumber(1)
+  Passcode ensurePasscode() => $_ensure(0);
+}
+
+class VerifyPasscodeRequest extends $pb.GeneratedMessage {
+  factory VerifyPasscodeRequest() => create();
+  VerifyPasscodeRequest._() : super();
+  factory VerifyPasscodeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory VerifyPasscodeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VerifyPasscodeRequest', createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'passcode', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
@@ -508,22 +649,22 @@ class ConnectToPartnerRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ConnectToPartnerRequest clone() => ConnectToPartnerRequest()..mergeFromMessage(this);
+  VerifyPasscodeRequest clone() => VerifyPasscodeRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ConnectToPartnerRequest copyWith(void Function(ConnectToPartnerRequest) updates) => super.copyWith((message) => updates(message as ConnectToPartnerRequest)) as ConnectToPartnerRequest;
+  VerifyPasscodeRequest copyWith(void Function(VerifyPasscodeRequest) updates) => super.copyWith((message) => updates(message as VerifyPasscodeRequest)) as VerifyPasscodeRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ConnectToPartnerRequest create() => ConnectToPartnerRequest._();
-  ConnectToPartnerRequest createEmptyInstance() => create();
-  static $pb.PbList<ConnectToPartnerRequest> createRepeated() => $pb.PbList<ConnectToPartnerRequest>();
+  static VerifyPasscodeRequest create() => VerifyPasscodeRequest._();
+  VerifyPasscodeRequest createEmptyInstance() => create();
+  static $pb.PbList<VerifyPasscodeRequest> createRepeated() => $pb.PbList<VerifyPasscodeRequest>();
   @$core.pragma('dart2js:noInline')
-  static ConnectToPartnerRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ConnectToPartnerRequest>(create);
-  static ConnectToPartnerRequest? _defaultInstance;
+  static VerifyPasscodeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VerifyPasscodeRequest>(create);
+  static VerifyPasscodeRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.int get passcode => $_getIZ(0);
@@ -535,13 +676,13 @@ class ConnectToPartnerRequest extends $pb.GeneratedMessage {
   void clearPasscode() => clearField(1);
 }
 
-class ConnectToPartnerResponse extends $pb.GeneratedMessage {
-  factory ConnectToPartnerResponse() => create();
-  ConnectToPartnerResponse._() : super();
-  factory ConnectToPartnerResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ConnectToPartnerResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+class VerifyPasscodeResponse extends $pb.GeneratedMessage {
+  factory VerifyPasscodeResponse() => create();
+  VerifyPasscodeResponse._() : super();
+  factory VerifyPasscodeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory VerifyPasscodeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ConnectToPartnerResponse', createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VerifyPasscodeResponse', createEmptyInstance: create)
     ..aOM<ProfileModel>(1, _omitFieldNames ? '' : 'profile', subBuilder: ProfileModel.create)
     ..hasRequiredFields = false
   ;
@@ -550,22 +691,22 @@ class ConnectToPartnerResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ConnectToPartnerResponse clone() => ConnectToPartnerResponse()..mergeFromMessage(this);
+  VerifyPasscodeResponse clone() => VerifyPasscodeResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ConnectToPartnerResponse copyWith(void Function(ConnectToPartnerResponse) updates) => super.copyWith((message) => updates(message as ConnectToPartnerResponse)) as ConnectToPartnerResponse;
+  VerifyPasscodeResponse copyWith(void Function(VerifyPasscodeResponse) updates) => super.copyWith((message) => updates(message as VerifyPasscodeResponse)) as VerifyPasscodeResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ConnectToPartnerResponse create() => ConnectToPartnerResponse._();
-  ConnectToPartnerResponse createEmptyInstance() => create();
-  static $pb.PbList<ConnectToPartnerResponse> createRepeated() => $pb.PbList<ConnectToPartnerResponse>();
+  static VerifyPasscodeResponse create() => VerifyPasscodeResponse._();
+  VerifyPasscodeResponse createEmptyInstance() => create();
+  static $pb.PbList<VerifyPasscodeResponse> createRepeated() => $pb.PbList<VerifyPasscodeResponse>();
   @$core.pragma('dart2js:noInline')
-  static ConnectToPartnerResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ConnectToPartnerResponse>(create);
-  static ConnectToPartnerResponse? _defaultInstance;
+  static VerifyPasscodeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VerifyPasscodeResponse>(create);
+  static VerifyPasscodeResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   ProfileModel get profile => $_getN(0);

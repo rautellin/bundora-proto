@@ -37,10 +37,14 @@ class ProfileServiceClient extends $grpc.Client {
       '/ProfileService/UpdateFCMToken',
       ($1.UpdateFCMTokenRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.UpdateFCMTokenResponse.fromBuffer(value));
-  static final _$connectToPartner = $grpc.ClientMethod<$1.ConnectToPartnerRequest, $1.ConnectToPartnerResponse>(
-      '/ProfileService/ConnectToPartner',
-      ($1.ConnectToPartnerRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.ConnectToPartnerResponse.fromBuffer(value));
+  static final _$verifyPasscode = $grpc.ClientMethod<$1.VerifyPasscodeRequest, $1.VerifyPasscodeResponse>(
+      '/ProfileService/VerifyPasscode',
+      ($1.VerifyPasscodeRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.VerifyPasscodeResponse.fromBuffer(value));
+  static final _$createPasscode = $grpc.ClientMethod<$1.CreatePasscodeRequest, $1.CreatePasscodeResponse>(
+      '/ProfileService/CreatePasscode',
+      ($1.CreatePasscodeRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.CreatePasscodeResponse.fromBuffer(value));
 
   ProfileServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -64,8 +68,12 @@ class ProfileServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateFCMToken, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.ConnectToPartnerResponse> connectToPartner($1.ConnectToPartnerRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$connectToPartner, request, options: options);
+  $grpc.ResponseFuture<$1.VerifyPasscodeResponse> verifyPasscode($1.VerifyPasscodeRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$verifyPasscode, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.CreatePasscodeResponse> createPasscode($1.CreatePasscodeRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createPasscode, request, options: options);
   }
 }
 
@@ -102,13 +110,20 @@ abstract class ProfileServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.UpdateFCMTokenRequest.fromBuffer(value),
         ($1.UpdateFCMTokenResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.ConnectToPartnerRequest, $1.ConnectToPartnerResponse>(
-        'ConnectToPartner',
-        connectToPartner_Pre,
+    $addMethod($grpc.ServiceMethod<$1.VerifyPasscodeRequest, $1.VerifyPasscodeResponse>(
+        'VerifyPasscode',
+        verifyPasscode_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.ConnectToPartnerRequest.fromBuffer(value),
-        ($1.ConnectToPartnerResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $1.VerifyPasscodeRequest.fromBuffer(value),
+        ($1.VerifyPasscodeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.CreatePasscodeRequest, $1.CreatePasscodeResponse>(
+        'CreatePasscode',
+        createPasscode_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.CreatePasscodeRequest.fromBuffer(value),
+        ($1.CreatePasscodeResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.GetProfileResponse> getProfile_Pre($grpc.ServiceCall call, $async.Future<$1.GetProfileRequest> request) async {
@@ -127,13 +142,18 @@ abstract class ProfileServiceBase extends $grpc.Service {
     return updateFCMToken(call, await request);
   }
 
-  $async.Future<$1.ConnectToPartnerResponse> connectToPartner_Pre($grpc.ServiceCall call, $async.Future<$1.ConnectToPartnerRequest> request) async {
-    return connectToPartner(call, await request);
+  $async.Future<$1.VerifyPasscodeResponse> verifyPasscode_Pre($grpc.ServiceCall call, $async.Future<$1.VerifyPasscodeRequest> request) async {
+    return verifyPasscode(call, await request);
+  }
+
+  $async.Future<$1.CreatePasscodeResponse> createPasscode_Pre($grpc.ServiceCall call, $async.Future<$1.CreatePasscodeRequest> request) async {
+    return createPasscode(call, await request);
   }
 
   $async.Future<$1.GetProfileResponse> getProfile($grpc.ServiceCall call, $1.GetProfileRequest request);
   $async.Future<$1.UpdateProfileResponse> updateProfile($grpc.ServiceCall call, $1.UpdateProfileRequest request);
   $async.Future<$1.CreateProfileResponse> createProfile($grpc.ServiceCall call, $1.CreateProfileRequest request);
   $async.Future<$1.UpdateFCMTokenResponse> updateFCMToken($grpc.ServiceCall call, $1.UpdateFCMTokenRequest request);
-  $async.Future<$1.ConnectToPartnerResponse> connectToPartner($grpc.ServiceCall call, $1.ConnectToPartnerRequest request);
+  $async.Future<$1.VerifyPasscodeResponse> verifyPasscode($grpc.ServiceCall call, $1.VerifyPasscodeRequest request);
+  $async.Future<$1.CreatePasscodeResponse> createPasscode($grpc.ServiceCall call, $1.CreatePasscodeRequest request);
 }

@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	ProfileService_GetProfile_FullMethodName       = "/ProfileService/GetProfile"
-	ProfileService_UpdateProfile_FullMethodName    = "/ProfileService/UpdateProfile"
-	ProfileService_CreateProfile_FullMethodName    = "/ProfileService/CreateProfile"
-	ProfileService_UpdateFCMToken_FullMethodName   = "/ProfileService/UpdateFCMToken"
-	ProfileService_ConnectToPartner_FullMethodName = "/ProfileService/ConnectToPartner"
+	ProfileService_GetProfile_FullMethodName     = "/ProfileService/GetProfile"
+	ProfileService_UpdateProfile_FullMethodName  = "/ProfileService/UpdateProfile"
+	ProfileService_CreateProfile_FullMethodName  = "/ProfileService/CreateProfile"
+	ProfileService_UpdateFCMToken_FullMethodName = "/ProfileService/UpdateFCMToken"
+	ProfileService_VerifyPasscode_FullMethodName = "/ProfileService/VerifyPasscode"
+	ProfileService_CreatePasscode_FullMethodName = "/ProfileService/CreatePasscode"
 )
 
 // ProfileServiceClient is the client API for ProfileService service.
@@ -34,7 +35,8 @@ type ProfileServiceClient interface {
 	UpdateProfile(ctx context.Context, in *UpdateProfileRequest, opts ...grpc.CallOption) (*UpdateProfileResponse, error)
 	CreateProfile(ctx context.Context, in *CreateProfileRequest, opts ...grpc.CallOption) (*CreateProfileResponse, error)
 	UpdateFCMToken(ctx context.Context, in *UpdateFCMTokenRequest, opts ...grpc.CallOption) (*UpdateFCMTokenResponse, error)
-	ConnectToPartner(ctx context.Context, in *ConnectToPartnerRequest, opts ...grpc.CallOption) (*ConnectToPartnerResponse, error)
+	VerifyPasscode(ctx context.Context, in *VerifyPasscodeRequest, opts ...grpc.CallOption) (*VerifyPasscodeResponse, error)
+	CreatePasscode(ctx context.Context, in *CreatePasscodeRequest, opts ...grpc.CallOption) (*CreatePasscodeResponse, error)
 }
 
 type profileServiceClient struct {
@@ -81,9 +83,18 @@ func (c *profileServiceClient) UpdateFCMToken(ctx context.Context, in *UpdateFCM
 	return out, nil
 }
 
-func (c *profileServiceClient) ConnectToPartner(ctx context.Context, in *ConnectToPartnerRequest, opts ...grpc.CallOption) (*ConnectToPartnerResponse, error) {
-	out := new(ConnectToPartnerResponse)
-	err := c.cc.Invoke(ctx, ProfileService_ConnectToPartner_FullMethodName, in, out, opts...)
+func (c *profileServiceClient) VerifyPasscode(ctx context.Context, in *VerifyPasscodeRequest, opts ...grpc.CallOption) (*VerifyPasscodeResponse, error) {
+	out := new(VerifyPasscodeResponse)
+	err := c.cc.Invoke(ctx, ProfileService_VerifyPasscode_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *profileServiceClient) CreatePasscode(ctx context.Context, in *CreatePasscodeRequest, opts ...grpc.CallOption) (*CreatePasscodeResponse, error) {
+	out := new(CreatePasscodeResponse)
+	err := c.cc.Invoke(ctx, ProfileService_CreatePasscode_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +109,8 @@ type ProfileServiceServer interface {
 	UpdateProfile(context.Context, *UpdateProfileRequest) (*UpdateProfileResponse, error)
 	CreateProfile(context.Context, *CreateProfileRequest) (*CreateProfileResponse, error)
 	UpdateFCMToken(context.Context, *UpdateFCMTokenRequest) (*UpdateFCMTokenResponse, error)
-	ConnectToPartner(context.Context, *ConnectToPartnerRequest) (*ConnectToPartnerResponse, error)
+	VerifyPasscode(context.Context, *VerifyPasscodeRequest) (*VerifyPasscodeResponse, error)
+	CreatePasscode(context.Context, *CreatePasscodeRequest) (*CreatePasscodeResponse, error)
 	mustEmbedUnimplementedProfileServiceServer()
 }
 
@@ -118,8 +130,11 @@ func (UnimplementedProfileServiceServer) CreateProfile(context.Context, *CreateP
 func (UnimplementedProfileServiceServer) UpdateFCMToken(context.Context, *UpdateFCMTokenRequest) (*UpdateFCMTokenResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateFCMToken not implemented")
 }
-func (UnimplementedProfileServiceServer) ConnectToPartner(context.Context, *ConnectToPartnerRequest) (*ConnectToPartnerResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ConnectToPartner not implemented")
+func (UnimplementedProfileServiceServer) VerifyPasscode(context.Context, *VerifyPasscodeRequest) (*VerifyPasscodeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method VerifyPasscode not implemented")
+}
+func (UnimplementedProfileServiceServer) CreatePasscode(context.Context, *CreatePasscodeRequest) (*CreatePasscodeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreatePasscode not implemented")
 }
 func (UnimplementedProfileServiceServer) mustEmbedUnimplementedProfileServiceServer() {}
 
@@ -206,20 +221,38 @@ func _ProfileService_UpdateFCMToken_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ProfileService_ConnectToPartner_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ConnectToPartnerRequest)
+func _ProfileService_VerifyPasscode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyPasscodeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ProfileServiceServer).ConnectToPartner(ctx, in)
+		return srv.(ProfileServiceServer).VerifyPasscode(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ProfileService_ConnectToPartner_FullMethodName,
+		FullMethod: ProfileService_VerifyPasscode_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProfileServiceServer).ConnectToPartner(ctx, req.(*ConnectToPartnerRequest))
+		return srv.(ProfileServiceServer).VerifyPasscode(ctx, req.(*VerifyPasscodeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ProfileService_CreatePasscode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreatePasscodeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProfileServiceServer).CreatePasscode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ProfileService_CreatePasscode_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProfileServiceServer).CreatePasscode(ctx, req.(*CreatePasscodeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -248,8 +281,12 @@ var ProfileService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ProfileService_UpdateFCMToken_Handler,
 		},
 		{
-			MethodName: "ConnectToPartner",
-			Handler:    _ProfileService_ConnectToPartner_Handler,
+			MethodName: "VerifyPasscode",
+			Handler:    _ProfileService_VerifyPasscode_Handler,
+		},
+		{
+			MethodName: "CreatePasscode",
+			Handler:    _ProfileService_CreatePasscode_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
