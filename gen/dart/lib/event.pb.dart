@@ -237,10 +237,14 @@ class CreateEventRequest extends $pb.GeneratedMessage {
 class CreateEventResponse extends $pb.GeneratedMessage {
   factory CreateEventResponse({
     EventModel? event,
+    EventResponse? response,
   }) {
     final $result = create();
     if (event != null) {
       $result.event = event;
+    }
+    if (response != null) {
+      $result.response = response;
     }
     return $result;
   }
@@ -250,6 +254,7 @@ class CreateEventResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateEventResponse', createEmptyInstance: create)
     ..aOM<EventModel>(1, _omitFieldNames ? '' : 'event', subBuilder: EventModel.create)
+    ..aOM<EventResponse>(2, _omitFieldNames ? '' : 'response', subBuilder: EventResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -284,6 +289,17 @@ class CreateEventResponse extends $pb.GeneratedMessage {
   void clearEvent() => clearField(1);
   @$pb.TagNumber(1)
   EventModel ensureEvent() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  EventResponse get response => $_getN(1);
+  @$pb.TagNumber(2)
+  set response(EventResponse v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasResponse() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearResponse() => clearField(2);
+  @$pb.TagNumber(2)
+  EventResponse ensureResponse() => $_ensure(1);
 }
 
 class AcknowledgeEventRequest extends $pb.GeneratedMessage {
@@ -386,6 +402,70 @@ class AcknowledgeEventResponse extends $pb.GeneratedMessage {
   void clearEvent() => clearField(1);
   @$pb.TagNumber(1)
   EventModel ensureEvent() => $_ensure(0);
+}
+
+class EventResponse extends $pb.GeneratedMessage {
+  factory EventResponse({
+    $core.String? title,
+    $core.String? body,
+  }) {
+    final $result = create();
+    if (title != null) {
+      $result.title = title;
+    }
+    if (body != null) {
+      $result.body = body;
+    }
+    return $result;
+  }
+  EventResponse._() : super();
+  factory EventResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EventResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EventResponse', createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'title')
+    ..aOS(2, _omitFieldNames ? '' : 'body')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  EventResponse clone() => EventResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  EventResponse copyWith(void Function(EventResponse) updates) => super.copyWith((message) => updates(message as EventResponse)) as EventResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EventResponse create() => EventResponse._();
+  EventResponse createEmptyInstance() => create();
+  static $pb.PbList<EventResponse> createRepeated() => $pb.PbList<EventResponse>();
+  @$core.pragma('dart2js:noInline')
+  static EventResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EventResponse>(create);
+  static EventResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get title => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set title($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasTitle() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTitle() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get body => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set body($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBody() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBody() => clearField(2);
 }
 
 class EventModel extends $pb.GeneratedMessage {

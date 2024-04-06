@@ -113,13 +113,14 @@ const CreateEventResponse$json = {
   '1': 'CreateEventResponse',
   '2': [
     {'1': 'event', '3': 1, '4': 1, '5': 11, '6': '.EventModel', '10': 'event'},
+    {'1': 'response', '3': 2, '4': 1, '5': 11, '6': '.EventResponse', '10': 'response'},
   ],
 };
 
 /// Descriptor for `CreateEventResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createEventResponseDescriptor = $convert.base64Decode(
     'ChNDcmVhdGVFdmVudFJlc3BvbnNlEiEKBWV2ZW50GAEgASgLMgsuRXZlbnRNb2RlbFIFZXZlbn'
-    'Q=');
+    'QSKgoIcmVzcG9uc2UYAiABKAsyDi5FdmVudFJlc3BvbnNlUghyZXNwb25zZQ==');
 
 @$core.Deprecated('Use acknowledgeEventRequestDescriptor instead')
 const AcknowledgeEventRequest$json = {
@@ -145,6 +146,23 @@ const AcknowledgeEventResponse$json = {
 final $typed_data.Uint8List acknowledgeEventResponseDescriptor = $convert.base64Decode(
     'ChhBY2tub3dsZWRnZUV2ZW50UmVzcG9uc2USIQoFZXZlbnQYASABKAsyCy5FdmVudE1vZGVsUg'
     'VldmVudA==');
+
+@$core.Deprecated('Use eventResponseDescriptor instead')
+const EventResponse$json = {
+  '1': 'EventResponse',
+  '2': [
+    {'1': 'title', '3': 1, '4': 1, '5': 9, '9': 0, '10': 'title', '17': true},
+    {'1': 'body', '3': 2, '4': 1, '5': 9, '10': 'body'},
+  ],
+  '8': [
+    {'1': '_title'},
+  ],
+};
+
+/// Descriptor for `EventResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List eventResponseDescriptor = $convert.base64Decode(
+    'Cg1FdmVudFJlc3BvbnNlEhkKBXRpdGxlGAEgASgJSABSBXRpdGxliAEBEhIKBGJvZHkYAiABKA'
+    'lSBGJvZHlCCAoGX3RpdGxl');
 
 @$core.Deprecated('Use eventModelDescriptor instead')
 const EventModel$json = {
