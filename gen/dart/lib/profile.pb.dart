@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -19,7 +19,31 @@ import 'profile.pbenum.dart';
 export 'profile.pbenum.dart';
 
 class ProfileModel extends $pb.GeneratedMessage {
-  factory ProfileModel() => create();
+  factory ProfileModel({
+    $core.String? id,
+    CharacterType? characterType,
+    $core.bool? onboardingCompleted,
+    $core.String? fcmToken,
+    $core.String? partnerId,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (characterType != null) {
+      $result.characterType = characterType;
+    }
+    if (onboardingCompleted != null) {
+      $result.onboardingCompleted = onboardingCompleted;
+    }
+    if (fcmToken != null) {
+      $result.fcmToken = fcmToken;
+    }
+    if (partnerId != null) {
+      $result.partnerId = partnerId;
+    }
+    return $result;
+  }
   ProfileModel._() : super();
   factory ProfileModel.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ProfileModel.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -101,7 +125,23 @@ class ProfileModel extends $pb.GeneratedMessage {
 }
 
 class Passcode extends $pb.GeneratedMessage {
-  factory Passcode() => create();
+  factory Passcode({
+    $core.int? passcode,
+    $core.String? createdBy,
+    $2.Timestamp? createdAt,
+  }) {
+    final $result = create();
+    if (passcode != null) {
+      $result.passcode = passcode;
+    }
+    if (createdBy != null) {
+      $result.createdBy = createdBy;
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
+    return $result;
+  }
   Passcode._() : super();
   factory Passcode.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Passcode.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -197,7 +237,15 @@ class GetProfileRequest extends $pb.GeneratedMessage {
 }
 
 class GetProfileResponse extends $pb.GeneratedMessage {
-  factory GetProfileResponse() => create();
+  factory GetProfileResponse({
+    ProfileModel? profile,
+  }) {
+    final $result = create();
+    if (profile != null) {
+      $result.profile = profile;
+    }
+    return $result;
+  }
   GetProfileResponse._() : super();
   factory GetProfileResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetProfileResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -241,7 +289,27 @@ class GetProfileResponse extends $pb.GeneratedMessage {
 }
 
 class UpdateProfileRequest extends $pb.GeneratedMessage {
-  factory UpdateProfileRequest() => create();
+  factory UpdateProfileRequest({
+    CharacterType? characterType,
+    $core.bool? onboardingCompleted,
+    $core.String? fcmToken,
+    $core.String? partnerId,
+  }) {
+    final $result = create();
+    if (characterType != null) {
+      $result.characterType = characterType;
+    }
+    if (onboardingCompleted != null) {
+      $result.onboardingCompleted = onboardingCompleted;
+    }
+    if (fcmToken != null) {
+      $result.fcmToken = fcmToken;
+    }
+    if (partnerId != null) {
+      $result.partnerId = partnerId;
+    }
+    return $result;
+  }
   UpdateProfileRequest._() : super();
   factory UpdateProfileRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateProfileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -313,7 +381,15 @@ class UpdateProfileRequest extends $pb.GeneratedMessage {
 }
 
 class UpdateProfileResponse extends $pb.GeneratedMessage {
-  factory UpdateProfileResponse() => create();
+  factory UpdateProfileResponse({
+    ProfileModel? profile,
+  }) {
+    final $result = create();
+    if (profile != null) {
+      $result.profile = profile;
+    }
+    return $result;
+  }
   UpdateProfileResponse._() : super();
   factory UpdateProfileResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateProfileResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -357,7 +433,27 @@ class UpdateProfileResponse extends $pb.GeneratedMessage {
 }
 
 class CreateProfileRequest extends $pb.GeneratedMessage {
-  factory CreateProfileRequest() => create();
+  factory CreateProfileRequest({
+    CharacterType? characterType,
+    $core.bool? onboardingCompleted,
+    $core.String? fcmToken,
+    $core.String? partnerId,
+  }) {
+    final $result = create();
+    if (characterType != null) {
+      $result.characterType = characterType;
+    }
+    if (onboardingCompleted != null) {
+      $result.onboardingCompleted = onboardingCompleted;
+    }
+    if (fcmToken != null) {
+      $result.fcmToken = fcmToken;
+    }
+    if (partnerId != null) {
+      $result.partnerId = partnerId;
+    }
+    return $result;
+  }
   CreateProfileRequest._() : super();
   factory CreateProfileRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateProfileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -429,7 +525,15 @@ class CreateProfileRequest extends $pb.GeneratedMessage {
 }
 
 class CreateProfileResponse extends $pb.GeneratedMessage {
-  factory CreateProfileResponse() => create();
+  factory CreateProfileResponse({
+    ProfileModel? profile,
+  }) {
+    final $result = create();
+    if (profile != null) {
+      $result.profile = profile;
+    }
+    return $result;
+  }
   CreateProfileResponse._() : super();
   factory CreateProfileResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateProfileResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -473,7 +577,15 @@ class CreateProfileResponse extends $pb.GeneratedMessage {
 }
 
 class UpdateFCMTokenRequest extends $pb.GeneratedMessage {
-  factory UpdateFCMTokenRequest() => create();
+  factory UpdateFCMTokenRequest({
+    $core.String? fcmToken,
+  }) {
+    final $result = create();
+    if (fcmToken != null) {
+      $result.fcmToken = fcmToken;
+    }
+    return $result;
+  }
   UpdateFCMTokenRequest._() : super();
   factory UpdateFCMTokenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateFCMTokenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -515,7 +627,15 @@ class UpdateFCMTokenRequest extends $pb.GeneratedMessage {
 }
 
 class UpdateFCMTokenResponse extends $pb.GeneratedMessage {
-  factory UpdateFCMTokenResponse() => create();
+  factory UpdateFCMTokenResponse({
+    ProfileModel? profile,
+  }) {
+    final $result = create();
+    if (profile != null) {
+      $result.profile = profile;
+    }
+    return $result;
+  }
   UpdateFCMTokenResponse._() : super();
   factory UpdateFCMTokenResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateFCMTokenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -591,7 +711,15 @@ class CreatePasscodeRequest extends $pb.GeneratedMessage {
 }
 
 class CreatePasscodeResponse extends $pb.GeneratedMessage {
-  factory CreatePasscodeResponse() => create();
+  factory CreatePasscodeResponse({
+    Passcode? passcode,
+  }) {
+    final $result = create();
+    if (passcode != null) {
+      $result.passcode = passcode;
+    }
+    return $result;
+  }
   CreatePasscodeResponse._() : super();
   factory CreatePasscodeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreatePasscodeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -635,7 +763,15 @@ class CreatePasscodeResponse extends $pb.GeneratedMessage {
 }
 
 class VerifyPasscodeRequest extends $pb.GeneratedMessage {
-  factory VerifyPasscodeRequest() => create();
+  factory VerifyPasscodeRequest({
+    $core.int? passcode,
+  }) {
+    final $result = create();
+    if (passcode != null) {
+      $result.passcode = passcode;
+    }
+    return $result;
+  }
   VerifyPasscodeRequest._() : super();
   factory VerifyPasscodeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory VerifyPasscodeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -677,7 +813,15 @@ class VerifyPasscodeRequest extends $pb.GeneratedMessage {
 }
 
 class VerifyPasscodeResponse extends $pb.GeneratedMessage {
-  factory VerifyPasscodeResponse() => create();
+  factory VerifyPasscodeResponse({
+    ProfileModel? profile,
+  }) {
+    final $result = create();
+    if (profile != null) {
+      $result.profile = profile;
+    }
+    return $result;
+  }
   VerifyPasscodeResponse._() : super();
   factory VerifyPasscodeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory VerifyPasscodeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

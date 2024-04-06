@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -26,6 +26,10 @@ class EventType extends $pb.ProtobufEnum {
   static const EventType EVENT_TYPE_MISS_YOU = EventType._(9, _omitEnumNames ? '' : 'EVENT_TYPE_MISS_YOU');
   static const EventType EVENT_TYPE_GOOD_NIGHT = EventType._(10, _omitEnumNames ? '' : 'EVENT_TYPE_GOOD_NIGHT');
   static const EventType EVENT_TYPE_GOOD_MORNING = EventType._(11, _omitEnumNames ? '' : 'EVENT_TYPE_GOOD_MORNING');
+  static const EventType EVENT_TYPE_OUTSIDE = EventType._(12, _omitEnumNames ? '' : 'EVENT_TYPE_OUTSIDE');
+  static const EventType EVENT_TYPE_COMING = EventType._(13, _omitEnumNames ? '' : 'EVENT_TYPE_COMING');
+  static const EventType EVENT_TYPE_READY_SOON = EventType._(14, _omitEnumNames ? '' : 'EVENT_TYPE_READY_SOON');
+  static const EventType EVENT_TYPE_NEED_SPACE = EventType._(15, _omitEnumNames ? '' : 'EVENT_TYPE_NEED_SPACE');
 
   static const $core.List<EventType> values = <EventType> [
     EVENT_TYPE_UNSPECIFIED,
@@ -40,6 +44,10 @@ class EventType extends $pb.ProtobufEnum {
     EVENT_TYPE_MISS_YOU,
     EVENT_TYPE_GOOD_NIGHT,
     EVENT_TYPE_GOOD_MORNING,
+    EVENT_TYPE_OUTSIDE,
+    EVENT_TYPE_COMING,
+    EVENT_TYPE_READY_SOON,
+    EVENT_TYPE_NEED_SPACE,
   ];
 
   static final $core.Map<$core.int, EventType> _byValue = $pb.ProtobufEnum.initByValue(values);

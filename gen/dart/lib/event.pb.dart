@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -51,7 +51,15 @@ class GetSentEventsRequest extends $pb.GeneratedMessage {
 }
 
 class GetSentEventsResponse extends $pb.GeneratedMessage {
-  factory GetSentEventsResponse() => create();
+  factory GetSentEventsResponse({
+    $core.Iterable<EventModel>? events,
+  }) {
+    final $result = create();
+    if (events != null) {
+      $result.events.addAll(events);
+    }
+    return $result;
+  }
   GetSentEventsResponse._() : super();
   factory GetSentEventsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetSentEventsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -119,7 +127,15 @@ class GetReceivedEventsRequest extends $pb.GeneratedMessage {
 }
 
 class GetReceivedEventsResponse extends $pb.GeneratedMessage {
-  factory GetReceivedEventsResponse() => create();
+  factory GetReceivedEventsResponse({
+    $core.Iterable<EventModel>? events,
+  }) {
+    final $result = create();
+    if (events != null) {
+      $result.events.addAll(events);
+    }
+    return $result;
+  }
   GetReceivedEventsResponse._() : super();
   factory GetReceivedEventsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetReceivedEventsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -155,7 +171,19 @@ class GetReceivedEventsResponse extends $pb.GeneratedMessage {
 }
 
 class CreateEventRequest extends $pb.GeneratedMessage {
-  factory CreateEventRequest() => create();
+  factory CreateEventRequest({
+    EventType? type,
+    $core.String? message,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
+    if (message != null) {
+      $result.message = message;
+    }
+    return $result;
+  }
   CreateEventRequest._() : super();
   factory CreateEventRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateEventRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -207,7 +235,15 @@ class CreateEventRequest extends $pb.GeneratedMessage {
 }
 
 class CreateEventResponse extends $pb.GeneratedMessage {
-  factory CreateEventResponse() => create();
+  factory CreateEventResponse({
+    EventModel? event,
+  }) {
+    final $result = create();
+    if (event != null) {
+      $result.event = event;
+    }
+    return $result;
+  }
   CreateEventResponse._() : super();
   factory CreateEventResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateEventResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -251,7 +287,15 @@ class CreateEventResponse extends $pb.GeneratedMessage {
 }
 
 class AcknowledgeEventRequest extends $pb.GeneratedMessage {
-  factory AcknowledgeEventRequest() => create();
+  factory AcknowledgeEventRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   AcknowledgeEventRequest._() : super();
   factory AcknowledgeEventRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AcknowledgeEventRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -293,7 +337,15 @@ class AcknowledgeEventRequest extends $pb.GeneratedMessage {
 }
 
 class AcknowledgeEventResponse extends $pb.GeneratedMessage {
-  factory AcknowledgeEventResponse() => create();
+  factory AcknowledgeEventResponse({
+    EventModel? event,
+  }) {
+    final $result = create();
+    if (event != null) {
+      $result.event = event;
+    }
+    return $result;
+  }
   AcknowledgeEventResponse._() : super();
   factory AcknowledgeEventResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AcknowledgeEventResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -337,7 +389,43 @@ class AcknowledgeEventResponse extends $pb.GeneratedMessage {
 }
 
 class EventModel extends $pb.GeneratedMessage {
-  factory EventModel() => create();
+  factory EventModel({
+    $core.String? id,
+    EventType? type,
+    $2.Timestamp? createdAt,
+    $core.String? message,
+    $core.String? createdBy,
+    $core.String? createdFor,
+    $core.bool? acknowledged,
+    $core.bool? seen,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
+    if (message != null) {
+      $result.message = message;
+    }
+    if (createdBy != null) {
+      $result.createdBy = createdBy;
+    }
+    if (createdFor != null) {
+      $result.createdFor = createdFor;
+    }
+    if (acknowledged != null) {
+      $result.acknowledged = acknowledged;
+    }
+    if (seen != null) {
+      $result.seen = seen;
+    }
+    return $result;
+  }
   EventModel._() : super();
   factory EventModel.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory EventModel.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -350,6 +438,7 @@ class EventModel extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'createdBy')
     ..aOS(6, _omitFieldNames ? '' : 'createdFor')
     ..aOB(7, _omitFieldNames ? '' : 'acknowledged')
+    ..aOB(8, _omitFieldNames ? '' : 'seen')
     ..hasRequiredFields = false
   ;
 
@@ -438,6 +527,15 @@ class EventModel extends $pb.GeneratedMessage {
   $core.bool hasAcknowledged() => $_has(6);
   @$pb.TagNumber(7)
   void clearAcknowledged() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get seen => $_getBF(7);
+  @$pb.TagNumber(8)
+  set seen($core.bool v) { $_setBool(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasSeen() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSeen() => clearField(8);
 }
 
 

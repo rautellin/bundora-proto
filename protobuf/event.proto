@@ -49,6 +49,7 @@ message EventModel {
     string created_by = 5;
     string created_for = 6;
     bool acknowledged = 7;
+    bool seen = 8;
 }
 
 enum EventType {
@@ -64,5 +65,9 @@ enum EventType {
     EVENT_TYPE_MISS_YOU = 9;
     EVENT_TYPE_GOOD_NIGHT = 10;
     EVENT_TYPE_GOOD_MORNING = 11;
+    EVENT_TYPE_OUTSIDE = 12;
+    EVENT_TYPE_COMING = 13;
+    EVENT_TYPE_READY_SOON = 14;
+    EVENT_TYPE_NEED_SPACE = 15;
 }
 

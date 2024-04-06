@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -29,6 +29,10 @@ const EventType$json = {
     {'1': 'EVENT_TYPE_MISS_YOU', '2': 9},
     {'1': 'EVENT_TYPE_GOOD_NIGHT', '2': 10},
     {'1': 'EVENT_TYPE_GOOD_MORNING', '2': 11},
+    {'1': 'EVENT_TYPE_OUTSIDE', '2': 12},
+    {'1': 'EVENT_TYPE_COMING', '2': 13},
+    {'1': 'EVENT_TYPE_READY_SOON', '2': 14},
+    {'1': 'EVENT_TYPE_NEED_SPACE', '2': 15},
   ],
 };
 
@@ -39,7 +43,9 @@ final $typed_data.Uint8List eventTypeDescriptor = $convert.base64Decode(
     'VF9UWVBFX0hVRxAEEhgKFEVWRU5UX1RZUEVfQVRURU5USU9OEAUSFQoRRVZFTlRfVFlQRV9XQU'
     'tFVVAQBhIUChBFVkVOVF9UWVBFX1RSQVNIEAcSEwoPRVZFTlRfVFlQRV9IRUxQEAgSFwoTRVZF'
     'TlRfVFlQRV9NSVNTX1lPVRAJEhkKFUVWRU5UX1RZUEVfR09PRF9OSUdIVBAKEhsKF0VWRU5UX1'
-    'RZUEVfR09PRF9NT1JOSU5HEAs=');
+    'RZUEVfR09PRF9NT1JOSU5HEAsSFgoSRVZFTlRfVFlQRV9PVVRTSURFEAwSFQoRRVZFTlRfVFlQ'
+    'RV9DT01JTkcQDRIZChVFVkVOVF9UWVBFX1JFQURZX1NPT04QDhIZChVFVkVOVF9UWVBFX05FRU'
+    'RfU1BBQ0UQDw==');
 
 @$core.Deprecated('Use getSentEventsRequestDescriptor instead')
 const GetSentEventsRequest$json = {
@@ -151,6 +157,7 @@ const EventModel$json = {
     {'1': 'created_by', '3': 5, '4': 1, '5': 9, '10': 'createdBy'},
     {'1': 'created_for', '3': 6, '4': 1, '5': 9, '10': 'createdFor'},
     {'1': 'acknowledged', '3': 7, '4': 1, '5': 8, '10': 'acknowledged'},
+    {'1': 'seen', '3': 8, '4': 1, '5': 8, '10': 'seen'},
   ],
   '8': [
     {'1': '_message'},
@@ -163,5 +170,6 @@ final $typed_data.Uint8List eventModelDescriptor = $convert.base64Decode(
     'R0eXBlEjkKCmNyZWF0ZWRfYXQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglj'
     'cmVhdGVkQXQSHQoHbWVzc2FnZRgEIAEoCUgAUgdtZXNzYWdliAEBEh0KCmNyZWF0ZWRfYnkYBS'
     'ABKAlSCWNyZWF0ZWRCeRIfCgtjcmVhdGVkX2ZvchgGIAEoCVIKY3JlYXRlZEZvchIiCgxhY2tu'
-    'b3dsZWRnZWQYByABKAhSDGFja25vd2xlZGdlZEIKCghfbWVzc2FnZQ==');
+    'b3dsZWRnZWQYByABKAhSDGFja25vd2xlZGdlZBISCgRzZWVuGAggASgIUgRzZWVuQgoKCF9tZX'
+    'NzYWdl');
 
