@@ -4,23 +4,15 @@ option go_package = "github.com/rautellin/bundora-proto/gen/go;proto";
 import "google/protobuf/timestamp.proto";
 
 service EventService {
-    rpc GetSentEvents(GetSentEventsRequest) returns (GetSentEventsResponse);
-    rpc GetReceivedEvents(GetReceivedEventsRequest) returns (GetReceivedEventsResponse);
+    rpc GetEvents(GetEventsRequest) returns (GetEventsResponse);
     rpc CreateEvent(CreateEventRequest) returns (CreateEventResponse);
     rpc AcknowledgeEvent(AcknowledgeEventRequest) returns (AcknowledgeEventResponse);
 }
 
-message GetSentEventsRequest {
+message GetEventsRequest {
 }
 
-message GetSentEventsResponse {
-    repeated EventModel events = 1;
-}
-
-message GetReceivedEventsRequest {
-}
-
-message GetReceivedEventsResponse {
+message GetEventsResponse {
     repeated EventModel events = 1;
 }
 
@@ -31,7 +23,7 @@ message CreateEventRequest {
 
 message CreateEventResponse {
     EventModel event = 1;
-    EventResponse response = 2;
+    EventCreationResponse response = 2;
 }
 
 message AcknowledgeEventRequest {
@@ -42,7 +34,7 @@ message AcknowledgeEventResponse {
     EventModel event = 1;
 }
 
-message EventResponse {
+message EventCreationResponse {
     optional string title = 1;
     string body = 2;
 }
@@ -56,6 +48,7 @@ message EventModel {
     string created_for = 6;
     bool acknowledged = 7;
     bool seen = 8;
+    bool received = 9;
 }
 
 enum EventType {

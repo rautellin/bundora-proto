@@ -18,13 +18,13 @@ import 'google/protobuf/timestamp.pb.dart' as $2;
 
 export 'event.pbenum.dart';
 
-class GetSentEventsRequest extends $pb.GeneratedMessage {
-  factory GetSentEventsRequest() => create();
-  GetSentEventsRequest._() : super();
-  factory GetSentEventsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetSentEventsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+class GetEventsRequest extends $pb.GeneratedMessage {
+  factory GetEventsRequest() => create();
+  GetEventsRequest._() : super();
+  factory GetEventsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetEventsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSentEventsRequest', createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEventsRequest', createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
@@ -32,26 +32,26 @@ class GetSentEventsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GetSentEventsRequest clone() => GetSentEventsRequest()..mergeFromMessage(this);
+  GetEventsRequest clone() => GetEventsRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetSentEventsRequest copyWith(void Function(GetSentEventsRequest) updates) => super.copyWith((message) => updates(message as GetSentEventsRequest)) as GetSentEventsRequest;
+  GetEventsRequest copyWith(void Function(GetEventsRequest) updates) => super.copyWith((message) => updates(message as GetEventsRequest)) as GetEventsRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetSentEventsRequest create() => GetSentEventsRequest._();
-  GetSentEventsRequest createEmptyInstance() => create();
-  static $pb.PbList<GetSentEventsRequest> createRepeated() => $pb.PbList<GetSentEventsRequest>();
+  static GetEventsRequest create() => GetEventsRequest._();
+  GetEventsRequest createEmptyInstance() => create();
+  static $pb.PbList<GetEventsRequest> createRepeated() => $pb.PbList<GetEventsRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetSentEventsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSentEventsRequest>(create);
-  static GetSentEventsRequest? _defaultInstance;
+  static GetEventsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetEventsRequest>(create);
+  static GetEventsRequest? _defaultInstance;
 }
 
-class GetSentEventsResponse extends $pb.GeneratedMessage {
-  factory GetSentEventsResponse({
+class GetEventsResponse extends $pb.GeneratedMessage {
+  factory GetEventsResponse({
     $core.Iterable<EventModel>? events,
   }) {
     final $result = create();
@@ -60,11 +60,11 @@ class GetSentEventsResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  GetSentEventsResponse._() : super();
-  factory GetSentEventsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetSentEventsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  GetEventsResponse._() : super();
+  factory GetEventsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetEventsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSentEventsResponse', createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEventsResponse', createEmptyInstance: create)
     ..pc<EventModel>(1, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM, subBuilder: EventModel.create)
     ..hasRequiredFields = false
   ;
@@ -73,98 +73,22 @@ class GetSentEventsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GetSentEventsResponse clone() => GetSentEventsResponse()..mergeFromMessage(this);
+  GetEventsResponse clone() => GetEventsResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetSentEventsResponse copyWith(void Function(GetSentEventsResponse) updates) => super.copyWith((message) => updates(message as GetSentEventsResponse)) as GetSentEventsResponse;
+  GetEventsResponse copyWith(void Function(GetEventsResponse) updates) => super.copyWith((message) => updates(message as GetEventsResponse)) as GetEventsResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetSentEventsResponse create() => GetSentEventsResponse._();
-  GetSentEventsResponse createEmptyInstance() => create();
-  static $pb.PbList<GetSentEventsResponse> createRepeated() => $pb.PbList<GetSentEventsResponse>();
+  static GetEventsResponse create() => GetEventsResponse._();
+  GetEventsResponse createEmptyInstance() => create();
+  static $pb.PbList<GetEventsResponse> createRepeated() => $pb.PbList<GetEventsResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetSentEventsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSentEventsResponse>(create);
-  static GetSentEventsResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<EventModel> get events => $_getList(0);
-}
-
-class GetReceivedEventsRequest extends $pb.GeneratedMessage {
-  factory GetReceivedEventsRequest() => create();
-  GetReceivedEventsRequest._() : super();
-  factory GetReceivedEventsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetReceivedEventsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetReceivedEventsRequest', createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  GetReceivedEventsRequest clone() => GetReceivedEventsRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  GetReceivedEventsRequest copyWith(void Function(GetReceivedEventsRequest) updates) => super.copyWith((message) => updates(message as GetReceivedEventsRequest)) as GetReceivedEventsRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static GetReceivedEventsRequest create() => GetReceivedEventsRequest._();
-  GetReceivedEventsRequest createEmptyInstance() => create();
-  static $pb.PbList<GetReceivedEventsRequest> createRepeated() => $pb.PbList<GetReceivedEventsRequest>();
-  @$core.pragma('dart2js:noInline')
-  static GetReceivedEventsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetReceivedEventsRequest>(create);
-  static GetReceivedEventsRequest? _defaultInstance;
-}
-
-class GetReceivedEventsResponse extends $pb.GeneratedMessage {
-  factory GetReceivedEventsResponse({
-    $core.Iterable<EventModel>? events,
-  }) {
-    final $result = create();
-    if (events != null) {
-      $result.events.addAll(events);
-    }
-    return $result;
-  }
-  GetReceivedEventsResponse._() : super();
-  factory GetReceivedEventsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetReceivedEventsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetReceivedEventsResponse', createEmptyInstance: create)
-    ..pc<EventModel>(1, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM, subBuilder: EventModel.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  GetReceivedEventsResponse clone() => GetReceivedEventsResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  GetReceivedEventsResponse copyWith(void Function(GetReceivedEventsResponse) updates) => super.copyWith((message) => updates(message as GetReceivedEventsResponse)) as GetReceivedEventsResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static GetReceivedEventsResponse create() => GetReceivedEventsResponse._();
-  GetReceivedEventsResponse createEmptyInstance() => create();
-  static $pb.PbList<GetReceivedEventsResponse> createRepeated() => $pb.PbList<GetReceivedEventsResponse>();
-  @$core.pragma('dart2js:noInline')
-  static GetReceivedEventsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetReceivedEventsResponse>(create);
-  static GetReceivedEventsResponse? _defaultInstance;
+  static GetEventsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetEventsResponse>(create);
+  static GetEventsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<EventModel> get events => $_getList(0);
@@ -237,7 +161,7 @@ class CreateEventRequest extends $pb.GeneratedMessage {
 class CreateEventResponse extends $pb.GeneratedMessage {
   factory CreateEventResponse({
     EventModel? event,
-    EventResponse? response,
+    EventCreationResponse? response,
   }) {
     final $result = create();
     if (event != null) {
@@ -254,7 +178,7 @@ class CreateEventResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateEventResponse', createEmptyInstance: create)
     ..aOM<EventModel>(1, _omitFieldNames ? '' : 'event', subBuilder: EventModel.create)
-    ..aOM<EventResponse>(2, _omitFieldNames ? '' : 'response', subBuilder: EventResponse.create)
+    ..aOM<EventCreationResponse>(2, _omitFieldNames ? '' : 'response', subBuilder: EventCreationResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -291,15 +215,15 @@ class CreateEventResponse extends $pb.GeneratedMessage {
   EventModel ensureEvent() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  EventResponse get response => $_getN(1);
+  EventCreationResponse get response => $_getN(1);
   @$pb.TagNumber(2)
-  set response(EventResponse v) { setField(2, v); }
+  set response(EventCreationResponse v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasResponse() => $_has(1);
   @$pb.TagNumber(2)
   void clearResponse() => clearField(2);
   @$pb.TagNumber(2)
-  EventResponse ensureResponse() => $_ensure(1);
+  EventCreationResponse ensureResponse() => $_ensure(1);
 }
 
 class AcknowledgeEventRequest extends $pb.GeneratedMessage {
@@ -404,8 +328,8 @@ class AcknowledgeEventResponse extends $pb.GeneratedMessage {
   EventModel ensureEvent() => $_ensure(0);
 }
 
-class EventResponse extends $pb.GeneratedMessage {
-  factory EventResponse({
+class EventCreationResponse extends $pb.GeneratedMessage {
+  factory EventCreationResponse({
     $core.String? title,
     $core.String? body,
   }) {
@@ -418,11 +342,11 @@ class EventResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  EventResponse._() : super();
-  factory EventResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory EventResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  EventCreationResponse._() : super();
+  factory EventCreationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EventCreationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EventResponse', createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EventCreationResponse', createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'title')
     ..aOS(2, _omitFieldNames ? '' : 'body')
     ..hasRequiredFields = false
@@ -432,22 +356,22 @@ class EventResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  EventResponse clone() => EventResponse()..mergeFromMessage(this);
+  EventCreationResponse clone() => EventCreationResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  EventResponse copyWith(void Function(EventResponse) updates) => super.copyWith((message) => updates(message as EventResponse)) as EventResponse;
+  EventCreationResponse copyWith(void Function(EventCreationResponse) updates) => super.copyWith((message) => updates(message as EventCreationResponse)) as EventCreationResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static EventResponse create() => EventResponse._();
-  EventResponse createEmptyInstance() => create();
-  static $pb.PbList<EventResponse> createRepeated() => $pb.PbList<EventResponse>();
+  static EventCreationResponse create() => EventCreationResponse._();
+  EventCreationResponse createEmptyInstance() => create();
+  static $pb.PbList<EventCreationResponse> createRepeated() => $pb.PbList<EventCreationResponse>();
   @$core.pragma('dart2js:noInline')
-  static EventResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EventResponse>(create);
-  static EventResponse? _defaultInstance;
+  static EventCreationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EventCreationResponse>(create);
+  static EventCreationResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get title => $_getSZ(0);
@@ -478,6 +402,7 @@ class EventModel extends $pb.GeneratedMessage {
     $core.String? createdFor,
     $core.bool? acknowledged,
     $core.bool? seen,
+    $core.bool? received,
   }) {
     final $result = create();
     if (id != null) {
@@ -504,6 +429,9 @@ class EventModel extends $pb.GeneratedMessage {
     if (seen != null) {
       $result.seen = seen;
     }
+    if (received != null) {
+      $result.received = received;
+    }
     return $result;
   }
   EventModel._() : super();
@@ -519,6 +447,7 @@ class EventModel extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'createdFor')
     ..aOB(7, _omitFieldNames ? '' : 'acknowledged')
     ..aOB(8, _omitFieldNames ? '' : 'seen')
+    ..aOB(9, _omitFieldNames ? '' : 'received')
     ..hasRequiredFields = false
   ;
 
@@ -616,6 +545,15 @@ class EventModel extends $pb.GeneratedMessage {
   $core.bool hasSeen() => $_has(7);
   @$pb.TagNumber(8)
   void clearSeen() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get received => $_getBF(8);
+  @$pb.TagNumber(9)
+  set received($core.bool v) { $_setBool(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasReceived() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearReceived() => clearField(9);
 }
 
 

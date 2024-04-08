@@ -22,8 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type EventServiceClient interface {
-	GetSentEvents(ctx context.Context, in *GetSentEventsRequest, opts ...grpc.CallOption) (*GetSentEventsResponse, error)
-	GetReceivedEvents(ctx context.Context, in *GetReceivedEventsRequest, opts ...grpc.CallOption) (*GetReceivedEventsResponse, error)
+	GetEvents(ctx context.Context, in *GetEventsRequest, opts ...grpc.CallOption) (*GetEventsResponse, error)
 	CreateEvent(ctx context.Context, in *CreateEventRequest, opts ...grpc.CallOption) (*CreateEventResponse, error)
 	AcknowledgeEvent(ctx context.Context, in *AcknowledgeEventRequest, opts ...grpc.CallOption) (*AcknowledgeEventResponse, error)
 }
@@ -36,18 +35,9 @@ func NewEventServiceClient(cc grpc.ClientConnInterface) EventServiceClient {
 	return &eventServiceClient{cc}
 }
 
-func (c *eventServiceClient) GetSentEvents(ctx context.Context, in *GetSentEventsRequest, opts ...grpc.CallOption) (*GetSentEventsResponse, error) {
-	out := new(GetSentEventsResponse)
-	err := c.cc.Invoke(ctx, "/EventService/GetSentEvents", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *eventServiceClient) GetReceivedEvents(ctx context.Context, in *GetReceivedEventsRequest, opts ...grpc.CallOption) (*GetReceivedEventsResponse, error) {
-	out := new(GetReceivedEventsResponse)
-	err := c.cc.Invoke(ctx, "/EventService/GetReceivedEvents", in, out, opts...)
+func (c *eventServiceClient) GetEvents(ctx context.Context, in *GetEventsRequest, opts ...grpc.CallOption) (*GetEventsResponse, error) {
+	out := new(GetEventsResponse)
+	err := c.cc.Invoke(ctx, "/EventService/GetEvents", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -76,8 +66,7 @@ func (c *eventServiceClient) AcknowledgeEvent(ctx context.Context, in *Acknowled
 // All implementations must embed UnimplementedEventServiceServer
 // for forward compatibility
 type EventServiceServer interface {
-	GetSentEvents(context.Context, *GetSentEventsRequest) (*GetSentEventsResponse, error)
-	GetReceivedEvents(context.Context, *GetReceivedEventsRequest) (*GetReceivedEventsResponse, error)
+	GetEvents(context.Context, *GetEventsRequest) (*GetEventsResponse, error)
 	CreateEvent(context.Context, *CreateEventRequest) (*CreateEventResponse, error)
 	AcknowledgeEvent(context.Context, *AcknowledgeEventRequest) (*AcknowledgeEventResponse, error)
 	mustEmbedUnimplementedEventServiceServer()
@@ -87,11 +76,8 @@ type EventServiceServer interface {
 type UnimplementedEventServiceServer struct {
 }
 
-func (UnimplementedEventServiceServer) GetSentEvents(context.Context, *GetSentEventsRequest) (*GetSentEventsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSentEvents not implemented")
-}
-func (UnimplementedEventServiceServer) GetReceivedEvents(context.Context, *GetReceivedEventsRequest) (*GetReceivedEventsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetReceivedEvents not implemented")
+func (UnimplementedEventServiceServer) GetEvents(context.Context, *GetEventsRequest) (*GetEventsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetEvents not implemented")
 }
 func (UnimplementedEventServiceServer) CreateEvent(context.Context, *CreateEventRequest) (*CreateEventResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateEvent not implemented")
@@ -112,38 +98,20 @@ func RegisterEventServiceServer(s grpc.ServiceRegistrar, srv EventServiceServer)
 	s.RegisterService(&EventService_ServiceDesc, srv)
 }
 
-func _EventService_GetSentEvents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetSentEventsRequest)
+func _EventService_GetEvents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetEventsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(EventServiceServer).GetSentEvents(ctx, in)
+		return srv.(EventServiceServer).GetEvents(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/EventService/GetSentEvents",
+		FullMethod: "/EventService/GetEvents",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EventServiceServer).GetSentEvents(ctx, req.(*GetSentEventsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _EventService_GetReceivedEvents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetReceivedEventsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(EventServiceServer).GetReceivedEvents(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/EventService/GetReceivedEvents",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EventServiceServer).GetReceivedEvents(ctx, req.(*GetReceivedEventsRequest))
+		return srv.(EventServiceServer).GetEvents(ctx, req.(*GetEventsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -192,12 +160,8 @@ var EventService_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*EventServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetSentEvents",
-			Handler:    _EventService_GetSentEvents_Handler,
-		},
-		{
-			MethodName: "GetReceivedEvents",
-			Handler:    _EventService_GetReceivedEvents_Handler,
+			MethodName: "GetEvents",
+			Handler:    _EventService_GetEvents_Handler,
 		},
 		{
 			MethodName: "CreateEvent",
