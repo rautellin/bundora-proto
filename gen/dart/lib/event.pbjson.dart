@@ -100,30 +100,30 @@ final $typed_data.Uint8List createEventResponseDescriptor = $convert.base64Decod
     'ChNDcmVhdGVFdmVudFJlc3BvbnNlEiEKBWV2ZW50GAEgASgLMgsuRXZlbnRNb2RlbFIFZXZlbn'
     'QSMgoIcmVzcG9uc2UYAiABKAsyFi5FdmVudENyZWF0aW9uUmVzcG9uc2VSCHJlc3BvbnNl');
 
-@$core.Deprecated('Use acknowledgeEventRequestDescriptor instead')
-const AcknowledgeEventRequest$json = {
-  '1': 'AcknowledgeEventRequest',
+@$core.Deprecated('Use markEventsAsSeenRequestDescriptor instead')
+const MarkEventsAsSeenRequest$json = {
+  '1': 'MarkEventsAsSeenRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'event_ids', '3': 1, '4': 3, '5': 9, '10': 'eventIds'},
   ],
 };
 
-/// Descriptor for `AcknowledgeEventRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List acknowledgeEventRequestDescriptor = $convert.base64Decode(
-    'ChdBY2tub3dsZWRnZUV2ZW50UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
+/// Descriptor for `MarkEventsAsSeenRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List markEventsAsSeenRequestDescriptor = $convert.base64Decode(
+    'ChdNYXJrRXZlbnRzQXNTZWVuUmVxdWVzdBIbCglldmVudF9pZHMYASADKAlSCGV2ZW50SWRz');
 
-@$core.Deprecated('Use acknowledgeEventResponseDescriptor instead')
-const AcknowledgeEventResponse$json = {
-  '1': 'AcknowledgeEventResponse',
+@$core.Deprecated('Use markEventsAsSeenResponseDescriptor instead')
+const MarkEventsAsSeenResponse$json = {
+  '1': 'MarkEventsAsSeenResponse',
   '2': [
-    {'1': 'event', '3': 1, '4': 1, '5': 11, '6': '.EventModel', '10': 'event'},
+    {'1': 'events', '3': 1, '4': 3, '5': 11, '6': '.EventModel', '10': 'events'},
   ],
 };
 
-/// Descriptor for `AcknowledgeEventResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List acknowledgeEventResponseDescriptor = $convert.base64Decode(
-    'ChhBY2tub3dsZWRnZUV2ZW50UmVzcG9uc2USIQoFZXZlbnQYASABKAsyCy5FdmVudE1vZGVsUg'
-    'VldmVudA==');
+/// Descriptor for `MarkEventsAsSeenResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List markEventsAsSeenResponseDescriptor = $convert.base64Decode(
+    'ChhNYXJrRXZlbnRzQXNTZWVuUmVzcG9uc2USIwoGZXZlbnRzGAEgAygLMgsuRXZlbnRNb2RlbF'
+    'IGZXZlbnRz');
 
 @$core.Deprecated('Use eventCreationResponseDescriptor instead')
 const EventCreationResponse$json = {

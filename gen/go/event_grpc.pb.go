@@ -24,7 +24,7 @@ const _ = grpc.SupportPackageIsVersion7
 type EventServiceClient interface {
 	GetEvents(ctx context.Context, in *GetEventsRequest, opts ...grpc.CallOption) (*GetEventsResponse, error)
 	CreateEvent(ctx context.Context, in *CreateEventRequest, opts ...grpc.CallOption) (*CreateEventResponse, error)
-	AcknowledgeEvent(ctx context.Context, in *AcknowledgeEventRequest, opts ...grpc.CallOption) (*AcknowledgeEventResponse, error)
+	MarkEventsAsSeen(ctx context.Context, in *MarkEventsAsSeenRequest, opts ...grpc.CallOption) (*MarkEventsAsSeenResponse, error)
 }
 
 type eventServiceClient struct {
@@ -53,9 +53,9 @@ func (c *eventServiceClient) CreateEvent(ctx context.Context, in *CreateEventReq
 	return out, nil
 }
 
-func (c *eventServiceClient) AcknowledgeEvent(ctx context.Context, in *AcknowledgeEventRequest, opts ...grpc.CallOption) (*AcknowledgeEventResponse, error) {
-	out := new(AcknowledgeEventResponse)
-	err := c.cc.Invoke(ctx, "/EventService/AcknowledgeEvent", in, out, opts...)
+func (c *eventServiceClient) MarkEventsAsSeen(ctx context.Context, in *MarkEventsAsSeenRequest, opts ...grpc.CallOption) (*MarkEventsAsSeenResponse, error) {
+	out := new(MarkEventsAsSeenResponse)
+	err := c.cc.Invoke(ctx, "/EventService/MarkEventsAsSeen", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -68,7 +68,7 @@ func (c *eventServiceClient) AcknowledgeEvent(ctx context.Context, in *Acknowled
 type EventServiceServer interface {
 	GetEvents(context.Context, *GetEventsRequest) (*GetEventsResponse, error)
 	CreateEvent(context.Context, *CreateEventRequest) (*CreateEventResponse, error)
-	AcknowledgeEvent(context.Context, *AcknowledgeEventRequest) (*AcknowledgeEventResponse, error)
+	MarkEventsAsSeen(context.Context, *MarkEventsAsSeenRequest) (*MarkEventsAsSeenResponse, error)
 	mustEmbedUnimplementedEventServiceServer()
 }
 
@@ -82,8 +82,8 @@ func (UnimplementedEventServiceServer) GetEvents(context.Context, *GetEventsRequ
 func (UnimplementedEventServiceServer) CreateEvent(context.Context, *CreateEventRequest) (*CreateEventResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateEvent not implemented")
 }
-func (UnimplementedEventServiceServer) AcknowledgeEvent(context.Context, *AcknowledgeEventRequest) (*AcknowledgeEventResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AcknowledgeEvent not implemented")
+func (UnimplementedEventServiceServer) MarkEventsAsSeen(context.Context, *MarkEventsAsSeenRequest) (*MarkEventsAsSeenResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method MarkEventsAsSeen not implemented")
 }
 func (UnimplementedEventServiceServer) mustEmbedUnimplementedEventServiceServer() {}
 
@@ -134,20 +134,20 @@ func _EventService_CreateEvent_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-func _EventService_AcknowledgeEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AcknowledgeEventRequest)
+func _EventService_MarkEventsAsSeen_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MarkEventsAsSeenRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(EventServiceServer).AcknowledgeEvent(ctx, in)
+		return srv.(EventServiceServer).MarkEventsAsSeen(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/EventService/AcknowledgeEvent",
+		FullMethod: "/EventService/MarkEventsAsSeen",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EventServiceServer).AcknowledgeEvent(ctx, req.(*AcknowledgeEventRequest))
+		return srv.(EventServiceServer).MarkEventsAsSeen(ctx, req.(*MarkEventsAsSeenRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -168,8 +168,8 @@ var EventService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _EventService_CreateEvent_Handler,
 		},
 		{
-			MethodName: "AcknowledgeEvent",
-			Handler:    _EventService_AcknowledgeEvent_Handler,
+			MethodName: "MarkEventsAsSeen",
+			Handler:    _EventService_MarkEventsAsSeen_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

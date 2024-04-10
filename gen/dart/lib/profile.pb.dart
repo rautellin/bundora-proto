@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'google/protobuf/timestamp.pb.dart' as $2;
+import 'google/protobuf/timestamp.pb.dart' as $3;
 import 'profile.pbenum.dart';
 
 export 'profile.pbenum.dart';
@@ -128,7 +128,7 @@ class Passcode extends $pb.GeneratedMessage {
   factory Passcode({
     $core.int? passcode,
     $core.String? createdBy,
-    $2.Timestamp? createdAt,
+    $3.Timestamp? createdAt,
   }) {
     final $result = create();
     if (passcode != null) {
@@ -149,7 +149,7 @@ class Passcode extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Passcode', createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'passcode', $pb.PbFieldType.O3)
     ..aOS(2, _omitFieldNames ? '' : 'createdBy')
-    ..aOM<$2.Timestamp>(3, _omitFieldNames ? '' : 'createdAt', subBuilder: $2.Timestamp.create)
+    ..aOM<$3.Timestamp>(3, _omitFieldNames ? '' : 'createdAt', subBuilder: $3.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -193,15 +193,15 @@ class Passcode extends $pb.GeneratedMessage {
   void clearCreatedBy() => clearField(2);
 
   @$pb.TagNumber(3)
-  $2.Timestamp get createdAt => $_getN(2);
+  $3.Timestamp get createdAt => $_getN(2);
   @$pb.TagNumber(3)
-  set createdAt($2.Timestamp v) { setField(3, v); }
+  set createdAt($3.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCreatedAt() => $_has(2);
   @$pb.TagNumber(3)
   void clearCreatedAt() => clearField(3);
   @$pb.TagNumber(3)
-  $2.Timestamp ensureCreatedAt() => $_ensure(2);
+  $3.Timestamp ensureCreatedAt() => $_ensure(2);
 }
 
 class GetProfileRequest extends $pb.GeneratedMessage {

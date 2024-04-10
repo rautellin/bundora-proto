@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'event.pbenum.dart';
-import 'google/protobuf/timestamp.pb.dart' as $2;
+import 'google/protobuf/timestamp.pb.dart' as $3;
 
 export 'event.pbenum.dart';
 
@@ -226,22 +226,22 @@ class CreateEventResponse extends $pb.GeneratedMessage {
   EventCreationResponse ensureResponse() => $_ensure(1);
 }
 
-class AcknowledgeEventRequest extends $pb.GeneratedMessage {
-  factory AcknowledgeEventRequest({
-    $core.String? id,
+class MarkEventsAsSeenRequest extends $pb.GeneratedMessage {
+  factory MarkEventsAsSeenRequest({
+    $core.Iterable<$core.String>? eventIds,
   }) {
     final $result = create();
-    if (id != null) {
-      $result.id = id;
+    if (eventIds != null) {
+      $result.eventIds.addAll(eventIds);
     }
     return $result;
   }
-  AcknowledgeEventRequest._() : super();
-  factory AcknowledgeEventRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AcknowledgeEventRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  MarkEventsAsSeenRequest._() : super();
+  factory MarkEventsAsSeenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MarkEventsAsSeenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AcknowledgeEventRequest', createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'id')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MarkEventsAsSeenRequest', createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'eventIds')
     ..hasRequiredFields = false
   ;
 
@@ -249,49 +249,43 @@ class AcknowledgeEventRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  AcknowledgeEventRequest clone() => AcknowledgeEventRequest()..mergeFromMessage(this);
+  MarkEventsAsSeenRequest clone() => MarkEventsAsSeenRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AcknowledgeEventRequest copyWith(void Function(AcknowledgeEventRequest) updates) => super.copyWith((message) => updates(message as AcknowledgeEventRequest)) as AcknowledgeEventRequest;
+  MarkEventsAsSeenRequest copyWith(void Function(MarkEventsAsSeenRequest) updates) => super.copyWith((message) => updates(message as MarkEventsAsSeenRequest)) as MarkEventsAsSeenRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static AcknowledgeEventRequest create() => AcknowledgeEventRequest._();
-  AcknowledgeEventRequest createEmptyInstance() => create();
-  static $pb.PbList<AcknowledgeEventRequest> createRepeated() => $pb.PbList<AcknowledgeEventRequest>();
+  static MarkEventsAsSeenRequest create() => MarkEventsAsSeenRequest._();
+  MarkEventsAsSeenRequest createEmptyInstance() => create();
+  static $pb.PbList<MarkEventsAsSeenRequest> createRepeated() => $pb.PbList<MarkEventsAsSeenRequest>();
   @$core.pragma('dart2js:noInline')
-  static AcknowledgeEventRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AcknowledgeEventRequest>(create);
-  static AcknowledgeEventRequest? _defaultInstance;
+  static MarkEventsAsSeenRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MarkEventsAsSeenRequest>(create);
+  static MarkEventsAsSeenRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get id => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set id($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  $core.List<$core.String> get eventIds => $_getList(0);
 }
 
-class AcknowledgeEventResponse extends $pb.GeneratedMessage {
-  factory AcknowledgeEventResponse({
-    EventModel? event,
+class MarkEventsAsSeenResponse extends $pb.GeneratedMessage {
+  factory MarkEventsAsSeenResponse({
+    $core.Iterable<EventModel>? events,
   }) {
     final $result = create();
-    if (event != null) {
-      $result.event = event;
+    if (events != null) {
+      $result.events.addAll(events);
     }
     return $result;
   }
-  AcknowledgeEventResponse._() : super();
-  factory AcknowledgeEventResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AcknowledgeEventResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  MarkEventsAsSeenResponse._() : super();
+  factory MarkEventsAsSeenResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MarkEventsAsSeenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AcknowledgeEventResponse', createEmptyInstance: create)
-    ..aOM<EventModel>(1, _omitFieldNames ? '' : 'event', subBuilder: EventModel.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MarkEventsAsSeenResponse', createEmptyInstance: create)
+    ..pc<EventModel>(1, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM, subBuilder: EventModel.create)
     ..hasRequiredFields = false
   ;
 
@@ -299,33 +293,25 @@ class AcknowledgeEventResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  AcknowledgeEventResponse clone() => AcknowledgeEventResponse()..mergeFromMessage(this);
+  MarkEventsAsSeenResponse clone() => MarkEventsAsSeenResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AcknowledgeEventResponse copyWith(void Function(AcknowledgeEventResponse) updates) => super.copyWith((message) => updates(message as AcknowledgeEventResponse)) as AcknowledgeEventResponse;
+  MarkEventsAsSeenResponse copyWith(void Function(MarkEventsAsSeenResponse) updates) => super.copyWith((message) => updates(message as MarkEventsAsSeenResponse)) as MarkEventsAsSeenResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static AcknowledgeEventResponse create() => AcknowledgeEventResponse._();
-  AcknowledgeEventResponse createEmptyInstance() => create();
-  static $pb.PbList<AcknowledgeEventResponse> createRepeated() => $pb.PbList<AcknowledgeEventResponse>();
+  static MarkEventsAsSeenResponse create() => MarkEventsAsSeenResponse._();
+  MarkEventsAsSeenResponse createEmptyInstance() => create();
+  static $pb.PbList<MarkEventsAsSeenResponse> createRepeated() => $pb.PbList<MarkEventsAsSeenResponse>();
   @$core.pragma('dart2js:noInline')
-  static AcknowledgeEventResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AcknowledgeEventResponse>(create);
-  static AcknowledgeEventResponse? _defaultInstance;
+  static MarkEventsAsSeenResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MarkEventsAsSeenResponse>(create);
+  static MarkEventsAsSeenResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  EventModel get event => $_getN(0);
-  @$pb.TagNumber(1)
-  set event(EventModel v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasEvent() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearEvent() => clearField(1);
-  @$pb.TagNumber(1)
-  EventModel ensureEvent() => $_ensure(0);
+  $core.List<EventModel> get events => $_getList(0);
 }
 
 class EventCreationResponse extends $pb.GeneratedMessage {
@@ -396,7 +382,7 @@ class EventModel extends $pb.GeneratedMessage {
   factory EventModel({
     $core.String? id,
     EventType? type,
-    $2.Timestamp? createdAt,
+    $3.Timestamp? createdAt,
     $core.String? message,
     $core.String? createdBy,
     $core.String? createdFor,
@@ -441,7 +427,7 @@ class EventModel extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EventModel', createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..e<EventType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: EventType.EVENT_TYPE_UNSPECIFIED, valueOf: EventType.valueOf, enumValues: EventType.values)
-    ..aOM<$2.Timestamp>(3, _omitFieldNames ? '' : 'createdAt', subBuilder: $2.Timestamp.create)
+    ..aOM<$3.Timestamp>(3, _omitFieldNames ? '' : 'createdAt', subBuilder: $3.Timestamp.create)
     ..aOS(4, _omitFieldNames ? '' : 'message')
     ..aOS(5, _omitFieldNames ? '' : 'createdBy')
     ..aOS(6, _omitFieldNames ? '' : 'createdFor')
@@ -491,15 +477,15 @@ class EventModel extends $pb.GeneratedMessage {
   void clearType() => clearField(2);
 
   @$pb.TagNumber(3)
-  $2.Timestamp get createdAt => $_getN(2);
+  $3.Timestamp get createdAt => $_getN(2);
   @$pb.TagNumber(3)
-  set createdAt($2.Timestamp v) { setField(3, v); }
+  set createdAt($3.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCreatedAt() => $_has(2);
   @$pb.TagNumber(3)
   void clearCreatedAt() => clearField(3);
   @$pb.TagNumber(3)
-  $2.Timestamp ensureCreatedAt() => $_ensure(2);
+  $3.Timestamp ensureCreatedAt() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get message => $_getSZ(3);
