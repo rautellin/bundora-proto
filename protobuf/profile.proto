@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/rautellin/mindfuloop-proto/gen/go;proto";
+option go_package = "github.com/rautellin/bundora-proto/gen/go;proto";
 import "google/protobuf/timestamp.proto";
 
 service ProfileService {
