@@ -100,12 +100,12 @@ enum Tag {
 
 enum Mood {
     MOOD_UNSPECIFIED = 0;
-    MOOD_NEUTRAL = 1;
-    MOOD_GOOD = 2;
-    MOOD_HAPPY = 3;
-    MOOD_AWESOME = 4;
-    MOOD_SAD = 5;
-    MOOD_ANXIOUS = 6;
-    MOOD_DEPRESSED = 7;
+    MOOD_DEPRESSED = 1;
+    MOOD_SAD = 2;
+    MOOD_SOMEWHAT_BAD = 3;
+    MOOD_NEUTRAL = 4;
+    MOOD_GOOD = 5;
+    MOOD_HAPPY = 6;
+    MOOD_AWESOME = 7;
 }
 
