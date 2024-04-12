@@ -35,7 +35,7 @@ message CreatePostResponse {
 }
 
 message MarkPostsAsSeenRequest {
-    repeated string post_ids = 1;
+    repeated PostModel posts = 1;
 }
 
 message MarkPostsAsSeenResponse {
@@ -85,7 +85,7 @@ enum PostType {
 enum Tag {
     TAG_UNSPECIFIED = 0;
     TAG_WORK = 1;
-    TAG_RELATIONSHIP = 2;
+    TAG_LOVE = 2;
     TAG_FAMILY = 3;
     TAG_FRIENDS = 4;
     TAG_HEALTH = 5;
@@ -94,8 +94,14 @@ enum Tag {
     TAG_FOOD = 8;
     TAG_SPORT = 9;
     TAG_WEATHER = 10;
-    TAG_ENERGY = 11;
+    TAG_SLEEP = 11;
     TAG_SHOPPING = 12;
+    TAG_FINANCE = 13;
+    TAG_RELAX = 14;
+    TAG_GAMING = 15;
+    TAG_NATURE = 16;
+    TAG_MUSIC = 17;
+    TAG_ENTERTAINMENT = 18;
 }
 
 enum Mood {

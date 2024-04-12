@@ -18,6 +18,8 @@ message ProfileModel {
     bool onboarding_completed = 3;
     optional string fcm_token = 4;
     optional string partner_id = 5;
+    optional string name = 6;
+    AvatarType avatar_type = 7;
 }
 
 message Passcode {
@@ -38,6 +40,8 @@ message UpdateProfileRequest {
     optional bool onboarding_completed = 2;
     optional string fcm_token = 3;
     optional string partner_id = 4;
+    optional string name = 5;
+    optional AvatarType avatar_type = 6;
 }
 
 message UpdateProfileResponse {
@@ -76,6 +80,15 @@ message VerifyPasscodeRequest {
 
 message VerifyPasscodeResponse {
     ProfileModel profile = 1;
+}
+
+enum AvatarType {
+    AVATAR_TYPE_UNSPECIFIED = 0;
+    AVATAR_TYPE_1 = 1;
+    AVATAR_TYPE_2 = 2;
+    AVATAR_TYPE_3 = 3;
+    AVATAR_TYPE_4 = 4;
+    AVATAR_TYPE_5 = 5;
 }
 
 enum CharacterType {
