@@ -20,6 +20,7 @@ class AvatarType extends $pb.ProtobufEnum {
   static const AvatarType AVATAR_TYPE_3 = AvatarType._(3, _omitEnumNames ? '' : 'AVATAR_TYPE_3');
   static const AvatarType AVATAR_TYPE_4 = AvatarType._(4, _omitEnumNames ? '' : 'AVATAR_TYPE_4');
   static const AvatarType AVATAR_TYPE_5 = AvatarType._(5, _omitEnumNames ? '' : 'AVATAR_TYPE_5');
+  static const AvatarType AVATAR_TYPE_6 = AvatarType._(6, _omitEnumNames ? '' : 'AVATAR_TYPE_6');
 
   static const $core.List<AvatarType> values = <AvatarType> [
     AVATAR_TYPE_UNSPECIFIED,
@@ -28,6 +29,7 @@ class AvatarType extends $pb.ProtobufEnum {
     AVATAR_TYPE_3,
     AVATAR_TYPE_4,
     AVATAR_TYPE_5,
+    AVATAR_TYPE_6,
   ];
 
   static final $core.Map<$core.int, AvatarType> _byValue = $pb.ProtobufEnum.initByValue(values);

@@ -23,6 +23,7 @@ const AvatarType$json = {
     {'1': 'AVATAR_TYPE_3', '2': 3},
     {'1': 'AVATAR_TYPE_4', '2': 4},
     {'1': 'AVATAR_TYPE_5', '2': 5},
+    {'1': 'AVATAR_TYPE_6', '2': 6},
   ],
 };
 
@@ -30,7 +31,7 @@ const AvatarType$json = {
 final $typed_data.Uint8List avatarTypeDescriptor = $convert.base64Decode(
     'CgpBdmF0YXJUeXBlEhsKF0FWQVRBUl9UWVBFX1VOU1BFQ0lGSUVEEAASEQoNQVZBVEFSX1RZUE'
     'VfMRABEhEKDUFWQVRBUl9UWVBFXzIQAhIRCg1BVkFUQVJfVFlQRV8zEAMSEQoNQVZBVEFSX1RZ'
-    'UEVfNBAEEhEKDUFWQVRBUl9UWVBFXzUQBQ==');
+    'UEVfNBAEEhEKDUFWQVRBUl9UWVBFXzUQBRIRCg1BVkFUQVJfVFlQRV82EAY=');
 
 @$core.Deprecated('Use characterTypeDescriptor instead')
 const CharacterType$json = {
