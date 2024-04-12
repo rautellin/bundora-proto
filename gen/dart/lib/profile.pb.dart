@@ -25,6 +25,8 @@ class ProfileModel extends $pb.GeneratedMessage {
     $core.bool? onboardingCompleted,
     $core.String? fcmToken,
     $core.String? partnerId,
+    $core.String? name,
+    AvatarType? avatarType,
   }) {
     final $result = create();
     if (id != null) {
@@ -42,6 +44,12 @@ class ProfileModel extends $pb.GeneratedMessage {
     if (partnerId != null) {
       $result.partnerId = partnerId;
     }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (avatarType != null) {
+      $result.avatarType = avatarType;
+    }
     return $result;
   }
   ProfileModel._() : super();
@@ -54,6 +62,8 @@ class ProfileModel extends $pb.GeneratedMessage {
     ..aOB(3, _omitFieldNames ? '' : 'onboardingCompleted')
     ..aOS(4, _omitFieldNames ? '' : 'fcmToken')
     ..aOS(5, _omitFieldNames ? '' : 'partnerId')
+    ..aOS(6, _omitFieldNames ? '' : 'name')
+    ..e<AvatarType>(7, _omitFieldNames ? '' : 'avatarType', $pb.PbFieldType.OE, defaultOrMaker: AvatarType.AVATAR_TYPE_UNSPECIFIED, valueOf: AvatarType.valueOf, enumValues: AvatarType.values)
     ..hasRequiredFields = false
   ;
 
@@ -122,6 +132,24 @@ class ProfileModel extends $pb.GeneratedMessage {
   $core.bool hasPartnerId() => $_has(4);
   @$pb.TagNumber(5)
   void clearPartnerId() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get name => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set name($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasName() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearName() => clearField(6);
+
+  @$pb.TagNumber(7)
+  AvatarType get avatarType => $_getN(6);
+  @$pb.TagNumber(7)
+  set avatarType(AvatarType v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasAvatarType() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAvatarType() => clearField(7);
 }
 
 class Passcode extends $pb.GeneratedMessage {
@@ -294,6 +322,8 @@ class UpdateProfileRequest extends $pb.GeneratedMessage {
     $core.bool? onboardingCompleted,
     $core.String? fcmToken,
     $core.String? partnerId,
+    $core.String? name,
+    AvatarType? avatarType,
   }) {
     final $result = create();
     if (characterType != null) {
@@ -308,6 +338,12 @@ class UpdateProfileRequest extends $pb.GeneratedMessage {
     if (partnerId != null) {
       $result.partnerId = partnerId;
     }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (avatarType != null) {
+      $result.avatarType = avatarType;
+    }
     return $result;
   }
   UpdateProfileRequest._() : super();
@@ -319,6 +355,8 @@ class UpdateProfileRequest extends $pb.GeneratedMessage {
     ..aOB(2, _omitFieldNames ? '' : 'onboardingCompleted')
     ..aOS(3, _omitFieldNames ? '' : 'fcmToken')
     ..aOS(4, _omitFieldNames ? '' : 'partnerId')
+    ..aOS(5, _omitFieldNames ? '' : 'name')
+    ..e<AvatarType>(6, _omitFieldNames ? '' : 'avatarType', $pb.PbFieldType.OE, defaultOrMaker: AvatarType.AVATAR_TYPE_UNSPECIFIED, valueOf: AvatarType.valueOf, enumValues: AvatarType.values)
     ..hasRequiredFields = false
   ;
 
@@ -378,6 +416,24 @@ class UpdateProfileRequest extends $pb.GeneratedMessage {
   $core.bool hasPartnerId() => $_has(3);
   @$pb.TagNumber(4)
   void clearPartnerId() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get name => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set name($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearName() => clearField(5);
+
+  @$pb.TagNumber(6)
+  AvatarType get avatarType => $_getN(5);
+  @$pb.TagNumber(6)
+  set avatarType(AvatarType v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasAvatarType() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAvatarType() => clearField(6);
 }
 
 class UpdateProfileResponse extends $pb.GeneratedMessage {

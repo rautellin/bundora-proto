@@ -34,7 +34,7 @@ const Tag$json = {
   '2': [
     {'1': 'TAG_UNSPECIFIED', '2': 0},
     {'1': 'TAG_WORK', '2': 1},
-    {'1': 'TAG_RELATIONSHIP', '2': 2},
+    {'1': 'TAG_LOVE', '2': 2},
     {'1': 'TAG_FAMILY', '2': 3},
     {'1': 'TAG_FRIENDS', '2': 4},
     {'1': 'TAG_HEALTH', '2': 5},
@@ -43,17 +43,25 @@ const Tag$json = {
     {'1': 'TAG_FOOD', '2': 8},
     {'1': 'TAG_SPORT', '2': 9},
     {'1': 'TAG_WEATHER', '2': 10},
-    {'1': 'TAG_ENERGY', '2': 11},
+    {'1': 'TAG_SLEEP', '2': 11},
     {'1': 'TAG_SHOPPING', '2': 12},
+    {'1': 'TAG_FINANCE', '2': 13},
+    {'1': 'TAG_RELAX', '2': 14},
+    {'1': 'TAG_GAMING', '2': 15},
+    {'1': 'TAG_NATURE', '2': 16},
+    {'1': 'TAG_MUSIC', '2': 17},
+    {'1': 'TAG_ENTERTAINMENT', '2': 18},
   ],
 };
 
 /// Descriptor for `Tag`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List tagDescriptor = $convert.base64Decode(
-    'CgNUYWcSEwoPVEFHX1VOU1BFQ0lGSUVEEAASDAoIVEFHX1dPUksQARIUChBUQUdfUkVMQVRJT0'
-    '5TSElQEAISDgoKVEFHX0ZBTUlMWRADEg8KC1RBR19GUklFTkRTEAQSDgoKVEFHX0hFQUxUSBAF'
-    'Eg0KCVRBR19IT0JCWRAGEg4KClRBR19UUkFWRUwQBxIMCghUQUdfRk9PRBAIEg0KCVRBR19TUE'
-    '9SVBAJEg8KC1RBR19XRUFUSEVSEAoSDgoKVEFHX0VORVJHWRALEhAKDFRBR19TSE9QUElORxAM');
+    'CgNUYWcSEwoPVEFHX1VOU1BFQ0lGSUVEEAASDAoIVEFHX1dPUksQARIMCghUQUdfTE9WRRACEg'
+    '4KClRBR19GQU1JTFkQAxIPCgtUQUdfRlJJRU5EUxAEEg4KClRBR19IRUFMVEgQBRINCglUQUdf'
+    'SE9CQlkQBhIOCgpUQUdfVFJBVkVMEAcSDAoIVEFHX0ZPT0QQCBINCglUQUdfU1BPUlQQCRIPCg'
+    'tUQUdfV0VBVEhFUhAKEg0KCVRBR19TTEVFUBALEhAKDFRBR19TSE9QUElORxAMEg8KC1RBR19G'
+    'SU5BTkNFEA0SDQoJVEFHX1JFTEFYEA4SDgoKVEFHX0dBTUlORxAPEg4KClRBR19OQVRVUkUQEB'
+    'INCglUQUdfTVVTSUMQERIVChFUQUdfRU5URVJUQUlOTUVOVBAS');
 
 @$core.Deprecated('Use moodDescriptor instead')
 const Mood$json = {
@@ -144,13 +152,14 @@ final $typed_data.Uint8List createPostResponseDescriptor = $convert.base64Decode
 const MarkPostsAsSeenRequest$json = {
   '1': 'MarkPostsAsSeenRequest',
   '2': [
-    {'1': 'post_ids', '3': 1, '4': 3, '5': 9, '10': 'postIds'},
+    {'1': 'posts', '3': 1, '4': 3, '5': 11, '6': '.PostModel', '10': 'posts'},
   ],
 };
 
 /// Descriptor for `MarkPostsAsSeenRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List markPostsAsSeenRequestDescriptor = $convert.base64Decode(
-    'ChZNYXJrUG9zdHNBc1NlZW5SZXF1ZXN0EhkKCHBvc3RfaWRzGAEgAygJUgdwb3N0SWRz');
+    'ChZNYXJrUG9zdHNBc1NlZW5SZXF1ZXN0EiAKBXBvc3RzGAEgAygLMgouUG9zdE1vZGVsUgVwb3'
+    'N0cw==');
 
 @$core.Deprecated('Use markPostsAsSeenResponseDescriptor instead')
 const MarkPostsAsSeenResponse$json = {

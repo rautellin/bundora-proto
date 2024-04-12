@@ -13,6 +13,25 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use avatarTypeDescriptor instead')
+const AvatarType$json = {
+  '1': 'AvatarType',
+  '2': [
+    {'1': 'AVATAR_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'AVATAR_TYPE_1', '2': 1},
+    {'1': 'AVATAR_TYPE_2', '2': 2},
+    {'1': 'AVATAR_TYPE_3', '2': 3},
+    {'1': 'AVATAR_TYPE_4', '2': 4},
+    {'1': 'AVATAR_TYPE_5', '2': 5},
+  ],
+};
+
+/// Descriptor for `AvatarType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List avatarTypeDescriptor = $convert.base64Decode(
+    'CgpBdmF0YXJUeXBlEhsKF0FWQVRBUl9UWVBFX1VOU1BFQ0lGSUVEEAASEQoNQVZBVEFSX1RZUE'
+    'VfMRABEhEKDUFWQVRBUl9UWVBFXzIQAhIRCg1BVkFUQVJfVFlQRV8zEAMSEQoNQVZBVEFSX1RZ'
+    'UEVfNBAEEhEKDUFWQVRBUl9UWVBFXzUQBQ==');
+
 @$core.Deprecated('Use characterTypeDescriptor instead')
 const CharacterType$json = {
   '1': 'CharacterType',
@@ -37,10 +56,13 @@ const ProfileModel$json = {
     {'1': 'onboarding_completed', '3': 3, '4': 1, '5': 8, '10': 'onboardingCompleted'},
     {'1': 'fcm_token', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'fcmToken', '17': true},
     {'1': 'partner_id', '3': 5, '4': 1, '5': 9, '9': 1, '10': 'partnerId', '17': true},
+    {'1': 'name', '3': 6, '4': 1, '5': 9, '9': 2, '10': 'name', '17': true},
+    {'1': 'avatar_type', '3': 7, '4': 1, '5': 14, '6': '.AvatarType', '10': 'avatarType'},
   ],
   '8': [
     {'1': '_fcm_token'},
     {'1': '_partner_id'},
+    {'1': '_name'},
   ],
 };
 
@@ -49,8 +71,9 @@ final $typed_data.Uint8List profileModelDescriptor = $convert.base64Decode(
     'CgxQcm9maWxlTW9kZWwSDgoCaWQYASABKAlSAmlkEjUKDmNoYXJhY3Rlcl90eXBlGAIgASgOMg'
     '4uQ2hhcmFjdGVyVHlwZVINY2hhcmFjdGVyVHlwZRIxChRvbmJvYXJkaW5nX2NvbXBsZXRlZBgD'
     'IAEoCFITb25ib2FyZGluZ0NvbXBsZXRlZBIgCglmY21fdG9rZW4YBCABKAlIAFIIZmNtVG9rZW'
-    '6IAQESIgoKcGFydG5lcl9pZBgFIAEoCUgBUglwYXJ0bmVySWSIAQFCDAoKX2ZjbV90b2tlbkIN'
-    'CgtfcGFydG5lcl9pZA==');
+    '6IAQESIgoKcGFydG5lcl9pZBgFIAEoCUgBUglwYXJ0bmVySWSIAQESFwoEbmFtZRgGIAEoCUgC'
+    'UgRuYW1liAEBEiwKC2F2YXRhcl90eXBlGAcgASgOMgsuQXZhdGFyVHlwZVIKYXZhdGFyVHlwZU'
+    'IMCgpfZmNtX3Rva2VuQg0KC19wYXJ0bmVyX2lkQgcKBV9uYW1l');
 
 @$core.Deprecated('Use passcodeDescriptor instead')
 const Passcode$json = {
@@ -98,12 +121,16 @@ const UpdateProfileRequest$json = {
     {'1': 'onboarding_completed', '3': 2, '4': 1, '5': 8, '9': 1, '10': 'onboardingCompleted', '17': true},
     {'1': 'fcm_token', '3': 3, '4': 1, '5': 9, '9': 2, '10': 'fcmToken', '17': true},
     {'1': 'partner_id', '3': 4, '4': 1, '5': 9, '9': 3, '10': 'partnerId', '17': true},
+    {'1': 'name', '3': 5, '4': 1, '5': 9, '9': 4, '10': 'name', '17': true},
+    {'1': 'avatar_type', '3': 6, '4': 1, '5': 14, '6': '.AvatarType', '9': 5, '10': 'avatarType', '17': true},
   ],
   '8': [
     {'1': '_character_type'},
     {'1': '_onboarding_completed'},
     {'1': '_fcm_token'},
     {'1': '_partner_id'},
+    {'1': '_name'},
+    {'1': '_avatar_type'},
   ],
 };
 
@@ -112,9 +139,10 @@ final $typed_data.Uint8List updateProfileRequestDescriptor = $convert.base64Deco
     'ChRVcGRhdGVQcm9maWxlUmVxdWVzdBI6Cg5jaGFyYWN0ZXJfdHlwZRgBIAEoDjIOLkNoYXJhY3'
     'RlclR5cGVIAFINY2hhcmFjdGVyVHlwZYgBARI2ChRvbmJvYXJkaW5nX2NvbXBsZXRlZBgCIAEo'
     'CEgBUhNvbmJvYXJkaW5nQ29tcGxldGVkiAEBEiAKCWZjbV90b2tlbhgDIAEoCUgCUghmY21Ub2'
-    'tlbogBARIiCgpwYXJ0bmVyX2lkGAQgASgJSANSCXBhcnRuZXJJZIgBAUIRCg9fY2hhcmFjdGVy'
-    'X3R5cGVCFwoVX29uYm9hcmRpbmdfY29tcGxldGVkQgwKCl9mY21fdG9rZW5CDQoLX3BhcnRuZX'
-    'JfaWQ=');
+    'tlbogBARIiCgpwYXJ0bmVyX2lkGAQgASgJSANSCXBhcnRuZXJJZIgBARIXCgRuYW1lGAUgASgJ'
+    'SARSBG5hbWWIAQESMQoLYXZhdGFyX3R5cGUYBiABKA4yCy5BdmF0YXJUeXBlSAVSCmF2YXRhcl'
+    'R5cGWIAQFCEQoPX2NoYXJhY3Rlcl90eXBlQhcKFV9vbmJvYXJkaW5nX2NvbXBsZXRlZEIMCgpf'
+    'ZmNtX3Rva2VuQg0KC19wYXJ0bmVyX2lkQgcKBV9uYW1lQg4KDF9hdmF0YXJfdHlwZQ==');
 
 @$core.Deprecated('Use updateProfileResponseDescriptor instead')
 const UpdateProfileResponse$json = {

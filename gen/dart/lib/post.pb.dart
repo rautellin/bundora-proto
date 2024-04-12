@@ -299,11 +299,11 @@ class CreatePostResponse extends $pb.GeneratedMessage {
 
 class MarkPostsAsSeenRequest extends $pb.GeneratedMessage {
   factory MarkPostsAsSeenRequest({
-    $core.Iterable<$core.String>? postIds,
+    $core.Iterable<PostModel>? posts,
   }) {
     final $result = create();
-    if (postIds != null) {
-      $result.postIds.addAll(postIds);
+    if (posts != null) {
+      $result.posts.addAll(posts);
     }
     return $result;
   }
@@ -312,7 +312,7 @@ class MarkPostsAsSeenRequest extends $pb.GeneratedMessage {
   factory MarkPostsAsSeenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MarkPostsAsSeenRequest', createEmptyInstance: create)
-    ..pPS(1, _omitFieldNames ? '' : 'postIds')
+    ..pc<PostModel>(1, _omitFieldNames ? '' : 'posts', $pb.PbFieldType.PM, subBuilder: PostModel.create)
     ..hasRequiredFields = false
   ;
 
@@ -338,7 +338,7 @@ class MarkPostsAsSeenRequest extends $pb.GeneratedMessage {
   static MarkPostsAsSeenRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$core.String> get postIds => $_getList(0);
+  $core.List<PostModel> get posts => $_getList(0);
 }
 
 class MarkPostsAsSeenResponse extends $pb.GeneratedMessage {

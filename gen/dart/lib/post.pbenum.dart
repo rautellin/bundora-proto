@@ -33,7 +33,7 @@ class PostType extends $pb.ProtobufEnum {
 class Tag extends $pb.ProtobufEnum {
   static const Tag TAG_UNSPECIFIED = Tag._(0, _omitEnumNames ? '' : 'TAG_UNSPECIFIED');
   static const Tag TAG_WORK = Tag._(1, _omitEnumNames ? '' : 'TAG_WORK');
-  static const Tag TAG_RELATIONSHIP = Tag._(2, _omitEnumNames ? '' : 'TAG_RELATIONSHIP');
+  static const Tag TAG_LOVE = Tag._(2, _omitEnumNames ? '' : 'TAG_LOVE');
   static const Tag TAG_FAMILY = Tag._(3, _omitEnumNames ? '' : 'TAG_FAMILY');
   static const Tag TAG_FRIENDS = Tag._(4, _omitEnumNames ? '' : 'TAG_FRIENDS');
   static const Tag TAG_HEALTH = Tag._(5, _omitEnumNames ? '' : 'TAG_HEALTH');
@@ -42,13 +42,19 @@ class Tag extends $pb.ProtobufEnum {
   static const Tag TAG_FOOD = Tag._(8, _omitEnumNames ? '' : 'TAG_FOOD');
   static const Tag TAG_SPORT = Tag._(9, _omitEnumNames ? '' : 'TAG_SPORT');
   static const Tag TAG_WEATHER = Tag._(10, _omitEnumNames ? '' : 'TAG_WEATHER');
-  static const Tag TAG_ENERGY = Tag._(11, _omitEnumNames ? '' : 'TAG_ENERGY');
+  static const Tag TAG_SLEEP = Tag._(11, _omitEnumNames ? '' : 'TAG_SLEEP');
   static const Tag TAG_SHOPPING = Tag._(12, _omitEnumNames ? '' : 'TAG_SHOPPING');
+  static const Tag TAG_FINANCE = Tag._(13, _omitEnumNames ? '' : 'TAG_FINANCE');
+  static const Tag TAG_RELAX = Tag._(14, _omitEnumNames ? '' : 'TAG_RELAX');
+  static const Tag TAG_GAMING = Tag._(15, _omitEnumNames ? '' : 'TAG_GAMING');
+  static const Tag TAG_NATURE = Tag._(16, _omitEnumNames ? '' : 'TAG_NATURE');
+  static const Tag TAG_MUSIC = Tag._(17, _omitEnumNames ? '' : 'TAG_MUSIC');
+  static const Tag TAG_ENTERTAINMENT = Tag._(18, _omitEnumNames ? '' : 'TAG_ENTERTAINMENT');
 
   static const $core.List<Tag> values = <Tag> [
     TAG_UNSPECIFIED,
     TAG_WORK,
-    TAG_RELATIONSHIP,
+    TAG_LOVE,
     TAG_FAMILY,
     TAG_FRIENDS,
     TAG_HEALTH,
@@ -57,8 +63,14 @@ class Tag extends $pb.ProtobufEnum {
     TAG_FOOD,
     TAG_SPORT,
     TAG_WEATHER,
-    TAG_ENERGY,
+    TAG_SLEEP,
     TAG_SHOPPING,
+    TAG_FINANCE,
+    TAG_RELAX,
+    TAG_GAMING,
+    TAG_NATURE,
+    TAG_MUSIC,
+    TAG_ENTERTAINMENT,
   ];
 
   static final $core.Map<$core.int, Tag> _byValue = $pb.ProtobufEnum.initByValue(values);

@@ -13,6 +13,29 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+class AvatarType extends $pb.ProtobufEnum {
+  static const AvatarType AVATAR_TYPE_UNSPECIFIED = AvatarType._(0, _omitEnumNames ? '' : 'AVATAR_TYPE_UNSPECIFIED');
+  static const AvatarType AVATAR_TYPE_1 = AvatarType._(1, _omitEnumNames ? '' : 'AVATAR_TYPE_1');
+  static const AvatarType AVATAR_TYPE_2 = AvatarType._(2, _omitEnumNames ? '' : 'AVATAR_TYPE_2');
+  static const AvatarType AVATAR_TYPE_3 = AvatarType._(3, _omitEnumNames ? '' : 'AVATAR_TYPE_3');
+  static const AvatarType AVATAR_TYPE_4 = AvatarType._(4, _omitEnumNames ? '' : 'AVATAR_TYPE_4');
+  static const AvatarType AVATAR_TYPE_5 = AvatarType._(5, _omitEnumNames ? '' : 'AVATAR_TYPE_5');
+
+  static const $core.List<AvatarType> values = <AvatarType> [
+    AVATAR_TYPE_UNSPECIFIED,
+    AVATAR_TYPE_1,
+    AVATAR_TYPE_2,
+    AVATAR_TYPE_3,
+    AVATAR_TYPE_4,
+    AVATAR_TYPE_5,
+  ];
+
+  static final $core.Map<$core.int, AvatarType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static AvatarType? valueOf($core.int value) => _byValue[value];
+
+  const AvatarType._($core.int v, $core.String n) : super(v, n);
+}
+
 class CharacterType extends $pb.ProtobufEnum {
   static const CharacterType CHARACTER_TYPE_UNSPECIFIED = CharacterType._(0, _omitEnumNames ? '' : 'CHARACTER_TYPE_UNSPECIFIED');
   static const CharacterType CHARACTER_TYPE_HELPING = CharacterType._(1, _omitEnumNames ? '' : 'CHARACTER_TYPE_HELPING');
