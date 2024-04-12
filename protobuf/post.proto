@@ -3,6 +3,7 @@ syntax = "proto3";
 option go_package = "github.com/rautellin/bundora-proto/gen/go;proto";
 import "google/protobuf/timestamp.proto";
 import "pagination.proto";
+import "profile.proto";
 
 service PostService {
     rpc GetPosts(GetPostsRequest) returns (GetPostsResponse);
@@ -17,7 +18,7 @@ message GetPostsRequest {
 }
 
 message GetPostsResponse {
-    repeated PostModel posts = 1;
+    repeated ExtendedPostModel posts = 1;
     PaginationModel pagination = 2;
 }
 
@@ -31,7 +32,7 @@ message CreatePostRequest {
 }
 
 message CreatePostResponse {
-    PostModel post = 1;
+    ExtendedPostModel post = 1;
 }
 
 message MarkPostsAsSeenRequest {
@@ -74,6 +75,11 @@ message PostModel {
     optional Mood mood = 9;
     bool seen = 10;
     bool deleted = 11;
+}
+
+message ExtendedPostModel {
+    PostModel post = 1;
+    ProfileModel createdBy = 2;
 }
 
 enum PostType {

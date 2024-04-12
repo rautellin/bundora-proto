@@ -101,15 +101,15 @@ final $typed_data.Uint8List getPostsRequestDescriptor = $convert.base64Decode(
 const GetPostsResponse$json = {
   '1': 'GetPostsResponse',
   '2': [
-    {'1': 'posts', '3': 1, '4': 3, '5': 11, '6': '.PostModel', '10': 'posts'},
+    {'1': 'posts', '3': 1, '4': 3, '5': 11, '6': '.ExtendedPostModel', '10': 'posts'},
     {'1': 'pagination', '3': 2, '4': 1, '5': 11, '6': '.PaginationModel', '10': 'pagination'},
   ],
 };
 
 /// Descriptor for `GetPostsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getPostsResponseDescriptor = $convert.base64Decode(
-    'ChBHZXRQb3N0c1Jlc3BvbnNlEiAKBXBvc3RzGAEgAygLMgouUG9zdE1vZGVsUgVwb3N0cxIwCg'
-    'pwYWdpbmF0aW9uGAIgASgLMhAuUGFnaW5hdGlvbk1vZGVsUgpwYWdpbmF0aW9u');
+    'ChBHZXRQb3N0c1Jlc3BvbnNlEigKBXBvc3RzGAEgAygLMhIuRXh0ZW5kZWRQb3N0TW9kZWxSBX'
+    'Bvc3RzEjAKCnBhZ2luYXRpb24YAiABKAsyEC5QYWdpbmF0aW9uTW9kZWxSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use createPostRequestDescriptor instead')
 const CreatePostRequest$json = {
@@ -140,13 +140,14 @@ final $typed_data.Uint8List createPostRequestDescriptor = $convert.base64Decode(
 const CreatePostResponse$json = {
   '1': 'CreatePostResponse',
   '2': [
-    {'1': 'post', '3': 1, '4': 1, '5': 11, '6': '.PostModel', '10': 'post'},
+    {'1': 'post', '3': 1, '4': 1, '5': 11, '6': '.ExtendedPostModel', '10': 'post'},
   ],
 };
 
 /// Descriptor for `CreatePostResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createPostResponseDescriptor = $convert.base64Decode(
-    'ChJDcmVhdGVQb3N0UmVzcG9uc2USHgoEcG9zdBgBIAEoCzIKLlBvc3RNb2RlbFIEcG9zdA==');
+    'ChJDcmVhdGVQb3N0UmVzcG9uc2USJgoEcG9zdBgBIAEoCzISLkV4dGVuZGVkUG9zdE1vZGVsUg'
+    'Rwb3N0');
 
 @$core.Deprecated('Use markPostsAsSeenRequestDescriptor instead')
 const MarkPostsAsSeenRequest$json = {
@@ -266,4 +267,18 @@ final $typed_data.Uint8List postModelDescriptor = $convert.base64Decode(
     'cm9tcHSIAQESGAoEdGFncxgIIAMoDjIELlRhZ1IEdGFncxIeCgRtb29kGAkgASgOMgUuTW9vZE'
     'gCUgRtb29kiAEBEhIKBHNlZW4YCiABKAhSBHNlZW4SGAoHZGVsZXRlZBgLIAEoCFIHZGVsZXRl'
     'ZEIICgZfdGl0bGVCCQoHX3Byb21wdEIHCgVfbW9vZA==');
+
+@$core.Deprecated('Use extendedPostModelDescriptor instead')
+const ExtendedPostModel$json = {
+  '1': 'ExtendedPostModel',
+  '2': [
+    {'1': 'post', '3': 1, '4': 1, '5': 11, '6': '.PostModel', '10': 'post'},
+    {'1': 'createdBy', '3': 2, '4': 1, '5': 11, '6': '.ProfileModel', '10': 'createdBy'},
+  ],
+};
+
+/// Descriptor for `ExtendedPostModel`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List extendedPostModelDescriptor = $convert.base64Decode(
+    'ChFFeHRlbmRlZFBvc3RNb2RlbBIeCgRwb3N0GAEgASgLMgouUG9zdE1vZGVsUgRwb3N0EisKCW'
+    'NyZWF0ZWRCeRgCIAEoCzINLlByb2ZpbGVNb2RlbFIJY3JlYXRlZEJ5');
 

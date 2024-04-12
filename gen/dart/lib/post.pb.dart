@@ -16,6 +16,7 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import 'google/protobuf/timestamp.pb.dart' as $3;
 import 'pagination.pb.dart' as $4;
 import 'post.pbenum.dart';
+import 'profile.pb.dart' as $1;
 
 export 'post.pbenum.dart';
 
@@ -73,7 +74,7 @@ class GetPostsRequest extends $pb.GeneratedMessage {
 
 class GetPostsResponse extends $pb.GeneratedMessage {
   factory GetPostsResponse({
-    $core.Iterable<PostModel>? posts,
+    $core.Iterable<ExtendedPostModel>? posts,
     $4.PaginationModel? pagination,
   }) {
     final $result = create();
@@ -90,7 +91,7 @@ class GetPostsResponse extends $pb.GeneratedMessage {
   factory GetPostsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPostsResponse', createEmptyInstance: create)
-    ..pc<PostModel>(1, _omitFieldNames ? '' : 'posts', $pb.PbFieldType.PM, subBuilder: PostModel.create)
+    ..pc<ExtendedPostModel>(1, _omitFieldNames ? '' : 'posts', $pb.PbFieldType.PM, subBuilder: ExtendedPostModel.create)
     ..aOM<$4.PaginationModel>(2, _omitFieldNames ? '' : 'pagination', subBuilder: $4.PaginationModel.create)
     ..hasRequiredFields = false
   ;
@@ -117,7 +118,7 @@ class GetPostsResponse extends $pb.GeneratedMessage {
   static GetPostsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<PostModel> get posts => $_getList(0);
+  $core.List<ExtendedPostModel> get posts => $_getList(0);
 
   @$pb.TagNumber(2)
   $4.PaginationModel get pagination => $_getN(1);
@@ -247,7 +248,7 @@ class CreatePostRequest extends $pb.GeneratedMessage {
 
 class CreatePostResponse extends $pb.GeneratedMessage {
   factory CreatePostResponse({
-    PostModel? post,
+    ExtendedPostModel? post,
   }) {
     final $result = create();
     if (post != null) {
@@ -260,7 +261,7 @@ class CreatePostResponse extends $pb.GeneratedMessage {
   factory CreatePostResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreatePostResponse', createEmptyInstance: create)
-    ..aOM<PostModel>(1, _omitFieldNames ? '' : 'post', subBuilder: PostModel.create)
+    ..aOM<ExtendedPostModel>(1, _omitFieldNames ? '' : 'post', subBuilder: ExtendedPostModel.create)
     ..hasRequiredFields = false
   ;
 
@@ -286,15 +287,15 @@ class CreatePostResponse extends $pb.GeneratedMessage {
   static CreatePostResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  PostModel get post => $_getN(0);
+  ExtendedPostModel get post => $_getN(0);
   @$pb.TagNumber(1)
-  set post(PostModel v) { setField(1, v); }
+  set post(ExtendedPostModel v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPost() => $_has(0);
   @$pb.TagNumber(1)
   void clearPost() => clearField(1);
   @$pb.TagNumber(1)
-  PostModel ensurePost() => $_ensure(0);
+  ExtendedPostModel ensurePost() => $_ensure(0);
 }
 
 class MarkPostsAsSeenRequest extends $pb.GeneratedMessage {
@@ -823,6 +824,74 @@ class PostModel extends $pb.GeneratedMessage {
   $core.bool hasDeleted() => $_has(10);
   @$pb.TagNumber(11)
   void clearDeleted() => clearField(11);
+}
+
+class ExtendedPostModel extends $pb.GeneratedMessage {
+  factory ExtendedPostModel({
+    PostModel? post,
+    $1.ProfileModel? createdBy,
+  }) {
+    final $result = create();
+    if (post != null) {
+      $result.post = post;
+    }
+    if (createdBy != null) {
+      $result.createdBy = createdBy;
+    }
+    return $result;
+  }
+  ExtendedPostModel._() : super();
+  factory ExtendedPostModel.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ExtendedPostModel.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExtendedPostModel', createEmptyInstance: create)
+    ..aOM<PostModel>(1, _omitFieldNames ? '' : 'post', subBuilder: PostModel.create)
+    ..aOM<$1.ProfileModel>(2, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy', subBuilder: $1.ProfileModel.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ExtendedPostModel clone() => ExtendedPostModel()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ExtendedPostModel copyWith(void Function(ExtendedPostModel) updates) => super.copyWith((message) => updates(message as ExtendedPostModel)) as ExtendedPostModel;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExtendedPostModel create() => ExtendedPostModel._();
+  ExtendedPostModel createEmptyInstance() => create();
+  static $pb.PbList<ExtendedPostModel> createRepeated() => $pb.PbList<ExtendedPostModel>();
+  @$core.pragma('dart2js:noInline')
+  static ExtendedPostModel getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ExtendedPostModel>(create);
+  static ExtendedPostModel? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  PostModel get post => $_getN(0);
+  @$pb.TagNumber(1)
+  set post(PostModel v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPost() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPost() => clearField(1);
+  @$pb.TagNumber(1)
+  PostModel ensurePost() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $1.ProfileModel get createdBy => $_getN(1);
+  @$pb.TagNumber(2)
+  set createdBy($1.ProfileModel v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCreatedBy() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCreatedBy() => clearField(2);
+  @$pb.TagNumber(2)
+  $1.ProfileModel ensureCreatedBy() => $_ensure(1);
 }
 
 
