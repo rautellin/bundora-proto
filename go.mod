@@ -1,4 +1,4 @@
-module github.com/rautellin/bundora-proto/gen/go
+module github.com/rautellin/bundora-proto
 
 go 1.22.1
 
