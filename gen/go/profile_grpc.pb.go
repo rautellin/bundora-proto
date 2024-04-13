@@ -24,7 +24,6 @@ const _ = grpc.SupportPackageIsVersion7
 type ProfileServiceClient interface {
 	GetProfile(ctx context.Context, in *GetProfileRequest, opts ...grpc.CallOption) (*GetProfileResponse, error)
 	UpdateProfile(ctx context.Context, in *UpdateProfileRequest, opts ...grpc.CallOption) (*UpdateProfileResponse, error)
-	CreateProfile(ctx context.Context, in *CreateProfileRequest, opts ...grpc.CallOption) (*CreateProfileResponse, error)
 	UpdateFCMToken(ctx context.Context, in *UpdateFCMTokenRequest, opts ...grpc.CallOption) (*UpdateFCMTokenResponse, error)
 	VerifyPasscode(ctx context.Context, in *VerifyPasscodeRequest, opts ...grpc.CallOption) (*VerifyPasscodeResponse, error)
 	CreatePasscode(ctx context.Context, in *CreatePasscodeRequest, opts ...grpc.CallOption) (*CreatePasscodeResponse, error)
@@ -50,15 +49,6 @@ func (c *profileServiceClient) GetProfile(ctx context.Context, in *GetProfileReq
 func (c *profileServiceClient) UpdateProfile(ctx context.Context, in *UpdateProfileRequest, opts ...grpc.CallOption) (*UpdateProfileResponse, error) {
 	out := new(UpdateProfileResponse)
 	err := c.cc.Invoke(ctx, "/ProfileService/UpdateProfile", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *profileServiceClient) CreateProfile(ctx context.Context, in *CreateProfileRequest, opts ...grpc.CallOption) (*CreateProfileResponse, error) {
-	out := new(CreateProfileResponse)
-	err := c.cc.Invoke(ctx, "/ProfileService/CreateProfile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -98,7 +88,6 @@ func (c *profileServiceClient) CreatePasscode(ctx context.Context, in *CreatePas
 type ProfileServiceServer interface {
 	GetProfile(context.Context, *GetProfileRequest) (*GetProfileResponse, error)
 	UpdateProfile(context.Context, *UpdateProfileRequest) (*UpdateProfileResponse, error)
-	CreateProfile(context.Context, *CreateProfileRequest) (*CreateProfileResponse, error)
 	UpdateFCMToken(context.Context, *UpdateFCMTokenRequest) (*UpdateFCMTokenResponse, error)
 	VerifyPasscode(context.Context, *VerifyPasscodeRequest) (*VerifyPasscodeResponse, error)
 	CreatePasscode(context.Context, *CreatePasscodeRequest) (*CreatePasscodeResponse, error)
@@ -114,9 +103,6 @@ func (UnimplementedProfileServiceServer) GetProfile(context.Context, *GetProfile
 }
 func (UnimplementedProfileServiceServer) UpdateProfile(context.Context, *UpdateProfileRequest) (*UpdateProfileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateProfile not implemented")
-}
-func (UnimplementedProfileServiceServer) CreateProfile(context.Context, *CreateProfileRequest) (*CreateProfileResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateProfile not implemented")
 }
 func (UnimplementedProfileServiceServer) UpdateFCMToken(context.Context, *UpdateFCMTokenRequest) (*UpdateFCMTokenResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateFCMToken not implemented")
@@ -172,24 +158,6 @@ func _ProfileService_UpdateProfile_Handler(srv interface{}, ctx context.Context,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ProfileServiceServer).UpdateProfile(ctx, req.(*UpdateProfileRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _ProfileService_CreateProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateProfileRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ProfileServiceServer).CreateProfile(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/ProfileService/CreateProfile",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProfileServiceServer).CreateProfile(ctx, req.(*CreateProfileRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -262,10 +230,6 @@ var ProfileService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateProfile",
 			Handler:    _ProfileService_UpdateProfile_Handler,
-		},
-		{
-			MethodName: "CreateProfile",
-			Handler:    _ProfileService_CreateProfile_Handler,
 		},
 		{
 			MethodName: "UpdateFCMToken",

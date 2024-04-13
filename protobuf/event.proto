@@ -2,6 +2,7 @@ syntax = "proto3";
 
 option go_package = "github.com/rautellin/bundora-proto/gen/go;proto";
 import "google/protobuf/timestamp.proto";
+import "profile.proto";
 
 service EventService {
     rpc GetEvents(GetEventsRequest) returns (GetEventsResponse);
@@ -13,7 +14,7 @@ message GetEventsRequest {
 }
 
 message GetEventsResponse {
-    repeated EventModel events = 1;
+    repeated ExtendedEventModel events = 1;
 }
 
 message CreateEventRequest {
@@ -49,6 +50,11 @@ message EventModel {
     bool acknowledged = 7;
     bool seen = 8;
     bool received = 9;
+}
+
+message ExtendedEventModel {
+    EventModel event = 1;
+    ProfileModel createdBy = 2;
 }
 
 enum EventType {

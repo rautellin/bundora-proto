@@ -60,14 +60,14 @@ final $typed_data.Uint8List getEventsRequestDescriptor = $convert.base64Decode(
 const GetEventsResponse$json = {
   '1': 'GetEventsResponse',
   '2': [
-    {'1': 'events', '3': 1, '4': 3, '5': 11, '6': '.EventModel', '10': 'events'},
+    {'1': 'events', '3': 1, '4': 3, '5': 11, '6': '.ExtendedEventModel', '10': 'events'},
   ],
 };
 
 /// Descriptor for `GetEventsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getEventsResponseDescriptor = $convert.base64Decode(
-    'ChFHZXRFdmVudHNSZXNwb25zZRIjCgZldmVudHMYASADKAsyCy5FdmVudE1vZGVsUgZldmVudH'
-    'M=');
+    'ChFHZXRFdmVudHNSZXNwb25zZRIrCgZldmVudHMYASADKAsyEy5FeHRlbmRlZEV2ZW50TW9kZW'
+    'xSBmV2ZW50cw==');
 
 @$core.Deprecated('Use createEventRequestDescriptor instead')
 const CreateEventRequest$json = {
@@ -169,4 +169,18 @@ final $typed_data.Uint8List eventModelDescriptor = $convert.base64Decode(
     'ABKAlSCWNyZWF0ZWRCeRIfCgtjcmVhdGVkX2ZvchgGIAEoCVIKY3JlYXRlZEZvchIiCgxhY2tu'
     'b3dsZWRnZWQYByABKAhSDGFja25vd2xlZGdlZBISCgRzZWVuGAggASgIUgRzZWVuEhoKCHJlY2'
     'VpdmVkGAkgASgIUghyZWNlaXZlZEIKCghfbWVzc2FnZQ==');
+
+@$core.Deprecated('Use extendedEventModelDescriptor instead')
+const ExtendedEventModel$json = {
+  '1': 'ExtendedEventModel',
+  '2': [
+    {'1': 'event', '3': 1, '4': 1, '5': 11, '6': '.EventModel', '10': 'event'},
+    {'1': 'createdBy', '3': 2, '4': 1, '5': 11, '6': '.ProfileModel', '10': 'createdBy'},
+  ],
+};
+
+/// Descriptor for `ExtendedEventModel`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List extendedEventModelDescriptor = $convert.base64Decode(
+    'ChJFeHRlbmRlZEV2ZW50TW9kZWwSIQoFZXZlbnQYASABKAsyCy5FdmVudE1vZGVsUgVldmVudB'
+    'IrCgljcmVhdGVkQnkYAiABKAsyDS5Qcm9maWxlTW9kZWxSCWNyZWF0ZWRCeQ==');
 

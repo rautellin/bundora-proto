@@ -15,6 +15,7 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'event.pbenum.dart';
 import 'google/protobuf/timestamp.pb.dart' as $3;
+import 'profile.pb.dart' as $0;
 
 export 'event.pbenum.dart';
 
@@ -52,7 +53,7 @@ class GetEventsRequest extends $pb.GeneratedMessage {
 
 class GetEventsResponse extends $pb.GeneratedMessage {
   factory GetEventsResponse({
-    $core.Iterable<EventModel>? events,
+    $core.Iterable<ExtendedEventModel>? events,
   }) {
     final $result = create();
     if (events != null) {
@@ -65,7 +66,7 @@ class GetEventsResponse extends $pb.GeneratedMessage {
   factory GetEventsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEventsResponse', createEmptyInstance: create)
-    ..pc<EventModel>(1, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM, subBuilder: EventModel.create)
+    ..pc<ExtendedEventModel>(1, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM, subBuilder: ExtendedEventModel.create)
     ..hasRequiredFields = false
   ;
 
@@ -91,7 +92,7 @@ class GetEventsResponse extends $pb.GeneratedMessage {
   static GetEventsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<EventModel> get events => $_getList(0);
+  $core.List<ExtendedEventModel> get events => $_getList(0);
 }
 
 class CreateEventRequest extends $pb.GeneratedMessage {
@@ -540,6 +541,74 @@ class EventModel extends $pb.GeneratedMessage {
   $core.bool hasReceived() => $_has(8);
   @$pb.TagNumber(9)
   void clearReceived() => clearField(9);
+}
+
+class ExtendedEventModel extends $pb.GeneratedMessage {
+  factory ExtendedEventModel({
+    EventModel? event,
+    $0.ProfileModel? createdBy,
+  }) {
+    final $result = create();
+    if (event != null) {
+      $result.event = event;
+    }
+    if (createdBy != null) {
+      $result.createdBy = createdBy;
+    }
+    return $result;
+  }
+  ExtendedEventModel._() : super();
+  factory ExtendedEventModel.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ExtendedEventModel.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExtendedEventModel', createEmptyInstance: create)
+    ..aOM<EventModel>(1, _omitFieldNames ? '' : 'event', subBuilder: EventModel.create)
+    ..aOM<$0.ProfileModel>(2, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy', subBuilder: $0.ProfileModel.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ExtendedEventModel clone() => ExtendedEventModel()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ExtendedEventModel copyWith(void Function(ExtendedEventModel) updates) => super.copyWith((message) => updates(message as ExtendedEventModel)) as ExtendedEventModel;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExtendedEventModel create() => ExtendedEventModel._();
+  ExtendedEventModel createEmptyInstance() => create();
+  static $pb.PbList<ExtendedEventModel> createRepeated() => $pb.PbList<ExtendedEventModel>();
+  @$core.pragma('dart2js:noInline')
+  static ExtendedEventModel getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ExtendedEventModel>(create);
+  static ExtendedEventModel? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EventModel get event => $_getN(0);
+  @$pb.TagNumber(1)
+  set event(EventModel v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasEvent() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEvent() => clearField(1);
+  @$pb.TagNumber(1)
+  EventModel ensureEvent() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $0.ProfileModel get createdBy => $_getN(1);
+  @$pb.TagNumber(2)
+  set createdBy($0.ProfileModel v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCreatedBy() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCreatedBy() => clearField(2);
+  @$pb.TagNumber(2)
+  $0.ProfileModel ensureCreatedBy() => $_ensure(1);
 }
 
 

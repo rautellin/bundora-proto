@@ -6,7 +6,6 @@ import "google/protobuf/timestamp.proto";
 service ProfileService {
     rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
     rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
-    rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
     rpc UpdateFCMToken(UpdateFCMTokenRequest) returns (UpdateFCMTokenResponse);
     rpc VerifyPasscode(VerifyPasscodeRequest) returns (VerifyPasscodeResponse);
     rpc CreatePasscode(CreatePasscodeRequest) returns (CreatePasscodeResponse);

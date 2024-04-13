@@ -16,7 +16,7 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import 'google/protobuf/timestamp.pb.dart' as $3;
 import 'pagination.pb.dart' as $4;
 import 'post.pbenum.dart';
-import 'profile.pb.dart' as $1;
+import 'profile.pb.dart' as $0;
 
 export 'post.pbenum.dart';
 
@@ -829,7 +829,7 @@ class PostModel extends $pb.GeneratedMessage {
 class ExtendedPostModel extends $pb.GeneratedMessage {
   factory ExtendedPostModel({
     PostModel? post,
-    $1.ProfileModel? createdBy,
+    $0.ProfileModel? createdBy,
   }) {
     final $result = create();
     if (post != null) {
@@ -846,7 +846,7 @@ class ExtendedPostModel extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExtendedPostModel', createEmptyInstance: create)
     ..aOM<PostModel>(1, _omitFieldNames ? '' : 'post', subBuilder: PostModel.create)
-    ..aOM<$1.ProfileModel>(2, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy', subBuilder: $1.ProfileModel.create)
+    ..aOM<$0.ProfileModel>(2, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy', subBuilder: $0.ProfileModel.create)
     ..hasRequiredFields = false
   ;
 
@@ -883,15 +883,15 @@ class ExtendedPostModel extends $pb.GeneratedMessage {
   PostModel ensurePost() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $1.ProfileModel get createdBy => $_getN(1);
+  $0.ProfileModel get createdBy => $_getN(1);
   @$pb.TagNumber(2)
-  set createdBy($1.ProfileModel v) { setField(2, v); }
+  set createdBy($0.ProfileModel v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCreatedBy() => $_has(1);
   @$pb.TagNumber(2)
   void clearCreatedBy() => clearField(2);
   @$pb.TagNumber(2)
-  $1.ProfileModel ensureCreatedBy() => $_ensure(1);
+  $0.ProfileModel ensureCreatedBy() => $_ensure(1);
 }
 
 
