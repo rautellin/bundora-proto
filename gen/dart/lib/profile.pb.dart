@@ -27,6 +27,10 @@ class ProfileModel extends $pb.GeneratedMessage {
     $core.String? partnerId,
     $core.String? name,
     AvatarType? avatarType,
+    $3.Timestamp? createdAt,
+    $3.Timestamp? updatedAt,
+    $3.Timestamp? deletedAt,
+    $core.bool? deleted,
   }) {
     final $result = create();
     if (id != null) {
@@ -50,6 +54,18 @@ class ProfileModel extends $pb.GeneratedMessage {
     if (avatarType != null) {
       $result.avatarType = avatarType;
     }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
+    if (updatedAt != null) {
+      $result.updatedAt = updatedAt;
+    }
+    if (deletedAt != null) {
+      $result.deletedAt = deletedAt;
+    }
+    if (deleted != null) {
+      $result.deleted = deleted;
+    }
     return $result;
   }
   ProfileModel._() : super();
@@ -64,6 +80,10 @@ class ProfileModel extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'partnerId')
     ..aOS(6, _omitFieldNames ? '' : 'name')
     ..e<AvatarType>(7, _omitFieldNames ? '' : 'avatarType', $pb.PbFieldType.OE, defaultOrMaker: AvatarType.AVATAR_TYPE_UNSPECIFIED, valueOf: AvatarType.valueOf, enumValues: AvatarType.values)
+    ..aOM<$3.Timestamp>(8, _omitFieldNames ? '' : 'createdAt', subBuilder: $3.Timestamp.create)
+    ..aOM<$3.Timestamp>(9, _omitFieldNames ? '' : 'updatedAt', subBuilder: $3.Timestamp.create)
+    ..aOM<$3.Timestamp>(10, _omitFieldNames ? '' : 'deletedAt', subBuilder: $3.Timestamp.create)
+    ..aOB(11, _omitFieldNames ? '' : 'deleted')
     ..hasRequiredFields = false
   ;
 
@@ -150,6 +170,48 @@ class ProfileModel extends $pb.GeneratedMessage {
   $core.bool hasAvatarType() => $_has(6);
   @$pb.TagNumber(7)
   void clearAvatarType() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $3.Timestamp get createdAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set createdAt($3.Timestamp v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasCreatedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCreatedAt() => clearField(8);
+  @$pb.TagNumber(8)
+  $3.Timestamp ensureCreatedAt() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  $3.Timestamp get updatedAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set updatedAt($3.Timestamp v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAt() => clearField(9);
+  @$pb.TagNumber(9)
+  $3.Timestamp ensureUpdatedAt() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  $3.Timestamp get deletedAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set deletedAt($3.Timestamp v) { setField(10, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasDeletedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearDeletedAt() => clearField(10);
+  @$pb.TagNumber(10)
+  $3.Timestamp ensureDeletedAt() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $core.bool get deleted => $_getBF(10);
+  @$pb.TagNumber(11)
+  set deleted($core.bool v) { $_setBool(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasDeleted() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearDeleted() => clearField(11);
 }
 
 class Passcode extends $pb.GeneratedMessage {

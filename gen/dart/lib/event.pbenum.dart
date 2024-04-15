@@ -16,7 +16,7 @@ import 'package:protobuf/protobuf.dart' as $pb;
 class EventType extends $pb.ProtobufEnum {
   static const EventType EVENT_TYPE_UNSPECIFIED = EventType._(0, _omitEnumNames ? '' : 'EVENT_TYPE_UNSPECIFIED');
   static const EventType EVENT_TYPE_CUSTOM = EventType._(1, _omitEnumNames ? '' : 'EVENT_TYPE_CUSTOM');
-  static const EventType EVENT_TYPE_TEA = EventType._(2, _omitEnumNames ? '' : 'EVENT_TYPE_TEA');
+  static const EventType EVENT_TYPE_LOVE = EventType._(2, _omitEnumNames ? '' : 'EVENT_TYPE_LOVE');
   static const EventType EVENT_TYPE_FOOD = EventType._(3, _omitEnumNames ? '' : 'EVENT_TYPE_FOOD');
   static const EventType EVENT_TYPE_HUG = EventType._(4, _omitEnumNames ? '' : 'EVENT_TYPE_HUG');
   static const EventType EVENT_TYPE_ATTENTION = EventType._(5, _omitEnumNames ? '' : 'EVENT_TYPE_ATTENTION');
@@ -34,7 +34,7 @@ class EventType extends $pb.ProtobufEnum {
   static const $core.List<EventType> values = <EventType> [
     EVENT_TYPE_UNSPECIFIED,
     EVENT_TYPE_CUSTOM,
-    EVENT_TYPE_TEA,
+    EVENT_TYPE_LOVE,
     EVENT_TYPE_FOOD,
     EVENT_TYPE_HUG,
     EVENT_TYPE_ATTENTION,

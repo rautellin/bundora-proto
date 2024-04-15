@@ -59,6 +59,10 @@ const ProfileModel$json = {
     {'1': 'partner_id', '3': 5, '4': 1, '5': 9, '9': 1, '10': 'partnerId', '17': true},
     {'1': 'name', '3': 6, '4': 1, '5': 9, '9': 2, '10': 'name', '17': true},
     {'1': 'avatar_type', '3': 7, '4': 1, '5': 14, '6': '.AvatarType', '10': 'avatarType'},
+    {'1': 'created_at', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+    {'1': 'updated_at', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+    {'1': 'deleted_at', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'deletedAt'},
+    {'1': 'deleted', '3': 11, '4': 1, '5': 8, '10': 'deleted'},
   ],
   '8': [
     {'1': '_fcm_token'},
@@ -73,8 +77,12 @@ final $typed_data.Uint8List profileModelDescriptor = $convert.base64Decode(
     '4uQ2hhcmFjdGVyVHlwZVINY2hhcmFjdGVyVHlwZRIxChRvbmJvYXJkaW5nX2NvbXBsZXRlZBgD'
     'IAEoCFITb25ib2FyZGluZ0NvbXBsZXRlZBIgCglmY21fdG9rZW4YBCABKAlIAFIIZmNtVG9rZW'
     '6IAQESIgoKcGFydG5lcl9pZBgFIAEoCUgBUglwYXJ0bmVySWSIAQESFwoEbmFtZRgGIAEoCUgC'
-    'UgRuYW1liAEBEiwKC2F2YXRhcl90eXBlGAcgASgOMgsuQXZhdGFyVHlwZVIKYXZhdGFyVHlwZU'
-    'IMCgpfZmNtX3Rva2VuQg0KC19wYXJ0bmVyX2lkQgcKBV9uYW1l');
+    'UgRuYW1liAEBEiwKC2F2YXRhcl90eXBlGAcgASgOMgsuQXZhdGFyVHlwZVIKYXZhdGFyVHlwZR'
+    'I5CgpjcmVhdGVkX2F0GAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRl'
+    'ZEF0EjkKCnVwZGF0ZWRfYXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cG'
+    'RhdGVkQXQSOQoKZGVsZXRlZF9hdBgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBS'
+    'CWRlbGV0ZWRBdBIYCgdkZWxldGVkGAsgASgIUgdkZWxldGVkQgwKCl9mY21fdG9rZW5CDQoLX3'
+    'BhcnRuZXJfaWRCBwoFX25hbWU=');
 
 @$core.Deprecated('Use passcodeDescriptor instead')
 const Passcode$json = {

@@ -250,6 +250,8 @@ const PostModel$json = {
     {'1': 'mood', '3': 9, '4': 1, '5': 14, '6': '.Mood', '9': 2, '10': 'mood', '17': true},
     {'1': 'seen', '3': 10, '4': 1, '5': 8, '10': 'seen'},
     {'1': 'deleted', '3': 11, '4': 1, '5': 8, '10': 'deleted'},
+    {'1': 'updated_at', '3': 12, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+    {'1': 'deleted_at', '3': 13, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'deletedAt'},
   ],
   '8': [
     {'1': '_title'},
@@ -266,7 +268,9 @@ final $typed_data.Uint8List postModelDescriptor = $convert.base64Decode(
     'V0aXRsZYgBARIYCgdtZXNzYWdlGAYgASgJUgdtZXNzYWdlEhsKBnByb21wdBgHIAEoCUgBUgZw'
     'cm9tcHSIAQESGAoEdGFncxgIIAMoDjIELlRhZ1IEdGFncxIeCgRtb29kGAkgASgOMgUuTW9vZE'
     'gCUgRtb29kiAEBEhIKBHNlZW4YCiABKAhSBHNlZW4SGAoHZGVsZXRlZBgLIAEoCFIHZGVsZXRl'
-    'ZEIICgZfdGl0bGVCCQoHX3Byb21wdEIHCgVfbW9vZA==');
+    'ZBI5Cgp1cGRhdGVkX2F0GAwgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYX'
+    'RlZEF0EjkKCmRlbGV0ZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglk'
+    'ZWxldGVkQXRCCAoGX3RpdGxlQgkKB19wcm9tcHRCBwoFX21vb2Q=');
 
 @$core.Deprecated('Use extendedPostModelDescriptor instead')
 const ExtendedPostModel$json = {

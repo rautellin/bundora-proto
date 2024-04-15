@@ -390,6 +390,9 @@ class EventModel extends $pb.GeneratedMessage {
     $core.bool? acknowledged,
     $core.bool? seen,
     $core.bool? received,
+    $core.bool? deleted,
+    $3.Timestamp? updatedAt,
+    $3.Timestamp? deletedAt,
   }) {
     final $result = create();
     if (id != null) {
@@ -419,6 +422,15 @@ class EventModel extends $pb.GeneratedMessage {
     if (received != null) {
       $result.received = received;
     }
+    if (deleted != null) {
+      $result.deleted = deleted;
+    }
+    if (updatedAt != null) {
+      $result.updatedAt = updatedAt;
+    }
+    if (deletedAt != null) {
+      $result.deletedAt = deletedAt;
+    }
     return $result;
   }
   EventModel._() : super();
@@ -435,6 +447,9 @@ class EventModel extends $pb.GeneratedMessage {
     ..aOB(7, _omitFieldNames ? '' : 'acknowledged')
     ..aOB(8, _omitFieldNames ? '' : 'seen')
     ..aOB(9, _omitFieldNames ? '' : 'received')
+    ..aOB(10, _omitFieldNames ? '' : 'deleted')
+    ..aOM<$3.Timestamp>(11, _omitFieldNames ? '' : 'updatedAt', subBuilder: $3.Timestamp.create)
+    ..aOM<$3.Timestamp>(12, _omitFieldNames ? '' : 'deletedAt', subBuilder: $3.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -541,6 +556,37 @@ class EventModel extends $pb.GeneratedMessage {
   $core.bool hasReceived() => $_has(8);
   @$pb.TagNumber(9)
   void clearReceived() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get deleted => $_getBF(9);
+  @$pb.TagNumber(10)
+  set deleted($core.bool v) { $_setBool(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasDeleted() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearDeleted() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $3.Timestamp get updatedAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set updatedAt($3.Timestamp v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedAt() => clearField(11);
+  @$pb.TagNumber(11)
+  $3.Timestamp ensureUpdatedAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $3.Timestamp get deletedAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set deletedAt($3.Timestamp v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasDeletedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearDeletedAt() => clearField(12);
+  @$pb.TagNumber(12)
+  $3.Timestamp ensureDeletedAt() => $_ensure(11);
 }
 
 class ExtendedEventModel extends $pb.GeneratedMessage {

@@ -19,7 +19,7 @@ const EventType$json = {
   '2': [
     {'1': 'EVENT_TYPE_UNSPECIFIED', '2': 0},
     {'1': 'EVENT_TYPE_CUSTOM', '2': 1},
-    {'1': 'EVENT_TYPE_TEA', '2': 2},
+    {'1': 'EVENT_TYPE_LOVE', '2': 2},
     {'1': 'EVENT_TYPE_FOOD', '2': 3},
     {'1': 'EVENT_TYPE_HUG', '2': 4},
     {'1': 'EVENT_TYPE_ATTENTION', '2': 5},
@@ -39,13 +39,13 @@ const EventType$json = {
 /// Descriptor for `EventType`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List eventTypeDescriptor = $convert.base64Decode(
     'CglFdmVudFR5cGUSGgoWRVZFTlRfVFlQRV9VTlNQRUNJRklFRBAAEhUKEUVWRU5UX1RZUEVfQ1'
-    'VTVE9NEAESEgoORVZFTlRfVFlQRV9URUEQAhITCg9FVkVOVF9UWVBFX0ZPT0QQAxISCg5FVkVO'
-    'VF9UWVBFX0hVRxAEEhgKFEVWRU5UX1RZUEVfQVRURU5USU9OEAUSFQoRRVZFTlRfVFlQRV9XQU'
-    'tFVVAQBhIUChBFVkVOVF9UWVBFX1RSQVNIEAcSEwoPRVZFTlRfVFlQRV9IRUxQEAgSFwoTRVZF'
-    'TlRfVFlQRV9NSVNTX1lPVRAJEhkKFUVWRU5UX1RZUEVfR09PRF9OSUdIVBAKEhsKF0VWRU5UX1'
-    'RZUEVfR09PRF9NT1JOSU5HEAsSFgoSRVZFTlRfVFlQRV9PVVRTSURFEAwSFQoRRVZFTlRfVFlQ'
-    'RV9DT01JTkcQDRIZChVFVkVOVF9UWVBFX1JFQURZX1NPT04QDhIZChVFVkVOVF9UWVBFX05FRU'
-    'RfU1BBQ0UQDw==');
+    'VTVE9NEAESEwoPRVZFTlRfVFlQRV9MT1ZFEAISEwoPRVZFTlRfVFlQRV9GT09EEAMSEgoORVZF'
+    'TlRfVFlQRV9IVUcQBBIYChRFVkVOVF9UWVBFX0FUVEVOVElPThAFEhUKEUVWRU5UX1RZUEVfV0'
+    'FLRVVQEAYSFAoQRVZFTlRfVFlQRV9UUkFTSBAHEhMKD0VWRU5UX1RZUEVfSEVMUBAIEhcKE0VW'
+    'RU5UX1RZUEVfTUlTU19ZT1UQCRIZChVFVkVOVF9UWVBFX0dPT0RfTklHSFQQChIbChdFVkVOVF'
+    '9UWVBFX0dPT0RfTU9STklORxALEhYKEkVWRU5UX1RZUEVfT1VUU0lERRAMEhUKEUVWRU5UX1RZ'
+    'UEVfQ09NSU5HEA0SGQoVRVZFTlRfVFlQRV9SRUFEWV9TT09OEA4SGQoVRVZFTlRfVFlQRV9ORU'
+    'VEX1NQQUNFEA8=');
 
 @$core.Deprecated('Use getEventsRequestDescriptor instead')
 const GetEventsRequest$json = {
@@ -155,6 +155,9 @@ const EventModel$json = {
     {'1': 'acknowledged', '3': 7, '4': 1, '5': 8, '10': 'acknowledged'},
     {'1': 'seen', '3': 8, '4': 1, '5': 8, '10': 'seen'},
     {'1': 'received', '3': 9, '4': 1, '5': 8, '10': 'received'},
+    {'1': 'deleted', '3': 10, '4': 1, '5': 8, '10': 'deleted'},
+    {'1': 'updated_at', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+    {'1': 'deleted_at', '3': 12, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'deletedAt'},
   ],
   '8': [
     {'1': '_message'},
@@ -168,7 +171,10 @@ final $typed_data.Uint8List eventModelDescriptor = $convert.base64Decode(
     'cmVhdGVkQXQSHQoHbWVzc2FnZRgEIAEoCUgAUgdtZXNzYWdliAEBEh0KCmNyZWF0ZWRfYnkYBS'
     'ABKAlSCWNyZWF0ZWRCeRIfCgtjcmVhdGVkX2ZvchgGIAEoCVIKY3JlYXRlZEZvchIiCgxhY2tu'
     'b3dsZWRnZWQYByABKAhSDGFja25vd2xlZGdlZBISCgRzZWVuGAggASgIUgRzZWVuEhoKCHJlY2'
-    'VpdmVkGAkgASgIUghyZWNlaXZlZEIKCghfbWVzc2FnZQ==');
+    'VpdmVkGAkgASgIUghyZWNlaXZlZBIYCgdkZWxldGVkGAogASgIUgdkZWxldGVkEjkKCnVwZGF0'
+    'ZWRfYXQYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSOQoKZG'
+    'VsZXRlZF9hdBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWRlbGV0ZWRBdEIK'
+    'CghfbWVzc2FnZQ==');
 
 @$core.Deprecated('Use extendedEventModelDescriptor instead')
 const ExtendedEventModel$json = {

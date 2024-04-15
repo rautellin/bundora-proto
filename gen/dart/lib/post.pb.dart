@@ -653,6 +653,8 @@ class PostModel extends $pb.GeneratedMessage {
     Mood? mood,
     $core.bool? seen,
     $core.bool? deleted,
+    $3.Timestamp? updatedAt,
+    $3.Timestamp? deletedAt,
   }) {
     final $result = create();
     if (id != null) {
@@ -688,6 +690,12 @@ class PostModel extends $pb.GeneratedMessage {
     if (deleted != null) {
       $result.deleted = deleted;
     }
+    if (updatedAt != null) {
+      $result.updatedAt = updatedAt;
+    }
+    if (deletedAt != null) {
+      $result.deletedAt = deletedAt;
+    }
     return $result;
   }
   PostModel._() : super();
@@ -706,6 +714,8 @@ class PostModel extends $pb.GeneratedMessage {
     ..e<Mood>(9, _omitFieldNames ? '' : 'mood', $pb.PbFieldType.OE, defaultOrMaker: Mood.MOOD_UNSPECIFIED, valueOf: Mood.valueOf, enumValues: Mood.values)
     ..aOB(10, _omitFieldNames ? '' : 'seen')
     ..aOB(11, _omitFieldNames ? '' : 'deleted')
+    ..aOM<$3.Timestamp>(12, _omitFieldNames ? '' : 'updatedAt', subBuilder: $3.Timestamp.create)
+    ..aOM<$3.Timestamp>(13, _omitFieldNames ? '' : 'deletedAt', subBuilder: $3.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -824,6 +834,28 @@ class PostModel extends $pb.GeneratedMessage {
   $core.bool hasDeleted() => $_has(10);
   @$pb.TagNumber(11)
   void clearDeleted() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $3.Timestamp get updatedAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set updatedAt($3.Timestamp v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasUpdatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUpdatedAt() => clearField(12);
+  @$pb.TagNumber(12)
+  $3.Timestamp ensureUpdatedAt() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $3.Timestamp get deletedAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set deletedAt($3.Timestamp v) { setField(13, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasDeletedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearDeletedAt() => clearField(13);
+  @$pb.TagNumber(13)
+  $3.Timestamp ensureDeletedAt() => $_ensure(12);
 }
 
 class ExtendedPostModel extends $pb.GeneratedMessage {
