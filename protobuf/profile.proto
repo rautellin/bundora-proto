@@ -19,6 +19,10 @@ message ProfileModel {
     optional string partner_id = 5;
     optional string name = 6;
     AvatarType avatar_type = 7;
+    google.protobuf.Timestamp created_at = 8;
+    google.protobuf.Timestamp updated_at = 9;
+    google.protobuf.Timestamp deleted_at = 10;
+    bool deleted = 11;
 }
 
 message Passcode {

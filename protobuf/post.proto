@@ -75,6 +75,8 @@ message PostModel {
     optional Mood mood = 9;
     bool seen = 10;
     bool deleted = 11;
+    google.protobuf.Timestamp updated_at = 12;
+    google.protobuf.Timestamp deleted_at = 13;
 }
 
 message ExtendedPostModel {

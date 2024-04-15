@@ -50,6 +50,9 @@ message EventModel {
     bool acknowledged = 7;
     bool seen = 8;
     bool received = 9;
+    bool deleted = 10;
+    google.protobuf.Timestamp updated_at = 11;
+    google.protobuf.Timestamp deleted_at = 12;
 }
 
 message ExtendedEventModel {
@@ -60,7 +63,7 @@ message ExtendedEventModel {
 enum EventType {
     EVENT_TYPE_UNSPECIFIED = 0;
     EVENT_TYPE_CUSTOM = 1;
-    EVENT_TYPE_TEA = 2;
+    EVENT_TYPE_LOVE = 2;
     EVENT_TYPE_FOOD = 3;
     EVENT_TYPE_HUG = 4;
     EVENT_TYPE_ATTENTION = 5;
