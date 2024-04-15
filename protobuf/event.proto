@@ -28,7 +28,7 @@ message CreateEventResponse {
 }
 
 message MarkEventsAsSeenRequest {
-    repeated string event_ids = 1;
+    repeated EventModel events = 1;
 }
 
 message MarkEventsAsSeenResponse {
