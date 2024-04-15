@@ -104,13 +104,14 @@ final $typed_data.Uint8List createEventResponseDescriptor = $convert.base64Decod
 const MarkEventsAsSeenRequest$json = {
   '1': 'MarkEventsAsSeenRequest',
   '2': [
-    {'1': 'event_ids', '3': 1, '4': 3, '5': 9, '10': 'eventIds'},
+    {'1': 'events', '3': 1, '4': 3, '5': 11, '6': '.EventModel', '10': 'events'},
   ],
 };
 
 /// Descriptor for `MarkEventsAsSeenRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List markEventsAsSeenRequestDescriptor = $convert.base64Decode(
-    'ChdNYXJrRXZlbnRzQXNTZWVuUmVxdWVzdBIbCglldmVudF9pZHMYASADKAlSCGV2ZW50SWRz');
+    'ChdNYXJrRXZlbnRzQXNTZWVuUmVxdWVzdBIjCgZldmVudHMYASADKAsyCy5FdmVudE1vZGVsUg'
+    'ZldmVudHM=');
 
 @$core.Deprecated('Use markEventsAsSeenResponseDescriptor instead')
 const MarkEventsAsSeenResponse$json = {

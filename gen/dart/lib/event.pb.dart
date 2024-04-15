@@ -229,11 +229,11 @@ class CreateEventResponse extends $pb.GeneratedMessage {
 
 class MarkEventsAsSeenRequest extends $pb.GeneratedMessage {
   factory MarkEventsAsSeenRequest({
-    $core.Iterable<$core.String>? eventIds,
+    $core.Iterable<EventModel>? events,
   }) {
     final $result = create();
-    if (eventIds != null) {
-      $result.eventIds.addAll(eventIds);
+    if (events != null) {
+      $result.events.addAll(events);
     }
     return $result;
   }
@@ -242,7 +242,7 @@ class MarkEventsAsSeenRequest extends $pb.GeneratedMessage {
   factory MarkEventsAsSeenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MarkEventsAsSeenRequest', createEmptyInstance: create)
-    ..pPS(1, _omitFieldNames ? '' : 'eventIds')
+    ..pc<EventModel>(1, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM, subBuilder: EventModel.create)
     ..hasRequiredFields = false
   ;
 
@@ -268,7 +268,7 @@ class MarkEventsAsSeenRequest extends $pb.GeneratedMessage {
   static MarkEventsAsSeenRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$core.String> get eventIds => $_getList(0);
+  $core.List<EventModel> get events => $_getList(0);
 }
 
 class MarkEventsAsSeenResponse extends $pb.GeneratedMessage {
