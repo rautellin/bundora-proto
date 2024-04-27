@@ -33,6 +33,10 @@ class EventServiceClient extends $grpc.Client {
       '/EventService/MarkEventsAsSeen',
       ($1.MarkEventsAsSeenRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.MarkEventsAsSeenResponse.fromBuffer(value));
+  static final _$reactToEvent = $grpc.ClientMethod<$1.ReactToEventRequest, $1.ReactToEventResponse>(
+      '/EventService/ReactToEvent',
+      ($1.ReactToEventRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.ReactToEventResponse.fromBuffer(value));
 
   EventServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -50,6 +54,10 @@ class EventServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$1.MarkEventsAsSeenResponse> markEventsAsSeen($1.MarkEventsAsSeenRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$markEventsAsSeen, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.ReactToEventResponse> reactToEvent($1.ReactToEventRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$reactToEvent, request, options: options);
   }
 }
 
@@ -79,6 +87,13 @@ abstract class EventServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.MarkEventsAsSeenRequest.fromBuffer(value),
         ($1.MarkEventsAsSeenResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.ReactToEventRequest, $1.ReactToEventResponse>(
+        'ReactToEvent',
+        reactToEvent_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.ReactToEventRequest.fromBuffer(value),
+        ($1.ReactToEventResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.GetEventsResponse> getEvents_Pre($grpc.ServiceCall call, $async.Future<$1.GetEventsRequest> request) async {
@@ -93,7 +108,12 @@ abstract class EventServiceBase extends $grpc.Service {
     return markEventsAsSeen(call, await request);
   }
 
+  $async.Future<$1.ReactToEventResponse> reactToEvent_Pre($grpc.ServiceCall call, $async.Future<$1.ReactToEventRequest> request) async {
+    return reactToEvent(call, await request);
+  }
+
   $async.Future<$1.GetEventsResponse> getEvents($grpc.ServiceCall call, $1.GetEventsRequest request);
   $async.Future<$1.CreateEventResponse> createEvent($grpc.ServiceCall call, $1.CreateEventRequest request);
   $async.Future<$1.MarkEventsAsSeenResponse> markEventsAsSeen($grpc.ServiceCall call, $1.MarkEventsAsSeenRequest request);
+  $async.Future<$1.ReactToEventResponse> reactToEvent($grpc.ServiceCall call, $1.ReactToEventRequest request);
 }

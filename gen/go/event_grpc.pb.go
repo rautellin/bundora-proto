@@ -25,6 +25,7 @@ type EventServiceClient interface {
 	GetEvents(ctx context.Context, in *GetEventsRequest, opts ...grpc.CallOption) (*GetEventsResponse, error)
 	CreateEvent(ctx context.Context, in *CreateEventRequest, opts ...grpc.CallOption) (*CreateEventResponse, error)
 	MarkEventsAsSeen(ctx context.Context, in *MarkEventsAsSeenRequest, opts ...grpc.CallOption) (*MarkEventsAsSeenResponse, error)
+	ReactToEvent(ctx context.Context, in *ReactToEventRequest, opts ...grpc.CallOption) (*ReactToEventResponse, error)
 }
 
 type eventServiceClient struct {
@@ -62,6 +63,15 @@ func (c *eventServiceClient) MarkEventsAsSeen(ctx context.Context, in *MarkEvent
 	return out, nil
 }
 
+func (c *eventServiceClient) ReactToEvent(ctx context.Context, in *ReactToEventRequest, opts ...grpc.CallOption) (*ReactToEventResponse, error) {
+	out := new(ReactToEventResponse)
+	err := c.cc.Invoke(ctx, "/EventService/ReactToEvent", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EventServiceServer is the server API for EventService service.
 // All implementations must embed UnimplementedEventServiceServer
 // for forward compatibility
@@ -69,6 +79,7 @@ type EventServiceServer interface {
 	GetEvents(context.Context, *GetEventsRequest) (*GetEventsResponse, error)
 	CreateEvent(context.Context, *CreateEventRequest) (*CreateEventResponse, error)
 	MarkEventsAsSeen(context.Context, *MarkEventsAsSeenRequest) (*MarkEventsAsSeenResponse, error)
+	ReactToEvent(context.Context, *ReactToEventRequest) (*ReactToEventResponse, error)
 	mustEmbedUnimplementedEventServiceServer()
 }
 
@@ -84,6 +95,9 @@ func (UnimplementedEventServiceServer) CreateEvent(context.Context, *CreateEvent
 }
 func (UnimplementedEventServiceServer) MarkEventsAsSeen(context.Context, *MarkEventsAsSeenRequest) (*MarkEventsAsSeenResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MarkEventsAsSeen not implemented")
+}
+func (UnimplementedEventServiceServer) ReactToEvent(context.Context, *ReactToEventRequest) (*ReactToEventResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ReactToEvent not implemented")
 }
 func (UnimplementedEventServiceServer) mustEmbedUnimplementedEventServiceServer() {}
 
@@ -152,6 +166,24 @@ func _EventService_MarkEventsAsSeen_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EventService_ReactToEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReactToEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EventServiceServer).ReactToEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/EventService/ReactToEvent",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EventServiceServer).ReactToEvent(ctx, req.(*ReactToEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // EventService_ServiceDesc is the grpc.ServiceDesc for EventService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -170,6 +202,10 @@ var EventService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "MarkEventsAsSeen",
 			Handler:    _EventService_MarkEventsAsSeen_Handler,
+		},
+		{
+			MethodName: "ReactToEvent",
+			Handler:    _EventService_ReactToEvent_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -41,6 +41,10 @@ class ProfileServiceClient extends $grpc.Client {
       '/ProfileService/CreatePasscode',
       ($0.CreatePasscodeRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.CreatePasscodeResponse.fromBuffer(value));
+  static final _$getUnseenNotifications = $grpc.ClientMethod<$0.GetUnseenNotificationsRequest, $0.GetUnseenNotificationsResponse>(
+      '/ProfileService/GetUnseenNotifications',
+      ($0.GetUnseenNotificationsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.GetUnseenNotificationsResponse.fromBuffer(value));
 
   ProfileServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -66,6 +70,10 @@ class ProfileServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.CreatePasscodeResponse> createPasscode($0.CreatePasscodeRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createPasscode, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetUnseenNotificationsResponse> getUnseenNotifications($0.GetUnseenNotificationsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getUnseenNotifications, request, options: options);
   }
 }
 
@@ -109,6 +117,13 @@ abstract class ProfileServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.CreatePasscodeRequest.fromBuffer(value),
         ($0.CreatePasscodeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetUnseenNotificationsRequest, $0.GetUnseenNotificationsResponse>(
+        'GetUnseenNotifications',
+        getUnseenNotifications_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetUnseenNotificationsRequest.fromBuffer(value),
+        ($0.GetUnseenNotificationsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetProfileResponse> getProfile_Pre($grpc.ServiceCall call, $async.Future<$0.GetProfileRequest> request) async {
@@ -131,9 +146,14 @@ abstract class ProfileServiceBase extends $grpc.Service {
     return createPasscode(call, await request);
   }
 
+  $async.Future<$0.GetUnseenNotificationsResponse> getUnseenNotifications_Pre($grpc.ServiceCall call, $async.Future<$0.GetUnseenNotificationsRequest> request) async {
+    return getUnseenNotifications(call, await request);
+  }
+
   $async.Future<$0.GetProfileResponse> getProfile($grpc.ServiceCall call, $0.GetProfileRequest request);
   $async.Future<$0.UpdateProfileResponse> updateProfile($grpc.ServiceCall call, $0.UpdateProfileRequest request);
   $async.Future<$0.UpdateFCMTokenResponse> updateFCMToken($grpc.ServiceCall call, $0.UpdateFCMTokenRequest request);
   $async.Future<$0.VerifyPasscodeResponse> verifyPasscode($grpc.ServiceCall call, $0.VerifyPasscodeRequest request);
   $async.Future<$0.CreatePasscodeResponse> createPasscode($grpc.ServiceCall call, $0.CreatePasscodeRequest request);
+  $async.Future<$0.GetUnseenNotificationsResponse> getUnseenNotifications($grpc.ServiceCall call, $0.GetUnseenNotificationsRequest request);
 }

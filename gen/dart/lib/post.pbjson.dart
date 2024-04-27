@@ -242,16 +242,17 @@ const PostModel$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'created_at', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
     {'1': 'created_by', '3': 3, '4': 1, '5': 9, '10': 'createdBy'},
-    {'1': 'type', '3': 4, '4': 1, '5': 14, '6': '.PostType', '10': 'type'},
-    {'1': 'title', '3': 5, '4': 1, '5': 9, '9': 0, '10': 'title', '17': true},
-    {'1': 'message', '3': 6, '4': 1, '5': 9, '10': 'message'},
-    {'1': 'prompt', '3': 7, '4': 1, '5': 9, '9': 1, '10': 'prompt', '17': true},
-    {'1': 'tags', '3': 8, '4': 3, '5': 14, '6': '.Tag', '10': 'tags'},
-    {'1': 'mood', '3': 9, '4': 1, '5': 14, '6': '.Mood', '9': 2, '10': 'mood', '17': true},
-    {'1': 'seen', '3': 10, '4': 1, '5': 8, '10': 'seen'},
-    {'1': 'deleted', '3': 11, '4': 1, '5': 8, '10': 'deleted'},
-    {'1': 'updated_at', '3': 12, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
-    {'1': 'deleted_at', '3': 13, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'deletedAt'},
+    {'1': 'created_for', '3': 4, '4': 1, '5': 9, '10': 'createdFor'},
+    {'1': 'type', '3': 5, '4': 1, '5': 14, '6': '.PostType', '10': 'type'},
+    {'1': 'title', '3': 6, '4': 1, '5': 9, '9': 0, '10': 'title', '17': true},
+    {'1': 'message', '3': 7, '4': 1, '5': 9, '10': 'message'},
+    {'1': 'prompt', '3': 8, '4': 1, '5': 9, '9': 1, '10': 'prompt', '17': true},
+    {'1': 'tags', '3': 9, '4': 3, '5': 14, '6': '.Tag', '10': 'tags'},
+    {'1': 'mood', '3': 10, '4': 1, '5': 14, '6': '.Mood', '9': 2, '10': 'mood', '17': true},
+    {'1': 'seen', '3': 11, '4': 1, '5': 8, '10': 'seen'},
+    {'1': 'deleted', '3': 12, '4': 1, '5': 8, '10': 'deleted'},
+    {'1': 'updated_at', '3': 13, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+    {'1': 'deleted_at', '3': 14, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'deletedAt'},
   ],
   '8': [
     {'1': '_title'},
@@ -264,13 +265,14 @@ const PostModel$json = {
 final $typed_data.Uint8List postModelDescriptor = $convert.base64Decode(
     'CglQb3N0TW9kZWwSDgoCaWQYASABKAlSAmlkEjkKCmNyZWF0ZWRfYXQYAiABKAsyGi5nb29nbG'
     'UucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSHQoKY3JlYXRlZF9ieRgDIAEoCVIJY3Jl'
-    'YXRlZEJ5Eh0KBHR5cGUYBCABKA4yCS5Qb3N0VHlwZVIEdHlwZRIZCgV0aXRsZRgFIAEoCUgAUg'
-    'V0aXRsZYgBARIYCgdtZXNzYWdlGAYgASgJUgdtZXNzYWdlEhsKBnByb21wdBgHIAEoCUgBUgZw'
-    'cm9tcHSIAQESGAoEdGFncxgIIAMoDjIELlRhZ1IEdGFncxIeCgRtb29kGAkgASgOMgUuTW9vZE'
-    'gCUgRtb29kiAEBEhIKBHNlZW4YCiABKAhSBHNlZW4SGAoHZGVsZXRlZBgLIAEoCFIHZGVsZXRl'
-    'ZBI5Cgp1cGRhdGVkX2F0GAwgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYX'
-    'RlZEF0EjkKCmRlbGV0ZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglk'
-    'ZWxldGVkQXRCCAoGX3RpdGxlQgkKB19wcm9tcHRCBwoFX21vb2Q=');
+    'YXRlZEJ5Eh8KC2NyZWF0ZWRfZm9yGAQgASgJUgpjcmVhdGVkRm9yEh0KBHR5cGUYBSABKA4yCS'
+    '5Qb3N0VHlwZVIEdHlwZRIZCgV0aXRsZRgGIAEoCUgAUgV0aXRsZYgBARIYCgdtZXNzYWdlGAcg'
+    'ASgJUgdtZXNzYWdlEhsKBnByb21wdBgIIAEoCUgBUgZwcm9tcHSIAQESGAoEdGFncxgJIAMoDj'
+    'IELlRhZ1IEdGFncxIeCgRtb29kGAogASgOMgUuTW9vZEgCUgRtb29kiAEBEhIKBHNlZW4YCyAB'
+    'KAhSBHNlZW4SGAoHZGVsZXRlZBgMIAEoCFIHZGVsZXRlZBI5Cgp1cGRhdGVkX2F0GA0gASgLMh'
+    'ouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0EjkKCmRlbGV0ZWRfYXQYDiAB'
+    'KAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglkZWxldGVkQXRCCAoGX3RpdGxlQgkKB1'
+    '9wcm9tcHRCBwoFX21vb2Q=');
 
 @$core.Deprecated('Use extendedPostModelDescriptor instead')
 const ExtendedPostModel$json = {

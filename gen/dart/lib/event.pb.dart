@@ -315,6 +315,102 @@ class MarkEventsAsSeenResponse extends $pb.GeneratedMessage {
   $core.List<EventModel> get events => $_getList(0);
 }
 
+class ReactToEventRequest extends $pb.GeneratedMessage {
+  factory ReactToEventRequest({
+    $core.String? eventId,
+    $core.String? unicode,
+  }) {
+    final $result = create();
+    if (eventId != null) {
+      $result.eventId = eventId;
+    }
+    if (unicode != null) {
+      $result.unicode = unicode;
+    }
+    return $result;
+  }
+  ReactToEventRequest._() : super();
+  factory ReactToEventRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ReactToEventRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReactToEventRequest', createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'eventId', protoName: 'eventId')
+    ..aOS(2, _omitFieldNames ? '' : 'unicode')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ReactToEventRequest clone() => ReactToEventRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ReactToEventRequest copyWith(void Function(ReactToEventRequest) updates) => super.copyWith((message) => updates(message as ReactToEventRequest)) as ReactToEventRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReactToEventRequest create() => ReactToEventRequest._();
+  ReactToEventRequest createEmptyInstance() => create();
+  static $pb.PbList<ReactToEventRequest> createRepeated() => $pb.PbList<ReactToEventRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ReactToEventRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReactToEventRequest>(create);
+  static ReactToEventRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get eventId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set eventId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasEventId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEventId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get unicode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set unicode($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUnicode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUnicode() => clearField(2);
+}
+
+class ReactToEventResponse extends $pb.GeneratedMessage {
+  factory ReactToEventResponse() => create();
+  ReactToEventResponse._() : super();
+  factory ReactToEventResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ReactToEventResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReactToEventResponse', createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ReactToEventResponse clone() => ReactToEventResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ReactToEventResponse copyWith(void Function(ReactToEventResponse) updates) => super.copyWith((message) => updates(message as ReactToEventResponse)) as ReactToEventResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReactToEventResponse create() => ReactToEventResponse._();
+  ReactToEventResponse createEmptyInstance() => create();
+  static $pb.PbList<ReactToEventResponse> createRepeated() => $pb.PbList<ReactToEventResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ReactToEventResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReactToEventResponse>(create);
+  static ReactToEventResponse? _defaultInstance;
+}
+
 class EventCreationResponse extends $pb.GeneratedMessage {
   factory EventCreationResponse({
     $core.String? title,
@@ -393,6 +489,7 @@ class EventModel extends $pb.GeneratedMessage {
     $core.bool? deleted,
     $3.Timestamp? updatedAt,
     $3.Timestamp? deletedAt,
+    $core.String? reaction,
   }) {
     final $result = create();
     if (id != null) {
@@ -431,6 +528,9 @@ class EventModel extends $pb.GeneratedMessage {
     if (deletedAt != null) {
       $result.deletedAt = deletedAt;
     }
+    if (reaction != null) {
+      $result.reaction = reaction;
+    }
     return $result;
   }
   EventModel._() : super();
@@ -450,6 +550,7 @@ class EventModel extends $pb.GeneratedMessage {
     ..aOB(10, _omitFieldNames ? '' : 'deleted')
     ..aOM<$3.Timestamp>(11, _omitFieldNames ? '' : 'updatedAt', subBuilder: $3.Timestamp.create)
     ..aOM<$3.Timestamp>(12, _omitFieldNames ? '' : 'deletedAt', subBuilder: $3.Timestamp.create)
+    ..aOS(13, _omitFieldNames ? '' : 'reaction')
     ..hasRequiredFields = false
   ;
 
@@ -587,6 +688,15 @@ class EventModel extends $pb.GeneratedMessage {
   void clearDeletedAt() => clearField(12);
   @$pb.TagNumber(12)
   $3.Timestamp ensureDeletedAt() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $core.String get reaction => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set reaction($core.String v) { $_setString(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasReaction() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearReaction() => clearField(13);
 }
 
 class ExtendedEventModel extends $pb.GeneratedMessage {

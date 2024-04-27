@@ -48,58 +48,6 @@ final $typed_data.Uint8List characterTypeDescriptor = $convert.base64Decode(
     'Cg1DaGFyYWN0ZXJUeXBlEh4KGkNIQVJBQ1RFUl9UWVBFX1VOU1BFQ0lGSUVEEAASGgoWQ0hBUk'
     'FDVEVSX1RZUEVfSEVMUElORxABEhsKF0NIQVJBQ1RFUl9UWVBFX0hFTFBMRVNTEAI=');
 
-@$core.Deprecated('Use profileModelDescriptor instead')
-const ProfileModel$json = {
-  '1': 'ProfileModel',
-  '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'character_type', '3': 2, '4': 1, '5': 14, '6': '.CharacterType', '10': 'characterType'},
-    {'1': 'onboarding_completed', '3': 3, '4': 1, '5': 8, '10': 'onboardingCompleted'},
-    {'1': 'fcm_token', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'fcmToken', '17': true},
-    {'1': 'partner_id', '3': 5, '4': 1, '5': 9, '9': 1, '10': 'partnerId', '17': true},
-    {'1': 'name', '3': 6, '4': 1, '5': 9, '9': 2, '10': 'name', '17': true},
-    {'1': 'avatar_type', '3': 7, '4': 1, '5': 14, '6': '.AvatarType', '10': 'avatarType'},
-    {'1': 'created_at', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
-    {'1': 'deleted_at', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'deletedAt'},
-    {'1': 'deleted', '3': 11, '4': 1, '5': 8, '10': 'deleted'},
-  ],
-  '8': [
-    {'1': '_fcm_token'},
-    {'1': '_partner_id'},
-    {'1': '_name'},
-  ],
-};
-
-/// Descriptor for `ProfileModel`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List profileModelDescriptor = $convert.base64Decode(
-    'CgxQcm9maWxlTW9kZWwSDgoCaWQYASABKAlSAmlkEjUKDmNoYXJhY3Rlcl90eXBlGAIgASgOMg'
-    '4uQ2hhcmFjdGVyVHlwZVINY2hhcmFjdGVyVHlwZRIxChRvbmJvYXJkaW5nX2NvbXBsZXRlZBgD'
-    'IAEoCFITb25ib2FyZGluZ0NvbXBsZXRlZBIgCglmY21fdG9rZW4YBCABKAlIAFIIZmNtVG9rZW'
-    '6IAQESIgoKcGFydG5lcl9pZBgFIAEoCUgBUglwYXJ0bmVySWSIAQESFwoEbmFtZRgGIAEoCUgC'
-    'UgRuYW1liAEBEiwKC2F2YXRhcl90eXBlGAcgASgOMgsuQXZhdGFyVHlwZVIKYXZhdGFyVHlwZR'
-    'I5CgpjcmVhdGVkX2F0GAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRl'
-    'ZEF0EjkKCnVwZGF0ZWRfYXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cG'
-    'RhdGVkQXQSOQoKZGVsZXRlZF9hdBgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBS'
-    'CWRlbGV0ZWRBdBIYCgdkZWxldGVkGAsgASgIUgdkZWxldGVkQgwKCl9mY21fdG9rZW5CDQoLX3'
-    'BhcnRuZXJfaWRCBwoFX25hbWU=');
-
-@$core.Deprecated('Use passcodeDescriptor instead')
-const Passcode$json = {
-  '1': 'Passcode',
-  '2': [
-    {'1': 'passcode', '3': 1, '4': 1, '5': 5, '10': 'passcode'},
-    {'1': 'created_by', '3': 2, '4': 1, '5': 9, '10': 'createdBy'},
-    {'1': 'created_at', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
-  ],
-};
-
-/// Descriptor for `Passcode`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List passcodeDescriptor = $convert.base64Decode(
-    'CghQYXNzY29kZRIaCghwYXNzY29kZRgBIAEoBVIIcGFzc2NvZGUSHQoKY3JlYXRlZF9ieRgCIA'
-    'EoCVIJY3JlYXRlZEJ5EjkKCmNyZWF0ZWRfYXQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGlt'
-    'ZXN0YW1wUgljcmVhdGVkQXQ=');
-
 @$core.Deprecated('Use getProfileRequestDescriptor instead')
 const GetProfileRequest$json = {
   '1': 'GetProfileRequest',
@@ -280,4 +228,81 @@ const VerifyPasscodeResponse$json = {
 final $typed_data.Uint8List verifyPasscodeResponseDescriptor = $convert.base64Decode(
     'ChZWZXJpZnlQYXNzY29kZVJlc3BvbnNlEicKB3Byb2ZpbGUYASABKAsyDS5Qcm9maWxlTW9kZW'
     'xSB3Byb2ZpbGU=');
+
+@$core.Deprecated('Use getUnseenNotificationsRequestDescriptor instead')
+const GetUnseenNotificationsRequest$json = {
+  '1': 'GetUnseenNotificationsRequest',
+};
+
+/// Descriptor for `GetUnseenNotificationsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getUnseenNotificationsRequestDescriptor = $convert.base64Decode(
+    'Ch1HZXRVbnNlZW5Ob3RpZmljYXRpb25zUmVxdWVzdA==');
+
+@$core.Deprecated('Use getUnseenNotificationsResponseDescriptor instead')
+const GetUnseenNotificationsResponse$json = {
+  '1': 'GetUnseenNotificationsResponse',
+  '2': [
+    {'1': 'unseen_notifications', '3': 1, '4': 1, '5': 5, '10': 'unseenNotifications'},
+    {'1': 'unseen_events', '3': 2, '4': 1, '5': 5, '10': 'unseenEvents'},
+    {'1': 'unseen_posts', '3': 3, '4': 1, '5': 5, '10': 'unseenPosts'},
+  ],
+};
+
+/// Descriptor for `GetUnseenNotificationsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getUnseenNotificationsResponseDescriptor = $convert.base64Decode(
+    'Ch5HZXRVbnNlZW5Ob3RpZmljYXRpb25zUmVzcG9uc2USMQoUdW5zZWVuX25vdGlmaWNhdGlvbn'
+    'MYASABKAVSE3Vuc2Vlbk5vdGlmaWNhdGlvbnMSIwoNdW5zZWVuX2V2ZW50cxgCIAEoBVIMdW5z'
+    'ZWVuRXZlbnRzEiEKDHVuc2Vlbl9wb3N0cxgDIAEoBVILdW5zZWVuUG9zdHM=');
+
+@$core.Deprecated('Use profileModelDescriptor instead')
+const ProfileModel$json = {
+  '1': 'ProfileModel',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'character_type', '3': 2, '4': 1, '5': 14, '6': '.CharacterType', '10': 'characterType'},
+    {'1': 'onboarding_completed', '3': 3, '4': 1, '5': 8, '10': 'onboardingCompleted'},
+    {'1': 'fcm_token', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'fcmToken', '17': true},
+    {'1': 'partner_id', '3': 5, '4': 1, '5': 9, '9': 1, '10': 'partnerId', '17': true},
+    {'1': 'name', '3': 6, '4': 1, '5': 9, '9': 2, '10': 'name', '17': true},
+    {'1': 'avatar_type', '3': 7, '4': 1, '5': 14, '6': '.AvatarType', '10': 'avatarType'},
+    {'1': 'created_at', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+    {'1': 'updated_at', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+    {'1': 'deleted_at', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'deletedAt'},
+    {'1': 'deleted', '3': 11, '4': 1, '5': 8, '10': 'deleted'},
+  ],
+  '8': [
+    {'1': '_fcm_token'},
+    {'1': '_partner_id'},
+    {'1': '_name'},
+  ],
+};
+
+/// Descriptor for `ProfileModel`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List profileModelDescriptor = $convert.base64Decode(
+    'CgxQcm9maWxlTW9kZWwSDgoCaWQYASABKAlSAmlkEjUKDmNoYXJhY3Rlcl90eXBlGAIgASgOMg'
+    '4uQ2hhcmFjdGVyVHlwZVINY2hhcmFjdGVyVHlwZRIxChRvbmJvYXJkaW5nX2NvbXBsZXRlZBgD'
+    'IAEoCFITb25ib2FyZGluZ0NvbXBsZXRlZBIgCglmY21fdG9rZW4YBCABKAlIAFIIZmNtVG9rZW'
+    '6IAQESIgoKcGFydG5lcl9pZBgFIAEoCUgBUglwYXJ0bmVySWSIAQESFwoEbmFtZRgGIAEoCUgC'
+    'UgRuYW1liAEBEiwKC2F2YXRhcl90eXBlGAcgASgOMgsuQXZhdGFyVHlwZVIKYXZhdGFyVHlwZR'
+    'I5CgpjcmVhdGVkX2F0GAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRl'
+    'ZEF0EjkKCnVwZGF0ZWRfYXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cG'
+    'RhdGVkQXQSOQoKZGVsZXRlZF9hdBgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBS'
+    'CWRlbGV0ZWRBdBIYCgdkZWxldGVkGAsgASgIUgdkZWxldGVkQgwKCl9mY21fdG9rZW5CDQoLX3'
+    'BhcnRuZXJfaWRCBwoFX25hbWU=');
+
+@$core.Deprecated('Use passcodeDescriptor instead')
+const Passcode$json = {
+  '1': 'Passcode',
+  '2': [
+    {'1': 'passcode', '3': 1, '4': 1, '5': 5, '10': 'passcode'},
+    {'1': 'created_by', '3': 2, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'created_at', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+  ],
+};
+
+/// Descriptor for `Passcode`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List passcodeDescriptor = $convert.base64Decode(
+    'CghQYXNzY29kZRIaCghwYXNzY29kZRgBIAEoBVIIcGFzc2NvZGUSHQoKY3JlYXRlZF9ieRgCIA'
+    'EoCVIJY3JlYXRlZEJ5EjkKCmNyZWF0ZWRfYXQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGlt'
+    'ZXN0YW1wUgljcmVhdGVkQXQ=');
 

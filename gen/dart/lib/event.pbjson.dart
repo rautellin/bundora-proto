@@ -126,6 +126,29 @@ final $typed_data.Uint8List markEventsAsSeenResponseDescriptor = $convert.base64
     'ChhNYXJrRXZlbnRzQXNTZWVuUmVzcG9uc2USIwoGZXZlbnRzGAEgAygLMgsuRXZlbnRNb2RlbF'
     'IGZXZlbnRz');
 
+@$core.Deprecated('Use reactToEventRequestDescriptor instead')
+const ReactToEventRequest$json = {
+  '1': 'ReactToEventRequest',
+  '2': [
+    {'1': 'eventId', '3': 1, '4': 1, '5': 9, '10': 'eventId'},
+    {'1': 'unicode', '3': 2, '4': 1, '5': 9, '10': 'unicode'},
+  ],
+};
+
+/// Descriptor for `ReactToEventRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reactToEventRequestDescriptor = $convert.base64Decode(
+    'ChNSZWFjdFRvRXZlbnRSZXF1ZXN0EhgKB2V2ZW50SWQYASABKAlSB2V2ZW50SWQSGAoHdW5pY2'
+    '9kZRgCIAEoCVIHdW5pY29kZQ==');
+
+@$core.Deprecated('Use reactToEventResponseDescriptor instead')
+const ReactToEventResponse$json = {
+  '1': 'ReactToEventResponse',
+};
+
+/// Descriptor for `ReactToEventResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reactToEventResponseDescriptor = $convert.base64Decode(
+    'ChRSZWFjdFRvRXZlbnRSZXNwb25zZQ==');
+
 @$core.Deprecated('Use eventCreationResponseDescriptor instead')
 const EventCreationResponse$json = {
   '1': 'EventCreationResponse',
@@ -159,9 +182,11 @@ const EventModel$json = {
     {'1': 'deleted', '3': 10, '4': 1, '5': 8, '10': 'deleted'},
     {'1': 'updated_at', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
     {'1': 'deleted_at', '3': 12, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'deletedAt'},
+    {'1': 'reaction', '3': 13, '4': 1, '5': 9, '9': 1, '10': 'reaction', '17': true},
   ],
   '8': [
     {'1': '_message'},
+    {'1': '_reaction'},
   ],
 };
 
@@ -174,8 +199,9 @@ final $typed_data.Uint8List eventModelDescriptor = $convert.base64Decode(
     'b3dsZWRnZWQYByABKAhSDGFja25vd2xlZGdlZBISCgRzZWVuGAggASgIUgRzZWVuEhoKCHJlY2'
     'VpdmVkGAkgASgIUghyZWNlaXZlZBIYCgdkZWxldGVkGAogASgIUgdkZWxldGVkEjkKCnVwZGF0'
     'ZWRfYXQYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSOQoKZG'
-    'VsZXRlZF9hdBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWRlbGV0ZWRBdEIK'
-    'CghfbWVzc2FnZQ==');
+    'VsZXRlZF9hdBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWRlbGV0ZWRBdBIf'
+    'CghyZWFjdGlvbhgNIAEoCUgBUghyZWFjdGlvbogBAUIKCghfbWVzc2FnZUILCglfcmVhY3Rpb2'
+    '4=');
 
 @$core.Deprecated('Use extendedEventModelDescriptor instead')
 const ExtendedEventModel$json = {

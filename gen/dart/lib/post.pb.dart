@@ -645,6 +645,7 @@ class PostModel extends $pb.GeneratedMessage {
     $core.String? id,
     $3.Timestamp? createdAt,
     $core.String? createdBy,
+    $core.String? createdFor,
     PostType? type,
     $core.String? title,
     $core.String? message,
@@ -665,6 +666,9 @@ class PostModel extends $pb.GeneratedMessage {
     }
     if (createdBy != null) {
       $result.createdBy = createdBy;
+    }
+    if (createdFor != null) {
+      $result.createdFor = createdFor;
     }
     if (type != null) {
       $result.type = type;
@@ -706,16 +710,17 @@ class PostModel extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOM<$3.Timestamp>(2, _omitFieldNames ? '' : 'createdAt', subBuilder: $3.Timestamp.create)
     ..aOS(3, _omitFieldNames ? '' : 'createdBy')
-    ..e<PostType>(4, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: PostType.POST_TYPE_UNSPECIFIED, valueOf: PostType.valueOf, enumValues: PostType.values)
-    ..aOS(5, _omitFieldNames ? '' : 'title')
-    ..aOS(6, _omitFieldNames ? '' : 'message')
-    ..aOS(7, _omitFieldNames ? '' : 'prompt')
-    ..pc<Tag>(8, _omitFieldNames ? '' : 'tags', $pb.PbFieldType.KE, valueOf: Tag.valueOf, enumValues: Tag.values, defaultEnumValue: Tag.TAG_UNSPECIFIED)
-    ..e<Mood>(9, _omitFieldNames ? '' : 'mood', $pb.PbFieldType.OE, defaultOrMaker: Mood.MOOD_UNSPECIFIED, valueOf: Mood.valueOf, enumValues: Mood.values)
-    ..aOB(10, _omitFieldNames ? '' : 'seen')
-    ..aOB(11, _omitFieldNames ? '' : 'deleted')
-    ..aOM<$3.Timestamp>(12, _omitFieldNames ? '' : 'updatedAt', subBuilder: $3.Timestamp.create)
-    ..aOM<$3.Timestamp>(13, _omitFieldNames ? '' : 'deletedAt', subBuilder: $3.Timestamp.create)
+    ..aOS(4, _omitFieldNames ? '' : 'createdFor')
+    ..e<PostType>(5, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: PostType.POST_TYPE_UNSPECIFIED, valueOf: PostType.valueOf, enumValues: PostType.values)
+    ..aOS(6, _omitFieldNames ? '' : 'title')
+    ..aOS(7, _omitFieldNames ? '' : 'message')
+    ..aOS(8, _omitFieldNames ? '' : 'prompt')
+    ..pc<Tag>(9, _omitFieldNames ? '' : 'tags', $pb.PbFieldType.KE, valueOf: Tag.valueOf, enumValues: Tag.values, defaultEnumValue: Tag.TAG_UNSPECIFIED)
+    ..e<Mood>(10, _omitFieldNames ? '' : 'mood', $pb.PbFieldType.OE, defaultOrMaker: Mood.MOOD_UNSPECIFIED, valueOf: Mood.valueOf, enumValues: Mood.values)
+    ..aOB(11, _omitFieldNames ? '' : 'seen')
+    ..aOB(12, _omitFieldNames ? '' : 'deleted')
+    ..aOM<$3.Timestamp>(13, _omitFieldNames ? '' : 'updatedAt', subBuilder: $3.Timestamp.create)
+    ..aOM<$3.Timestamp>(14, _omitFieldNames ? '' : 'deletedAt', subBuilder: $3.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -770,92 +775,101 @@ class PostModel extends $pb.GeneratedMessage {
   void clearCreatedBy() => clearField(3);
 
   @$pb.TagNumber(4)
-  PostType get type => $_getN(3);
+  $core.String get createdFor => $_getSZ(3);
   @$pb.TagNumber(4)
-  set type(PostType v) { setField(4, v); }
+  set createdFor($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasType() => $_has(3);
+  $core.bool hasCreatedFor() => $_has(3);
   @$pb.TagNumber(4)
-  void clearType() => clearField(4);
+  void clearCreatedFor() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get title => $_getSZ(4);
+  PostType get type => $_getN(4);
   @$pb.TagNumber(5)
-  set title($core.String v) { $_setString(4, v); }
+  set type(PostType v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasTitle() => $_has(4);
+  $core.bool hasType() => $_has(4);
   @$pb.TagNumber(5)
-  void clearTitle() => clearField(5);
+  void clearType() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get message => $_getSZ(5);
+  $core.String get title => $_getSZ(5);
   @$pb.TagNumber(6)
-  set message($core.String v) { $_setString(5, v); }
+  set title($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasMessage() => $_has(5);
+  $core.bool hasTitle() => $_has(5);
   @$pb.TagNumber(6)
-  void clearMessage() => clearField(6);
+  void clearTitle() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get prompt => $_getSZ(6);
+  $core.String get message => $_getSZ(6);
   @$pb.TagNumber(7)
-  set prompt($core.String v) { $_setString(6, v); }
+  set message($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasPrompt() => $_has(6);
+  $core.bool hasMessage() => $_has(6);
   @$pb.TagNumber(7)
-  void clearPrompt() => clearField(7);
+  void clearMessage() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.List<Tag> get tags => $_getList(7);
+  $core.String get prompt => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set prompt($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasPrompt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPrompt() => clearField(8);
 
   @$pb.TagNumber(9)
-  Mood get mood => $_getN(8);
-  @$pb.TagNumber(9)
-  set mood(Mood v) { setField(9, v); }
-  @$pb.TagNumber(9)
-  $core.bool hasMood() => $_has(8);
-  @$pb.TagNumber(9)
-  void clearMood() => clearField(9);
+  $core.List<Tag> get tags => $_getList(8);
 
   @$pb.TagNumber(10)
-  $core.bool get seen => $_getBF(9);
+  Mood get mood => $_getN(9);
   @$pb.TagNumber(10)
-  set seen($core.bool v) { $_setBool(9, v); }
+  set mood(Mood v) { setField(10, v); }
   @$pb.TagNumber(10)
-  $core.bool hasSeen() => $_has(9);
+  $core.bool hasMood() => $_has(9);
   @$pb.TagNumber(10)
-  void clearSeen() => clearField(10);
+  void clearMood() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.bool get deleted => $_getBF(10);
+  $core.bool get seen => $_getBF(10);
   @$pb.TagNumber(11)
-  set deleted($core.bool v) { $_setBool(10, v); }
+  set seen($core.bool v) { $_setBool(10, v); }
   @$pb.TagNumber(11)
-  $core.bool hasDeleted() => $_has(10);
+  $core.bool hasSeen() => $_has(10);
   @$pb.TagNumber(11)
-  void clearDeleted() => clearField(11);
+  void clearSeen() => clearField(11);
 
   @$pb.TagNumber(12)
-  $3.Timestamp get updatedAt => $_getN(11);
+  $core.bool get deleted => $_getBF(11);
   @$pb.TagNumber(12)
-  set updatedAt($3.Timestamp v) { setField(12, v); }
+  set deleted($core.bool v) { $_setBool(11, v); }
   @$pb.TagNumber(12)
-  $core.bool hasUpdatedAt() => $_has(11);
+  $core.bool hasDeleted() => $_has(11);
   @$pb.TagNumber(12)
-  void clearUpdatedAt() => clearField(12);
-  @$pb.TagNumber(12)
-  $3.Timestamp ensureUpdatedAt() => $_ensure(11);
+  void clearDeleted() => clearField(12);
 
   @$pb.TagNumber(13)
-  $3.Timestamp get deletedAt => $_getN(12);
+  $3.Timestamp get updatedAt => $_getN(12);
   @$pb.TagNumber(13)
-  set deletedAt($3.Timestamp v) { setField(13, v); }
+  set updatedAt($3.Timestamp v) { setField(13, v); }
   @$pb.TagNumber(13)
-  $core.bool hasDeletedAt() => $_has(12);
+  $core.bool hasUpdatedAt() => $_has(12);
   @$pb.TagNumber(13)
-  void clearDeletedAt() => clearField(13);
+  void clearUpdatedAt() => clearField(13);
   @$pb.TagNumber(13)
-  $3.Timestamp ensureDeletedAt() => $_ensure(12);
+  $3.Timestamp ensureUpdatedAt() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  $3.Timestamp get deletedAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set deletedAt($3.Timestamp v) { setField(14, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasDeletedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearDeletedAt() => clearField(14);
+  @$pb.TagNumber(14)
+  $3.Timestamp ensureDeletedAt() => $_ensure(13);
 }
 
 class ExtendedPostModel extends $pb.GeneratedMessage {

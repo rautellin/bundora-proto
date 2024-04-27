@@ -27,6 +27,7 @@ type ProfileServiceClient interface {
 	UpdateFCMToken(ctx context.Context, in *UpdateFCMTokenRequest, opts ...grpc.CallOption) (*UpdateFCMTokenResponse, error)
 	VerifyPasscode(ctx context.Context, in *VerifyPasscodeRequest, opts ...grpc.CallOption) (*VerifyPasscodeResponse, error)
 	CreatePasscode(ctx context.Context, in *CreatePasscodeRequest, opts ...grpc.CallOption) (*CreatePasscodeResponse, error)
+	GetUnseenNotifications(ctx context.Context, in *GetUnseenNotificationsRequest, opts ...grpc.CallOption) (*GetUnseenNotificationsResponse, error)
 }
 
 type profileServiceClient struct {
@@ -82,6 +83,15 @@ func (c *profileServiceClient) CreatePasscode(ctx context.Context, in *CreatePas
 	return out, nil
 }
 
+func (c *profileServiceClient) GetUnseenNotifications(ctx context.Context, in *GetUnseenNotificationsRequest, opts ...grpc.CallOption) (*GetUnseenNotificationsResponse, error) {
+	out := new(GetUnseenNotificationsResponse)
+	err := c.cc.Invoke(ctx, "/ProfileService/GetUnseenNotifications", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ProfileServiceServer is the server API for ProfileService service.
 // All implementations must embed UnimplementedProfileServiceServer
 // for forward compatibility
@@ -91,6 +101,7 @@ type ProfileServiceServer interface {
 	UpdateFCMToken(context.Context, *UpdateFCMTokenRequest) (*UpdateFCMTokenResponse, error)
 	VerifyPasscode(context.Context, *VerifyPasscodeRequest) (*VerifyPasscodeResponse, error)
 	CreatePasscode(context.Context, *CreatePasscodeRequest) (*CreatePasscodeResponse, error)
+	GetUnseenNotifications(context.Context, *GetUnseenNotificationsRequest) (*GetUnseenNotificationsResponse, error)
 	mustEmbedUnimplementedProfileServiceServer()
 }
 
@@ -112,6 +123,9 @@ func (UnimplementedProfileServiceServer) VerifyPasscode(context.Context, *Verify
 }
 func (UnimplementedProfileServiceServer) CreatePasscode(context.Context, *CreatePasscodeRequest) (*CreatePasscodeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreatePasscode not implemented")
+}
+func (UnimplementedProfileServiceServer) GetUnseenNotifications(context.Context, *GetUnseenNotificationsRequest) (*GetUnseenNotificationsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUnseenNotifications not implemented")
 }
 func (UnimplementedProfileServiceServer) mustEmbedUnimplementedProfileServiceServer() {}
 
@@ -216,6 +230,24 @@ func _ProfileService_CreatePasscode_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ProfileService_GetUnseenNotifications_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUnseenNotificationsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProfileServiceServer).GetUnseenNotifications(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/ProfileService/GetUnseenNotifications",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProfileServiceServer).GetUnseenNotifications(ctx, req.(*GetUnseenNotificationsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ProfileService_ServiceDesc is the grpc.ServiceDesc for ProfileService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -242,6 +274,10 @@ var ProfileService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreatePasscode",
 			Handler:    _ProfileService_CreatePasscode_Handler,
+		},
+		{
+			MethodName: "GetUnseenNotifications",
+			Handler:    _ProfileService_GetUnseenNotifications_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
