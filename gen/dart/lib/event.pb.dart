@@ -15,7 +15,6 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'event.pbenum.dart';
 import 'google/protobuf/timestamp.pb.dart' as $3;
-import 'profile.pb.dart' as $0;
 
 export 'event.pbenum.dart';
 
@@ -702,14 +701,22 @@ class EventModel extends $pb.GeneratedMessage {
 class ExtendedEventModel extends $pb.GeneratedMessage {
   factory ExtendedEventModel({
     EventModel? event,
-    $0.ProfileModel? createdBy,
+    $core.String? title,
+    $core.String? subtitle,
+    $core.String? body,
   }) {
     final $result = create();
     if (event != null) {
       $result.event = event;
     }
-    if (createdBy != null) {
-      $result.createdBy = createdBy;
+    if (title != null) {
+      $result.title = title;
+    }
+    if (subtitle != null) {
+      $result.subtitle = subtitle;
+    }
+    if (body != null) {
+      $result.body = body;
     }
     return $result;
   }
@@ -719,7 +726,9 @@ class ExtendedEventModel extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExtendedEventModel', createEmptyInstance: create)
     ..aOM<EventModel>(1, _omitFieldNames ? '' : 'event', subBuilder: EventModel.create)
-    ..aOM<$0.ProfileModel>(2, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy', subBuilder: $0.ProfileModel.create)
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'subtitle')
+    ..aOS(4, _omitFieldNames ? '' : 'body')
     ..hasRequiredFields = false
   ;
 
@@ -756,15 +765,31 @@ class ExtendedEventModel extends $pb.GeneratedMessage {
   EventModel ensureEvent() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $0.ProfileModel get createdBy => $_getN(1);
+  $core.String get title => $_getSZ(1);
   @$pb.TagNumber(2)
-  set createdBy($0.ProfileModel v) { setField(2, v); }
+  set title($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasCreatedBy() => $_has(1);
+  $core.bool hasTitle() => $_has(1);
   @$pb.TagNumber(2)
-  void clearCreatedBy() => clearField(2);
-  @$pb.TagNumber(2)
-  $0.ProfileModel ensureCreatedBy() => $_ensure(1);
+  void clearTitle() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get subtitle => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set subtitle($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSubtitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSubtitle() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get body => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set body($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasBody() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBody() => clearField(4);
 }
 
 

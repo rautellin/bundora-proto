@@ -208,12 +208,15 @@ const ExtendedEventModel$json = {
   '1': 'ExtendedEventModel',
   '2': [
     {'1': 'event', '3': 1, '4': 1, '5': 11, '6': '.EventModel', '10': 'event'},
-    {'1': 'createdBy', '3': 2, '4': 1, '5': 11, '6': '.ProfileModel', '10': 'createdBy'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'subtitle', '3': 3, '4': 1, '5': 9, '10': 'subtitle'},
+    {'1': 'body', '3': 4, '4': 1, '5': 9, '10': 'body'},
   ],
 };
 
 /// Descriptor for `ExtendedEventModel`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List extendedEventModelDescriptor = $convert.base64Decode(
     'ChJFeHRlbmRlZEV2ZW50TW9kZWwSIQoFZXZlbnQYASABKAsyCy5FdmVudE1vZGVsUgVldmVudB'
-    'IrCgljcmVhdGVkQnkYAiABKAsyDS5Qcm9maWxlTW9kZWxSCWNyZWF0ZWRCeQ==');
+    'IUCgV0aXRsZRgCIAEoCVIFdGl0bGUSGgoIc3VidGl0bGUYAyABKAlSCHN1YnRpdGxlEhIKBGJv'
+    'ZHkYBCABKAlSBGJvZHk=');
 
