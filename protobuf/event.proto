@@ -70,7 +70,9 @@ message EventModel {
 
 message ExtendedEventModel {
     EventModel event = 1;
-    ProfileModel createdBy = 2;
+    string title = 2;
+    string subtitle = 3;
+    string body = 4;
 }
 
 enum EventType {
