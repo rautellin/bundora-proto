@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+option go_package = "github.com/rautellin/bundora-proto/gen/go;proto";
+import "google/protobuf/timestamp.proto";
+
+/// [OnboardingService] is a service that provides onboarding status for different features
+service OnboardingService {
+    rpc GetOnboardingStatus(GetOnboardingStatusRequest) returns (GetOnboardingStatusResponse);
+    rpc SetOnboardingStatus(SetOnboardingStatusRequest) returns (SetOnboardingStatusResponse);
+}
+
+message GetOnboardingStatusRequest {
+}
+
+message GetOnboardingStatusResponse {
+    repeated OnboardingStatus status = 1;
+}
+
+message SetOnboardingStatusRequest {
+    OnboardingType type = 1;
+}
+
+message SetOnboardingStatusResponse {
+}
+
+message OnboardingStatus {
+    OnboardingType type = 1;
+    google.protobuf.Timestamp updated_at = 3;
+    bool onboarded = 5;
+}
+
+/// [OnboardingType] refers to the different types of features that require onboarding
+enum OnboardingType {
+    ONBOARDING_TYPE_UNKNOWN = 0;
+    ONBOARDING_TYPE_CREATE_PROFILE = 1;
+    ONBOARDING_TYPE_CONNECT_PROFILE = 2;
+    ONBOARDING_TYPE_CREATE_EVENT_LONG_PRESS = 3;
+}
+
