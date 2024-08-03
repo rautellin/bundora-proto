@@ -13,8 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'google/protobuf/timestamp.pb.dart' as $3;
-import 'pagination.pb.dart' as $4;
+import 'google/protobuf/timestamp.pb.dart' as $4;
+import 'pagination.pb.dart' as $5;
 import 'post.pbenum.dart';
 import 'profile.pb.dart' as $0;
 
@@ -22,7 +22,7 @@ export 'post.pbenum.dart';
 
 class GetPostsRequest extends $pb.GeneratedMessage {
   factory GetPostsRequest({
-    $4.PaginationModel? pagination,
+    $5.PaginationModel? pagination,
   }) {
     final $result = create();
     if (pagination != null) {
@@ -35,7 +35,7 @@ class GetPostsRequest extends $pb.GeneratedMessage {
   factory GetPostsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPostsRequest', createEmptyInstance: create)
-    ..aOM<$4.PaginationModel>(1, _omitFieldNames ? '' : 'pagination', subBuilder: $4.PaginationModel.create)
+    ..aOM<$5.PaginationModel>(1, _omitFieldNames ? '' : 'pagination', subBuilder: $5.PaginationModel.create)
     ..hasRequiredFields = false
   ;
 
@@ -61,21 +61,21 @@ class GetPostsRequest extends $pb.GeneratedMessage {
   static GetPostsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.PaginationModel get pagination => $_getN(0);
+  $5.PaginationModel get pagination => $_getN(0);
   @$pb.TagNumber(1)
-  set pagination($4.PaginationModel v) { setField(1, v); }
+  set pagination($5.PaginationModel v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPagination() => $_has(0);
   @$pb.TagNumber(1)
   void clearPagination() => clearField(1);
   @$pb.TagNumber(1)
-  $4.PaginationModel ensurePagination() => $_ensure(0);
+  $5.PaginationModel ensurePagination() => $_ensure(0);
 }
 
 class GetPostsResponse extends $pb.GeneratedMessage {
   factory GetPostsResponse({
     $core.Iterable<ExtendedPostModel>? posts,
-    $4.PaginationModel? pagination,
+    $5.PaginationModel? pagination,
   }) {
     final $result = create();
     if (posts != null) {
@@ -92,7 +92,7 @@ class GetPostsResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPostsResponse', createEmptyInstance: create)
     ..pc<ExtendedPostModel>(1, _omitFieldNames ? '' : 'posts', $pb.PbFieldType.PM, subBuilder: ExtendedPostModel.create)
-    ..aOM<$4.PaginationModel>(2, _omitFieldNames ? '' : 'pagination', subBuilder: $4.PaginationModel.create)
+    ..aOM<$5.PaginationModel>(2, _omitFieldNames ? '' : 'pagination', subBuilder: $5.PaginationModel.create)
     ..hasRequiredFields = false
   ;
 
@@ -121,15 +121,15 @@ class GetPostsResponse extends $pb.GeneratedMessage {
   $core.List<ExtendedPostModel> get posts => $_getList(0);
 
   @$pb.TagNumber(2)
-  $4.PaginationModel get pagination => $_getN(1);
+  $5.PaginationModel get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($4.PaginationModel v) { setField(2, v); }
+  set pagination($5.PaginationModel v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $4.PaginationModel ensurePagination() => $_ensure(1);
+  $5.PaginationModel ensurePagination() => $_ensure(1);
 }
 
 class CreatePostRequest extends $pb.GeneratedMessage {
@@ -643,7 +643,7 @@ class DeletePostResponse extends $pb.GeneratedMessage {
 class PostModel extends $pb.GeneratedMessage {
   factory PostModel({
     $core.String? id,
-    $3.Timestamp? createdAt,
+    $4.Timestamp? createdAt,
     $core.String? createdBy,
     $core.String? createdFor,
     PostType? type,
@@ -654,8 +654,8 @@ class PostModel extends $pb.GeneratedMessage {
     Mood? mood,
     $core.bool? seen,
     $core.bool? deleted,
-    $3.Timestamp? updatedAt,
-    $3.Timestamp? deletedAt,
+    $4.Timestamp? updatedAt,
+    $4.Timestamp? deletedAt,
   }) {
     final $result = create();
     if (id != null) {
@@ -708,7 +708,7 @@ class PostModel extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PostModel', createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<$3.Timestamp>(2, _omitFieldNames ? '' : 'createdAt', subBuilder: $3.Timestamp.create)
+    ..aOM<$4.Timestamp>(2, _omitFieldNames ? '' : 'createdAt', subBuilder: $4.Timestamp.create)
     ..aOS(3, _omitFieldNames ? '' : 'createdBy')
     ..aOS(4, _omitFieldNames ? '' : 'createdFor')
     ..e<PostType>(5, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: PostType.POST_TYPE_UNSPECIFIED, valueOf: PostType.valueOf, enumValues: PostType.values)
@@ -719,8 +719,8 @@ class PostModel extends $pb.GeneratedMessage {
     ..e<Mood>(10, _omitFieldNames ? '' : 'mood', $pb.PbFieldType.OE, defaultOrMaker: Mood.MOOD_UNSPECIFIED, valueOf: Mood.valueOf, enumValues: Mood.values)
     ..aOB(11, _omitFieldNames ? '' : 'seen')
     ..aOB(12, _omitFieldNames ? '' : 'deleted')
-    ..aOM<$3.Timestamp>(13, _omitFieldNames ? '' : 'updatedAt', subBuilder: $3.Timestamp.create)
-    ..aOM<$3.Timestamp>(14, _omitFieldNames ? '' : 'deletedAt', subBuilder: $3.Timestamp.create)
+    ..aOM<$4.Timestamp>(13, _omitFieldNames ? '' : 'updatedAt', subBuilder: $4.Timestamp.create)
+    ..aOM<$4.Timestamp>(14, _omitFieldNames ? '' : 'deletedAt', subBuilder: $4.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -755,15 +755,15 @@ class PostModel extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $3.Timestamp get createdAt => $_getN(1);
+  $4.Timestamp get createdAt => $_getN(1);
   @$pb.TagNumber(2)
-  set createdAt($3.Timestamp v) { setField(2, v); }
+  set createdAt($4.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCreatedAt() => $_has(1);
   @$pb.TagNumber(2)
   void clearCreatedAt() => clearField(2);
   @$pb.TagNumber(2)
-  $3.Timestamp ensureCreatedAt() => $_ensure(1);
+  $4.Timestamp ensureCreatedAt() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $core.String get createdBy => $_getSZ(2);
@@ -850,26 +850,26 @@ class PostModel extends $pb.GeneratedMessage {
   void clearDeleted() => clearField(12);
 
   @$pb.TagNumber(13)
-  $3.Timestamp get updatedAt => $_getN(12);
+  $4.Timestamp get updatedAt => $_getN(12);
   @$pb.TagNumber(13)
-  set updatedAt($3.Timestamp v) { setField(13, v); }
+  set updatedAt($4.Timestamp v) { setField(13, v); }
   @$pb.TagNumber(13)
   $core.bool hasUpdatedAt() => $_has(12);
   @$pb.TagNumber(13)
   void clearUpdatedAt() => clearField(13);
   @$pb.TagNumber(13)
-  $3.Timestamp ensureUpdatedAt() => $_ensure(12);
+  $4.Timestamp ensureUpdatedAt() => $_ensure(12);
 
   @$pb.TagNumber(14)
-  $3.Timestamp get deletedAt => $_getN(13);
+  $4.Timestamp get deletedAt => $_getN(13);
   @$pb.TagNumber(14)
-  set deletedAt($3.Timestamp v) { setField(14, v); }
+  set deletedAt($4.Timestamp v) { setField(14, v); }
   @$pb.TagNumber(14)
   $core.bool hasDeletedAt() => $_has(13);
   @$pb.TagNumber(14)
   void clearDeletedAt() => clearField(14);
   @$pb.TagNumber(14)
-  $3.Timestamp ensureDeletedAt() => $_ensure(13);
+  $4.Timestamp ensureDeletedAt() => $_ensure(13);
 }
 
 class ExtendedPostModel extends $pb.GeneratedMessage {

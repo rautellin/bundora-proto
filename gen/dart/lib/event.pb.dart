@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'event.pbenum.dart';
-import 'google/protobuf/timestamp.pb.dart' as $3;
+import 'google/protobuf/timestamp.pb.dart' as $4;
 
 export 'event.pbenum.dart';
 
@@ -478,7 +478,7 @@ class EventModel extends $pb.GeneratedMessage {
   factory EventModel({
     $core.String? id,
     EventType? type,
-    $3.Timestamp? createdAt,
+    $4.Timestamp? createdAt,
     $core.String? message,
     $core.String? createdBy,
     $core.String? createdFor,
@@ -486,8 +486,8 @@ class EventModel extends $pb.GeneratedMessage {
     $core.bool? seen,
     $core.bool? received,
     $core.bool? deleted,
-    $3.Timestamp? updatedAt,
-    $3.Timestamp? deletedAt,
+    $4.Timestamp? updatedAt,
+    $4.Timestamp? deletedAt,
     $core.String? reaction,
   }) {
     final $result = create();
@@ -539,7 +539,7 @@ class EventModel extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EventModel', createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..e<EventType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: EventType.EVENT_TYPE_UNSPECIFIED, valueOf: EventType.valueOf, enumValues: EventType.values)
-    ..aOM<$3.Timestamp>(3, _omitFieldNames ? '' : 'createdAt', subBuilder: $3.Timestamp.create)
+    ..aOM<$4.Timestamp>(3, _omitFieldNames ? '' : 'createdAt', subBuilder: $4.Timestamp.create)
     ..aOS(4, _omitFieldNames ? '' : 'message')
     ..aOS(5, _omitFieldNames ? '' : 'createdBy')
     ..aOS(6, _omitFieldNames ? '' : 'createdFor')
@@ -547,8 +547,8 @@ class EventModel extends $pb.GeneratedMessage {
     ..aOB(8, _omitFieldNames ? '' : 'seen')
     ..aOB(9, _omitFieldNames ? '' : 'received')
     ..aOB(10, _omitFieldNames ? '' : 'deleted')
-    ..aOM<$3.Timestamp>(11, _omitFieldNames ? '' : 'updatedAt', subBuilder: $3.Timestamp.create)
-    ..aOM<$3.Timestamp>(12, _omitFieldNames ? '' : 'deletedAt', subBuilder: $3.Timestamp.create)
+    ..aOM<$4.Timestamp>(11, _omitFieldNames ? '' : 'updatedAt', subBuilder: $4.Timestamp.create)
+    ..aOM<$4.Timestamp>(12, _omitFieldNames ? '' : 'deletedAt', subBuilder: $4.Timestamp.create)
     ..aOS(13, _omitFieldNames ? '' : 'reaction')
     ..hasRequiredFields = false
   ;
@@ -593,15 +593,15 @@ class EventModel extends $pb.GeneratedMessage {
   void clearType() => clearField(2);
 
   @$pb.TagNumber(3)
-  $3.Timestamp get createdAt => $_getN(2);
+  $4.Timestamp get createdAt => $_getN(2);
   @$pb.TagNumber(3)
-  set createdAt($3.Timestamp v) { setField(3, v); }
+  set createdAt($4.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCreatedAt() => $_has(2);
   @$pb.TagNumber(3)
   void clearCreatedAt() => clearField(3);
   @$pb.TagNumber(3)
-  $3.Timestamp ensureCreatedAt() => $_ensure(2);
+  $4.Timestamp ensureCreatedAt() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get message => $_getSZ(3);
@@ -667,26 +667,26 @@ class EventModel extends $pb.GeneratedMessage {
   void clearDeleted() => clearField(10);
 
   @$pb.TagNumber(11)
-  $3.Timestamp get updatedAt => $_getN(10);
+  $4.Timestamp get updatedAt => $_getN(10);
   @$pb.TagNumber(11)
-  set updatedAt($3.Timestamp v) { setField(11, v); }
+  set updatedAt($4.Timestamp v) { setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasUpdatedAt() => $_has(10);
   @$pb.TagNumber(11)
   void clearUpdatedAt() => clearField(11);
   @$pb.TagNumber(11)
-  $3.Timestamp ensureUpdatedAt() => $_ensure(10);
+  $4.Timestamp ensureUpdatedAt() => $_ensure(10);
 
   @$pb.TagNumber(12)
-  $3.Timestamp get deletedAt => $_getN(11);
+  $4.Timestamp get deletedAt => $_getN(11);
   @$pb.TagNumber(12)
-  set deletedAt($3.Timestamp v) { setField(12, v); }
+  set deletedAt($4.Timestamp v) { setField(12, v); }
   @$pb.TagNumber(12)
   $core.bool hasDeletedAt() => $_has(11);
   @$pb.TagNumber(12)
   void clearDeletedAt() => clearField(12);
   @$pb.TagNumber(12)
-  $3.Timestamp ensureDeletedAt() => $_ensure(11);
+  $4.Timestamp ensureDeletedAt() => $_ensure(11);
 
   @$pb.TagNumber(13)
   $core.String get reaction => $_getSZ(12);
