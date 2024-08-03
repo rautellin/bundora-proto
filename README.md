@@ -1,10 +1,10 @@
 # bundora-proto
 
 ### Generate protobuf files
-Run the bash script `generate_proto.sh` in the root directory of the project. This will generate the protobuf files in the `/gen` directory.
+Run the bash script `gen_proto.sh` in the root directory of the project. This will generate the protobuf files in the `/gen` directory.
 
 ```
-./generate_proto.sh
+./gen_proto.sh
 ```
 
 ### Publish updated protobuf files
