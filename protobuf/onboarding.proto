@@ -21,6 +21,7 @@ message SetOnboardingStatusRequest {
 }
 
 message SetOnboardingStatusResponse {
+    OnboardingStatus status = 1;
 }
 
 message OnboardingStatus {
