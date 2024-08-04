@@ -68,11 +68,15 @@ final $typed_data.Uint8List setOnboardingStatusRequestDescriptor = $convert.base
 @$core.Deprecated('Use setOnboardingStatusResponseDescriptor instead')
 const SetOnboardingStatusResponse$json = {
   '1': 'SetOnboardingStatusResponse',
+  '2': [
+    {'1': 'status', '3': 1, '4': 1, '5': 11, '6': '.OnboardingStatus', '10': 'status'},
+  ],
 };
 
 /// Descriptor for `SetOnboardingStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List setOnboardingStatusResponseDescriptor = $convert.base64Decode(
-    'ChtTZXRPbmJvYXJkaW5nU3RhdHVzUmVzcG9uc2U=');
+    'ChtTZXRPbmJvYXJkaW5nU3RhdHVzUmVzcG9uc2USKQoGc3RhdHVzGAEgASgLMhEuT25ib2FyZG'
+    'luZ1N0YXR1c1IGc3RhdHVz');
 
 @$core.Deprecated('Use onboardingStatusDescriptor instead')
 const OnboardingStatus$json = {

@@ -145,12 +145,21 @@ class SetOnboardingStatusRequest extends $pb.GeneratedMessage {
 }
 
 class SetOnboardingStatusResponse extends $pb.GeneratedMessage {
-  factory SetOnboardingStatusResponse() => create();
+  factory SetOnboardingStatusResponse({
+    OnboardingStatus? status,
+  }) {
+    final $result = create();
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
   SetOnboardingStatusResponse._() : super();
   factory SetOnboardingStatusResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SetOnboardingStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetOnboardingStatusResponse', createEmptyInstance: create)
+    ..aOM<OnboardingStatus>(1, _omitFieldNames ? '' : 'status', subBuilder: OnboardingStatus.create)
     ..hasRequiredFields = false
   ;
 
@@ -174,6 +183,17 @@ class SetOnboardingStatusResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static SetOnboardingStatusResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetOnboardingStatusResponse>(create);
   static SetOnboardingStatusResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnboardingStatus get status => $_getN(0);
+  @$pb.TagNumber(1)
+  set status(OnboardingStatus v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStatus() => clearField(1);
+  @$pb.TagNumber(1)
+  OnboardingStatus ensureStatus() => $_ensure(0);
 }
 
 class OnboardingStatus extends $pb.GeneratedMessage {
