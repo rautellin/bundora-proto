@@ -21,6 +21,7 @@ message GetEventsResponse {
 message CreateEventRequest {
     EventType type = 1;
     optional string message = 2;
+    bool enhanced = 3;
 }
 
 message CreateEventResponse {
