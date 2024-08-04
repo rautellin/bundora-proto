@@ -98,6 +98,7 @@ class CreateEventRequest extends $pb.GeneratedMessage {
   factory CreateEventRequest({
     EventType? type,
     $core.String? message,
+    $core.bool? enhanced,
   }) {
     final $result = create();
     if (type != null) {
@@ -105,6 +106,9 @@ class CreateEventRequest extends $pb.GeneratedMessage {
     }
     if (message != null) {
       $result.message = message;
+    }
+    if (enhanced != null) {
+      $result.enhanced = enhanced;
     }
     return $result;
   }
@@ -115,6 +119,7 @@ class CreateEventRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateEventRequest', createEmptyInstance: create)
     ..e<EventType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: EventType.EVENT_TYPE_UNSPECIFIED, valueOf: EventType.valueOf, enumValues: EventType.values)
     ..aOS(2, _omitFieldNames ? '' : 'message')
+    ..aOB(3, _omitFieldNames ? '' : 'enhanced')
     ..hasRequiredFields = false
   ;
 
@@ -156,6 +161,15 @@ class CreateEventRequest extends $pb.GeneratedMessage {
   $core.bool hasMessage() => $_has(1);
   @$pb.TagNumber(2)
   void clearMessage() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get enhanced => $_getBF(2);
+  @$pb.TagNumber(3)
+  set enhanced($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasEnhanced() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEnhanced() => clearField(3);
 }
 
 class CreateEventResponse extends $pb.GeneratedMessage {

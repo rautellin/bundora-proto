@@ -75,6 +75,7 @@ const CreateEventRequest$json = {
   '2': [
     {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.EventType', '10': 'type'},
     {'1': 'message', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'message', '17': true},
+    {'1': 'enhanced', '3': 3, '4': 1, '5': 8, '10': 'enhanced'},
   ],
   '8': [
     {'1': '_message'},
@@ -84,7 +85,8 @@ const CreateEventRequest$json = {
 /// Descriptor for `CreateEventRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createEventRequestDescriptor = $convert.base64Decode(
     'ChJDcmVhdGVFdmVudFJlcXVlc3QSHgoEdHlwZRgBIAEoDjIKLkV2ZW50VHlwZVIEdHlwZRIdCg'
-    'dtZXNzYWdlGAIgASgJSABSB21lc3NhZ2WIAQFCCgoIX21lc3NhZ2U=');
+    'dtZXNzYWdlGAIgASgJSABSB21lc3NhZ2WIAQESGgoIZW5oYW5jZWQYAyABKAhSCGVuaGFuY2Vk'
+    'QgoKCF9tZXNzYWdl');
 
 @$core.Deprecated('Use createEventResponseDescriptor instead')
 const CreateEventResponse$json = {
