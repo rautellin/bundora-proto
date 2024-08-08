@@ -33,6 +33,11 @@ const EventType$json = {
     {'1': 'EVENT_TYPE_COMING', '2': 13},
     {'1': 'EVENT_TYPE_READY_SOON', '2': 14},
     {'1': 'EVENT_TYPE_NEED_SPACE', '2': 15},
+    {'1': 'EVENT_TYPE_ARRIVED', '2': 16},
+    {'1': 'EVENT_TYPE_MOOD', '2': 17},
+    {'1': 'EVENT_TYPE_ON_MY_MIND', '2': 18},
+    {'1': 'EVENT_TYPE_COMPLIMENT', '2': 19},
+    {'1': 'EVENT_TYPE_RANDOM', '2': 20},
   ],
 };
 
@@ -45,7 +50,9 @@ final $typed_data.Uint8List eventTypeDescriptor = $convert.base64Decode(
     'RU5UX1RZUEVfTUlTU19ZT1UQCRIZChVFVkVOVF9UWVBFX0dPT0RfTklHSFQQChIbChdFVkVOVF'
     '9UWVBFX0dPT0RfTU9STklORxALEhYKEkVWRU5UX1RZUEVfT1VUU0lERRAMEhUKEUVWRU5UX1RZ'
     'UEVfQ09NSU5HEA0SGQoVRVZFTlRfVFlQRV9SRUFEWV9TT09OEA4SGQoVRVZFTlRfVFlQRV9ORU'
-    'VEX1NQQUNFEA8=');
+    'VEX1NQQUNFEA8SFgoSRVZFTlRfVFlQRV9BUlJJVkVEEBASEwoPRVZFTlRfVFlQRV9NT09EEBES'
+    'GQoVRVZFTlRfVFlQRV9PTl9NWV9NSU5EEBISGQoVRVZFTlRfVFlQRV9DT01QTElNRU5UEBMSFQ'
+    'oRRVZFTlRfVFlQRV9SQU5ET00QFA==');
 
 @$core.Deprecated('Use getEventsRequestDescriptor instead')
 const GetEventsRequest$json = {
@@ -76,9 +83,11 @@ const CreateEventRequest$json = {
     {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.EventType', '10': 'type'},
     {'1': 'message', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'message', '17': true},
     {'1': 'enhanced', '3': 3, '4': 1, '5': 8, '10': 'enhanced'},
+    {'1': 'mood', '3': 4, '4': 1, '5': 14, '6': '.Mood', '9': 1, '10': 'mood', '17': true},
   ],
   '8': [
     {'1': '_message'},
+    {'1': '_mood'},
   ],
 };
 
@@ -86,7 +95,7 @@ const CreateEventRequest$json = {
 final $typed_data.Uint8List createEventRequestDescriptor = $convert.base64Decode(
     'ChJDcmVhdGVFdmVudFJlcXVlc3QSHgoEdHlwZRgBIAEoDjIKLkV2ZW50VHlwZVIEdHlwZRIdCg'
     'dtZXNzYWdlGAIgASgJSABSB21lc3NhZ2WIAQESGgoIZW5oYW5jZWQYAyABKAhSCGVuaGFuY2Vk'
-    'QgoKCF9tZXNzYWdl');
+    'Eh4KBG1vb2QYBCABKA4yBS5Nb29kSAFSBG1vb2SIAQFCCgoIX21lc3NhZ2VCBwoFX21vb2Q=');
 
 @$core.Deprecated('Use createEventResponseDescriptor instead')
 const CreateEventResponse$json = {
@@ -185,10 +194,13 @@ const EventModel$json = {
     {'1': 'updated_at', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
     {'1': 'deleted_at', '3': 12, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'deletedAt'},
     {'1': 'reaction', '3': 13, '4': 1, '5': 9, '9': 1, '10': 'reaction', '17': true},
+    {'1': 'mood', '3': 14, '4': 1, '5': 14, '6': '.Mood', '9': 2, '10': 'mood', '17': true},
+    {'1': 'enhanced', '3': 15, '4': 1, '5': 8, '10': 'enhanced'},
   ],
   '8': [
     {'1': '_message'},
     {'1': '_reaction'},
+    {'1': '_mood'},
   ],
 };
 
@@ -202,8 +214,9 @@ final $typed_data.Uint8List eventModelDescriptor = $convert.base64Decode(
     'VpdmVkGAkgASgIUghyZWNlaXZlZBIYCgdkZWxldGVkGAogASgIUgdkZWxldGVkEjkKCnVwZGF0'
     'ZWRfYXQYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSOQoKZG'
     'VsZXRlZF9hdBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWRlbGV0ZWRBdBIf'
-    'CghyZWFjdGlvbhgNIAEoCUgBUghyZWFjdGlvbogBAUIKCghfbWVzc2FnZUILCglfcmVhY3Rpb2'
-    '4=');
+    'CghyZWFjdGlvbhgNIAEoCUgBUghyZWFjdGlvbogBARIeCgRtb29kGA4gASgOMgUuTW9vZEgCUg'
+    'Rtb29kiAEBEhoKCGVuaGFuY2VkGA8gASgIUghlbmhhbmNlZEIKCghfbWVzc2FnZUILCglfcmVh'
+    'Y3Rpb25CBwoFX21vb2Q=');
 
 @$core.Deprecated('Use extendedEventModelDescriptor instead')
 const ExtendedEventModel$json = {

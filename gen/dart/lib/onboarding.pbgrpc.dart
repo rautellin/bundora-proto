@@ -15,20 +15,20 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'onboarding.pb.dart' as $2;
+import 'onboarding.pb.dart' as $3;
 
 export 'onboarding.pb.dart';
 
 @$pb.GrpcServiceName('OnboardingService')
 class OnboardingServiceClient extends $grpc.Client {
-  static final _$getOnboardingStatus = $grpc.ClientMethod<$2.GetOnboardingStatusRequest, $2.GetOnboardingStatusResponse>(
+  static final _$getOnboardingStatus = $grpc.ClientMethod<$3.GetOnboardingStatusRequest, $3.GetOnboardingStatusResponse>(
       '/OnboardingService/GetOnboardingStatus',
-      ($2.GetOnboardingStatusRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $2.GetOnboardingStatusResponse.fromBuffer(value));
-  static final _$setOnboardingStatus = $grpc.ClientMethod<$2.SetOnboardingStatusRequest, $2.SetOnboardingStatusResponse>(
+      ($3.GetOnboardingStatusRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $3.GetOnboardingStatusResponse.fromBuffer(value));
+  static final _$setOnboardingStatus = $grpc.ClientMethod<$3.SetOnboardingStatusRequest, $3.SetOnboardingStatusResponse>(
       '/OnboardingService/SetOnboardingStatus',
-      ($2.SetOnboardingStatusRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $2.SetOnboardingStatusResponse.fromBuffer(value));
+      ($3.SetOnboardingStatusRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $3.SetOnboardingStatusResponse.fromBuffer(value));
 
   OnboardingServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -36,11 +36,11 @@ class OnboardingServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$2.GetOnboardingStatusResponse> getOnboardingStatus($2.GetOnboardingStatusRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$3.GetOnboardingStatusResponse> getOnboardingStatus($3.GetOnboardingStatusRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getOnboardingStatus, request, options: options);
   }
 
-  $grpc.ResponseFuture<$2.SetOnboardingStatusResponse> setOnboardingStatus($2.SetOnboardingStatusRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$3.SetOnboardingStatusResponse> setOnboardingStatus($3.SetOnboardingStatusRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$setOnboardingStatus, request, options: options);
   }
 }
@@ -50,30 +50,30 @@ abstract class OnboardingServiceBase extends $grpc.Service {
   $core.String get $name => 'OnboardingService';
 
   OnboardingServiceBase() {
-    $addMethod($grpc.ServiceMethod<$2.GetOnboardingStatusRequest, $2.GetOnboardingStatusResponse>(
+    $addMethod($grpc.ServiceMethod<$3.GetOnboardingStatusRequest, $3.GetOnboardingStatusResponse>(
         'GetOnboardingStatus',
         getOnboardingStatus_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $2.GetOnboardingStatusRequest.fromBuffer(value),
-        ($2.GetOnboardingStatusResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$2.SetOnboardingStatusRequest, $2.SetOnboardingStatusResponse>(
+        ($core.List<$core.int> value) => $3.GetOnboardingStatusRequest.fromBuffer(value),
+        ($3.GetOnboardingStatusResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$3.SetOnboardingStatusRequest, $3.SetOnboardingStatusResponse>(
         'SetOnboardingStatus',
         setOnboardingStatus_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $2.SetOnboardingStatusRequest.fromBuffer(value),
-        ($2.SetOnboardingStatusResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $3.SetOnboardingStatusRequest.fromBuffer(value),
+        ($3.SetOnboardingStatusResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$2.GetOnboardingStatusResponse> getOnboardingStatus_Pre($grpc.ServiceCall call, $async.Future<$2.GetOnboardingStatusRequest> request) async {
+  $async.Future<$3.GetOnboardingStatusResponse> getOnboardingStatus_Pre($grpc.ServiceCall call, $async.Future<$3.GetOnboardingStatusRequest> request) async {
     return getOnboardingStatus(call, await request);
   }
 
-  $async.Future<$2.SetOnboardingStatusResponse> setOnboardingStatus_Pre($grpc.ServiceCall call, $async.Future<$2.SetOnboardingStatusRequest> request) async {
+  $async.Future<$3.SetOnboardingStatusResponse> setOnboardingStatus_Pre($grpc.ServiceCall call, $async.Future<$3.SetOnboardingStatusRequest> request) async {
     return setOnboardingStatus(call, await request);
   }
 
-  $async.Future<$2.GetOnboardingStatusResponse> getOnboardingStatus($grpc.ServiceCall call, $2.GetOnboardingStatusRequest request);
-  $async.Future<$2.SetOnboardingStatusResponse> setOnboardingStatus($grpc.ServiceCall call, $2.SetOnboardingStatusRequest request);
+  $async.Future<$3.GetOnboardingStatusResponse> getOnboardingStatus($grpc.ServiceCall call, $3.GetOnboardingStatusRequest request);
+  $async.Future<$3.SetOnboardingStatusResponse> setOnboardingStatus($grpc.ServiceCall call, $3.SetOnboardingStatusRequest request);
 }

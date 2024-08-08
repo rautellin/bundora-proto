@@ -30,6 +30,11 @@ class EventType extends $pb.ProtobufEnum {
   static const EventType EVENT_TYPE_COMING = EventType._(13, _omitEnumNames ? '' : 'EVENT_TYPE_COMING');
   static const EventType EVENT_TYPE_READY_SOON = EventType._(14, _omitEnumNames ? '' : 'EVENT_TYPE_READY_SOON');
   static const EventType EVENT_TYPE_NEED_SPACE = EventType._(15, _omitEnumNames ? '' : 'EVENT_TYPE_NEED_SPACE');
+  static const EventType EVENT_TYPE_ARRIVED = EventType._(16, _omitEnumNames ? '' : 'EVENT_TYPE_ARRIVED');
+  static const EventType EVENT_TYPE_MOOD = EventType._(17, _omitEnumNames ? '' : 'EVENT_TYPE_MOOD');
+  static const EventType EVENT_TYPE_ON_MY_MIND = EventType._(18, _omitEnumNames ? '' : 'EVENT_TYPE_ON_MY_MIND');
+  static const EventType EVENT_TYPE_COMPLIMENT = EventType._(19, _omitEnumNames ? '' : 'EVENT_TYPE_COMPLIMENT');
+  static const EventType EVENT_TYPE_RANDOM = EventType._(20, _omitEnumNames ? '' : 'EVENT_TYPE_RANDOM');
 
   static const $core.List<EventType> values = <EventType> [
     EVENT_TYPE_UNSPECIFIED,
@@ -48,6 +53,11 @@ class EventType extends $pb.ProtobufEnum {
     EVENT_TYPE_COMING,
     EVENT_TYPE_READY_SOON,
     EVENT_TYPE_NEED_SPACE,
+    EVENT_TYPE_ARRIVED,
+    EVENT_TYPE_MOOD,
+    EVENT_TYPE_ON_MY_MIND,
+    EVENT_TYPE_COMPLIMENT,
+    EVENT_TYPE_RANDOM,
   ];
 
   static final $core.Map<$core.int, EventType> _byValue = $pb.ProtobufEnum.initByValue(values);

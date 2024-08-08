@@ -82,8 +82,8 @@ class Tag extends $pb.ProtobufEnum {
 class Mood extends $pb.ProtobufEnum {
   static const Mood MOOD_UNSPECIFIED = Mood._(0, _omitEnumNames ? '' : 'MOOD_UNSPECIFIED');
   static const Mood MOOD_DEPRESSED = Mood._(1, _omitEnumNames ? '' : 'MOOD_DEPRESSED');
-  static const Mood MOOD_SAD = Mood._(2, _omitEnumNames ? '' : 'MOOD_SAD');
-  static const Mood MOOD_SOMEWHAT_BAD = Mood._(3, _omitEnumNames ? '' : 'MOOD_SOMEWHAT_BAD');
+  static const Mood MOOD_FRUSTRATED = Mood._(2, _omitEnumNames ? '' : 'MOOD_FRUSTRATED');
+  static const Mood MOOD_SAD = Mood._(3, _omitEnumNames ? '' : 'MOOD_SAD');
   static const Mood MOOD_NEUTRAL = Mood._(4, _omitEnumNames ? '' : 'MOOD_NEUTRAL');
   static const Mood MOOD_GOOD = Mood._(5, _omitEnumNames ? '' : 'MOOD_GOOD');
   static const Mood MOOD_HAPPY = Mood._(6, _omitEnumNames ? '' : 'MOOD_HAPPY');
@@ -92,8 +92,8 @@ class Mood extends $pb.ProtobufEnum {
   static const $core.List<Mood> values = <Mood> [
     MOOD_UNSPECIFIED,
     MOOD_DEPRESSED,
+    MOOD_FRUSTRATED,
     MOOD_SAD,
-    MOOD_SOMEWHAT_BAD,
     MOOD_NEUTRAL,
     MOOD_GOOD,
     MOOD_HAPPY,

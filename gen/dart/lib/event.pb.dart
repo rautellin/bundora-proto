@@ -15,6 +15,7 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'event.pbenum.dart';
 import 'google/protobuf/timestamp.pb.dart' as $4;
+import 'post.pbenum.dart' as $1;
 
 export 'event.pbenum.dart';
 
@@ -99,6 +100,7 @@ class CreateEventRequest extends $pb.GeneratedMessage {
     EventType? type,
     $core.String? message,
     $core.bool? enhanced,
+    $1.Mood? mood,
   }) {
     final $result = create();
     if (type != null) {
@@ -110,6 +112,9 @@ class CreateEventRequest extends $pb.GeneratedMessage {
     if (enhanced != null) {
       $result.enhanced = enhanced;
     }
+    if (mood != null) {
+      $result.mood = mood;
+    }
     return $result;
   }
   CreateEventRequest._() : super();
@@ -120,6 +125,7 @@ class CreateEventRequest extends $pb.GeneratedMessage {
     ..e<EventType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: EventType.EVENT_TYPE_UNSPECIFIED, valueOf: EventType.valueOf, enumValues: EventType.values)
     ..aOS(2, _omitFieldNames ? '' : 'message')
     ..aOB(3, _omitFieldNames ? '' : 'enhanced')
+    ..e<$1.Mood>(4, _omitFieldNames ? '' : 'mood', $pb.PbFieldType.OE, defaultOrMaker: $1.Mood.MOOD_UNSPECIFIED, valueOf: $1.Mood.valueOf, enumValues: $1.Mood.values)
     ..hasRequiredFields = false
   ;
 
@@ -170,6 +176,15 @@ class CreateEventRequest extends $pb.GeneratedMessage {
   $core.bool hasEnhanced() => $_has(2);
   @$pb.TagNumber(3)
   void clearEnhanced() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $1.Mood get mood => $_getN(3);
+  @$pb.TagNumber(4)
+  set mood($1.Mood v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasMood() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMood() => clearField(4);
 }
 
 class CreateEventResponse extends $pb.GeneratedMessage {
@@ -503,6 +518,8 @@ class EventModel extends $pb.GeneratedMessage {
     $4.Timestamp? updatedAt,
     $4.Timestamp? deletedAt,
     $core.String? reaction,
+    $1.Mood? mood,
+    $core.bool? enhanced,
   }) {
     final $result = create();
     if (id != null) {
@@ -544,6 +561,12 @@ class EventModel extends $pb.GeneratedMessage {
     if (reaction != null) {
       $result.reaction = reaction;
     }
+    if (mood != null) {
+      $result.mood = mood;
+    }
+    if (enhanced != null) {
+      $result.enhanced = enhanced;
+    }
     return $result;
   }
   EventModel._() : super();
@@ -564,6 +587,8 @@ class EventModel extends $pb.GeneratedMessage {
     ..aOM<$4.Timestamp>(11, _omitFieldNames ? '' : 'updatedAt', subBuilder: $4.Timestamp.create)
     ..aOM<$4.Timestamp>(12, _omitFieldNames ? '' : 'deletedAt', subBuilder: $4.Timestamp.create)
     ..aOS(13, _omitFieldNames ? '' : 'reaction')
+    ..e<$1.Mood>(14, _omitFieldNames ? '' : 'mood', $pb.PbFieldType.OE, defaultOrMaker: $1.Mood.MOOD_UNSPECIFIED, valueOf: $1.Mood.valueOf, enumValues: $1.Mood.values)
+    ..aOB(15, _omitFieldNames ? '' : 'enhanced')
     ..hasRequiredFields = false
   ;
 
@@ -710,6 +735,24 @@ class EventModel extends $pb.GeneratedMessage {
   $core.bool hasReaction() => $_has(12);
   @$pb.TagNumber(13)
   void clearReaction() => clearField(13);
+
+  @$pb.TagNumber(14)
+  $1.Mood get mood => $_getN(13);
+  @$pb.TagNumber(14)
+  set mood($1.Mood v) { setField(14, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasMood() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearMood() => clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.bool get enhanced => $_getBF(14);
+  @$pb.TagNumber(15)
+  set enhanced($core.bool v) { $_setBool(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasEnhanced() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearEnhanced() => clearField(15);
 }
 
 class ExtendedEventModel extends $pb.GeneratedMessage {

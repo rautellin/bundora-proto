@@ -69,8 +69,8 @@ const Mood$json = {
   '2': [
     {'1': 'MOOD_UNSPECIFIED', '2': 0},
     {'1': 'MOOD_DEPRESSED', '2': 1},
-    {'1': 'MOOD_SAD', '2': 2},
-    {'1': 'MOOD_SOMEWHAT_BAD', '2': 3},
+    {'1': 'MOOD_FRUSTRATED', '2': 2},
+    {'1': 'MOOD_SAD', '2': 3},
     {'1': 'MOOD_NEUTRAL', '2': 4},
     {'1': 'MOOD_GOOD', '2': 5},
     {'1': 'MOOD_HAPPY', '2': 6},
@@ -80,9 +80,9 @@ const Mood$json = {
 
 /// Descriptor for `Mood`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List moodDescriptor = $convert.base64Decode(
-    'CgRNb29kEhQKEE1PT0RfVU5TUEVDSUZJRUQQABISCg5NT09EX0RFUFJFU1NFRBABEgwKCE1PT0'
-    'RfU0FEEAISFQoRTU9PRF9TT01FV0hBVF9CQUQQAxIQCgxNT09EX05FVVRSQUwQBBINCglNT09E'
-    'X0dPT0QQBRIOCgpNT09EX0hBUFBZEAYSEAoMTU9PRF9BV0VTT01FEAc=');
+    'CgRNb29kEhQKEE1PT0RfVU5TUEVDSUZJRUQQABISCg5NT09EX0RFUFJFU1NFRBABEhMKD01PT0'
+    'RfRlJVU1RSQVRFRBACEgwKCE1PT0RfU0FEEAMSEAoMTU9PRF9ORVVUUkFMEAQSDQoJTU9PRF9H'
+    'T09EEAUSDgoKTU9PRF9IQVBQWRAGEhAKDE1PT0RfQVdFU09NRRAH');
 
 @$core.Deprecated('Use getPostsRequestDescriptor instead')
 const GetPostsRequest$json = {
