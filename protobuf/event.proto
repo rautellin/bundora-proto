@@ -3,6 +3,7 @@ syntax = "proto3";
 option go_package = "github.com/rautellin/bundora-proto/gen/go;proto";
 import "google/protobuf/timestamp.proto";
 import "profile.proto";
+import "post.proto";
 
 service EventService {
     rpc GetEvents(GetEventsRequest) returns (GetEventsResponse);
@@ -22,6 +23,7 @@ message CreateEventRequest {
     EventType type = 1;
     optional string message = 2;
     bool enhanced = 3;
+    optional Mood mood = 4;
 }
 
 message CreateEventResponse {
@@ -67,6 +69,8 @@ message EventModel {
     google.protobuf.Timestamp updated_at = 11;
     google.protobuf.Timestamp deleted_at = 12;
     optional string reaction = 13;
+    optional Mood mood = 14;
+    bool enhanced = 15;
 }
 
 message ExtendedEventModel {
@@ -93,5 +97,10 @@ enum EventType {
     EVENT_TYPE_COMING = 13;
     EVENT_TYPE_READY_SOON = 14;
     EVENT_TYPE_NEED_SPACE = 15;
+    EVENT_TYPE_ARRIVED = 16;
+    EVENT_TYPE_MOOD = 17;
+    EVENT_TYPE_ON_MY_MIND = 18;
+    EVENT_TYPE_COMPLIMENT = 19;
+    EVENT_TYPE_RANDOM = 20;
 }
 
