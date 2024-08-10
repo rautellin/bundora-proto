@@ -829,7 +829,7 @@ class ProfileModel extends $pb.GeneratedMessage {
     $4.Timestamp? updatedAt,
     $4.Timestamp? deletedAt,
     $core.bool? deleted,
-    MoodType? mood,
+    $core.bool? inGoodMood,
   }) {
     final $result = create();
     if (id != null) {
@@ -865,8 +865,8 @@ class ProfileModel extends $pb.GeneratedMessage {
     if (deleted != null) {
       $result.deleted = deleted;
     }
-    if (mood != null) {
-      $result.mood = mood;
+    if (inGoodMood != null) {
+      $result.inGoodMood = inGoodMood;
     }
     return $result;
   }
@@ -886,7 +886,7 @@ class ProfileModel extends $pb.GeneratedMessage {
     ..aOM<$4.Timestamp>(9, _omitFieldNames ? '' : 'updatedAt', subBuilder: $4.Timestamp.create)
     ..aOM<$4.Timestamp>(10, _omitFieldNames ? '' : 'deletedAt', subBuilder: $4.Timestamp.create)
     ..aOB(11, _omitFieldNames ? '' : 'deleted')
-    ..e<MoodType>(12, _omitFieldNames ? '' : 'mood', $pb.PbFieldType.OE, defaultOrMaker: MoodType.MOOD_TYPE_UNSPECIFIED, valueOf: MoodType.valueOf, enumValues: MoodType.values)
+    ..aOB(12, _omitFieldNames ? '' : 'inGoodMood')
     ..hasRequiredFields = false
   ;
 
@@ -1019,26 +1019,26 @@ class ProfileModel extends $pb.GeneratedMessage {
   void clearDeleted() => clearField(11);
 
   @$pb.TagNumber(12)
-  MoodType get mood => $_getN(11);
+  $core.bool get inGoodMood => $_getBF(11);
   @$pb.TagNumber(12)
-  set mood(MoodType v) { setField(12, v); }
+  set inGoodMood($core.bool v) { $_setBool(11, v); }
   @$pb.TagNumber(12)
-  $core.bool hasMood() => $_has(11);
+  $core.bool hasInGoodMood() => $_has(11);
   @$pb.TagNumber(12)
-  void clearMood() => clearField(12);
+  void clearInGoodMood() => clearField(12);
 }
 
 class PartnerModel extends $pb.GeneratedMessage {
   factory PartnerModel({
     $core.String? id,
-    MoodType? mood,
+    $core.bool? inGoodMood,
   }) {
     final $result = create();
     if (id != null) {
       $result.id = id;
     }
-    if (mood != null) {
-      $result.mood = mood;
+    if (inGoodMood != null) {
+      $result.inGoodMood = inGoodMood;
     }
     return $result;
   }
@@ -1048,7 +1048,7 @@ class PartnerModel extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PartnerModel', createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..e<MoodType>(2, _omitFieldNames ? '' : 'mood', $pb.PbFieldType.OE, defaultOrMaker: MoodType.MOOD_TYPE_UNSPECIFIED, valueOf: MoodType.valueOf, enumValues: MoodType.values)
+    ..aOB(2, _omitFieldNames ? '' : 'inGoodMood')
     ..hasRequiredFields = false
   ;
 
@@ -1083,13 +1083,13 @@ class PartnerModel extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  MoodType get mood => $_getN(1);
+  $core.bool get inGoodMood => $_getBF(1);
   @$pb.TagNumber(2)
-  set mood(MoodType v) { setField(2, v); }
+  set inGoodMood($core.bool v) { $_setBool(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasMood() => $_has(1);
+  $core.bool hasInGoodMood() => $_has(1);
   @$pb.TagNumber(2)
-  void clearMood() => clearField(2);
+  void clearInGoodMood() => clearField(2);
 }
 
 class Passcode extends $pb.GeneratedMessage {

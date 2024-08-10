@@ -89,12 +89,12 @@ message ProfileModel {
     google.protobuf.Timestamp updated_at = 9;
     google.protobuf.Timestamp deleted_at = 10;
     bool deleted = 11;
-    optional MoodType mood = 12;
+    bool in_good_mood = 12;
 }
 
 message PartnerModel {
     string id = 1;
-    MoodType mood = 2;
+    bool in_good_mood = 2;
 }
 
 message Passcode {
@@ -117,12 +117,6 @@ enum CharacterType {
     CHARACTER_TYPE_UNSPECIFIED = 0;
     CHARACTER_TYPE_HELPING = 1;
     CHARACTER_TYPE_HELPLESS = 2;
-}
-
-enum MoodType {
-    MOOD_TYPE_UNSPECIFIED = 0;
-    MOOD_TYPE_GOOD = 1;
-    MOOD_TYPE_BAD = 2;
 }
 
 

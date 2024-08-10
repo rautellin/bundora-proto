@@ -48,21 +48,6 @@ final $typed_data.Uint8List characterTypeDescriptor = $convert.base64Decode(
     'Cg1DaGFyYWN0ZXJUeXBlEh4KGkNIQVJBQ1RFUl9UWVBFX1VOU1BFQ0lGSUVEEAASGgoWQ0hBUk'
     'FDVEVSX1RZUEVfSEVMUElORxABEhsKF0NIQVJBQ1RFUl9UWVBFX0hFTFBMRVNTEAI=');
 
-@$core.Deprecated('Use moodTypeDescriptor instead')
-const MoodType$json = {
-  '1': 'MoodType',
-  '2': [
-    {'1': 'MOOD_TYPE_UNSPECIFIED', '2': 0},
-    {'1': 'MOOD_TYPE_GOOD', '2': 1},
-    {'1': 'MOOD_TYPE_BAD', '2': 2},
-  ],
-};
-
-/// Descriptor for `MoodType`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List moodTypeDescriptor = $convert.base64Decode(
-    'CghNb29kVHlwZRIZChVNT09EX1RZUEVfVU5TUEVDSUZJRUQQABISCg5NT09EX1RZUEVfR09PRB'
-    'ABEhEKDU1PT0RfVFlQRV9CQUQQAg==');
-
 @$core.Deprecated('Use getProfileRequestDescriptor instead')
 const GetProfileRequest$json = {
   '1': 'GetProfileRequest',
@@ -284,13 +269,12 @@ const ProfileModel$json = {
     {'1': 'updated_at', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
     {'1': 'deleted_at', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'deletedAt'},
     {'1': 'deleted', '3': 11, '4': 1, '5': 8, '10': 'deleted'},
-    {'1': 'mood', '3': 12, '4': 1, '5': 14, '6': '.MoodType', '9': 3, '10': 'mood', '17': true},
+    {'1': 'in_good_mood', '3': 12, '4': 1, '5': 8, '10': 'inGoodMood'},
   ],
   '8': [
     {'1': '_fcm_token'},
     {'1': '_partner'},
     {'1': '_name'},
-    {'1': '_mood'},
   ],
 };
 
@@ -304,23 +288,23 @@ final $typed_data.Uint8List profileModelDescriptor = $convert.base64Decode(
     'F2YXRhclR5cGUSOQoKY3JlYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh'
     'bXBSCWNyZWF0ZWRBdBI5Cgp1cGRhdGVkX2F0GAkgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbW'
     'VzdGFtcFIJdXBkYXRlZEF0EjkKCmRlbGV0ZWRfYXQYCiABKAsyGi5nb29nbGUucHJvdG9idWYu'
-    'VGltZXN0YW1wUglkZWxldGVkQXQSGAoHZGVsZXRlZBgLIAEoCFIHZGVsZXRlZBIiCgRtb29kGA'
-    'wgASgOMgkuTW9vZFR5cGVIA1IEbW9vZIgBAUIMCgpfZmNtX3Rva2VuQgoKCF9wYXJ0bmVyQgcK'
-    'BV9uYW1lQgcKBV9tb29k');
+    'VGltZXN0YW1wUglkZWxldGVkQXQSGAoHZGVsZXRlZBgLIAEoCFIHZGVsZXRlZBIgCgxpbl9nb2'
+    '9kX21vb2QYDCABKAhSCmluR29vZE1vb2RCDAoKX2ZjbV90b2tlbkIKCghfcGFydG5lckIHCgVf'
+    'bmFtZQ==');
 
 @$core.Deprecated('Use partnerModelDescriptor instead')
 const PartnerModel$json = {
   '1': 'PartnerModel',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'mood', '3': 2, '4': 1, '5': 14, '6': '.MoodType', '10': 'mood'},
+    {'1': 'in_good_mood', '3': 2, '4': 1, '5': 8, '10': 'inGoodMood'},
   ],
 };
 
 /// Descriptor for `PartnerModel`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List partnerModelDescriptor = $convert.base64Decode(
-    'CgxQYXJ0bmVyTW9kZWwSDgoCaWQYASABKAlSAmlkEh0KBG1vb2QYAiABKA4yCS5Nb29kVHlwZV'
-    'IEbW9vZA==');
+    'CgxQYXJ0bmVyTW9kZWwSDgoCaWQYASABKAlSAmlkEiAKDGluX2dvb2RfbW9vZBgCIAEoCFIKaW'
+    '5Hb29kTW9vZA==');
 
 @$core.Deprecated('Use passcodeDescriptor instead')
 const Passcode$json = {
