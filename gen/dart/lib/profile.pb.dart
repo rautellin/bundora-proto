@@ -822,13 +822,14 @@ class ProfileModel extends $pb.GeneratedMessage {
     CharacterType? characterType,
     $core.bool? onboardingCompleted,
     $core.String? fcmToken,
-    $core.String? partnerId,
+    PartnerModel? partner,
     $core.String? name,
     AvatarType? avatarType,
     $4.Timestamp? createdAt,
     $4.Timestamp? updatedAt,
     $4.Timestamp? deletedAt,
     $core.bool? deleted,
+    MoodType? mood,
   }) {
     final $result = create();
     if (id != null) {
@@ -843,8 +844,8 @@ class ProfileModel extends $pb.GeneratedMessage {
     if (fcmToken != null) {
       $result.fcmToken = fcmToken;
     }
-    if (partnerId != null) {
-      $result.partnerId = partnerId;
+    if (partner != null) {
+      $result.partner = partner;
     }
     if (name != null) {
       $result.name = name;
@@ -864,6 +865,9 @@ class ProfileModel extends $pb.GeneratedMessage {
     if (deleted != null) {
       $result.deleted = deleted;
     }
+    if (mood != null) {
+      $result.mood = mood;
+    }
     return $result;
   }
   ProfileModel._() : super();
@@ -875,13 +879,14 @@ class ProfileModel extends $pb.GeneratedMessage {
     ..e<CharacterType>(2, _omitFieldNames ? '' : 'characterType', $pb.PbFieldType.OE, defaultOrMaker: CharacterType.CHARACTER_TYPE_UNSPECIFIED, valueOf: CharacterType.valueOf, enumValues: CharacterType.values)
     ..aOB(3, _omitFieldNames ? '' : 'onboardingCompleted')
     ..aOS(4, _omitFieldNames ? '' : 'fcmToken')
-    ..aOS(5, _omitFieldNames ? '' : 'partnerId')
+    ..aOM<PartnerModel>(5, _omitFieldNames ? '' : 'partner', subBuilder: PartnerModel.create)
     ..aOS(6, _omitFieldNames ? '' : 'name')
     ..e<AvatarType>(7, _omitFieldNames ? '' : 'avatarType', $pb.PbFieldType.OE, defaultOrMaker: AvatarType.AVATAR_TYPE_UNSPECIFIED, valueOf: AvatarType.valueOf, enumValues: AvatarType.values)
     ..aOM<$4.Timestamp>(8, _omitFieldNames ? '' : 'createdAt', subBuilder: $4.Timestamp.create)
     ..aOM<$4.Timestamp>(9, _omitFieldNames ? '' : 'updatedAt', subBuilder: $4.Timestamp.create)
     ..aOM<$4.Timestamp>(10, _omitFieldNames ? '' : 'deletedAt', subBuilder: $4.Timestamp.create)
     ..aOB(11, _omitFieldNames ? '' : 'deleted')
+    ..e<MoodType>(12, _omitFieldNames ? '' : 'mood', $pb.PbFieldType.OE, defaultOrMaker: MoodType.MOOD_TYPE_UNSPECIFIED, valueOf: MoodType.valueOf, enumValues: MoodType.values)
     ..hasRequiredFields = false
   ;
 
@@ -943,13 +948,15 @@ class ProfileModel extends $pb.GeneratedMessage {
   void clearFcmToken() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get partnerId => $_getSZ(4);
+  PartnerModel get partner => $_getN(4);
   @$pb.TagNumber(5)
-  set partnerId($core.String v) { $_setString(4, v); }
+  set partner(PartnerModel v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasPartnerId() => $_has(4);
+  $core.bool hasPartner() => $_has(4);
   @$pb.TagNumber(5)
-  void clearPartnerId() => clearField(5);
+  void clearPartner() => clearField(5);
+  @$pb.TagNumber(5)
+  PartnerModel ensurePartner() => $_ensure(4);
 
   @$pb.TagNumber(6)
   $core.String get name => $_getSZ(5);
@@ -1010,6 +1017,79 @@ class ProfileModel extends $pb.GeneratedMessage {
   $core.bool hasDeleted() => $_has(10);
   @$pb.TagNumber(11)
   void clearDeleted() => clearField(11);
+
+  @$pb.TagNumber(12)
+  MoodType get mood => $_getN(11);
+  @$pb.TagNumber(12)
+  set mood(MoodType v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasMood() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearMood() => clearField(12);
+}
+
+class PartnerModel extends $pb.GeneratedMessage {
+  factory PartnerModel({
+    $core.String? id,
+    MoodType? mood,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (mood != null) {
+      $result.mood = mood;
+    }
+    return $result;
+  }
+  PartnerModel._() : super();
+  factory PartnerModel.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PartnerModel.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PartnerModel', createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..e<MoodType>(2, _omitFieldNames ? '' : 'mood', $pb.PbFieldType.OE, defaultOrMaker: MoodType.MOOD_TYPE_UNSPECIFIED, valueOf: MoodType.valueOf, enumValues: MoodType.values)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PartnerModel clone() => PartnerModel()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PartnerModel copyWith(void Function(PartnerModel) updates) => super.copyWith((message) => updates(message as PartnerModel)) as PartnerModel;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PartnerModel create() => PartnerModel._();
+  PartnerModel createEmptyInstance() => create();
+  static $pb.PbList<PartnerModel> createRepeated() => $pb.PbList<PartnerModel>();
+  @$core.pragma('dart2js:noInline')
+  static PartnerModel getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PartnerModel>(create);
+  static PartnerModel? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  MoodType get mood => $_getN(1);
+  @$pb.TagNumber(2)
+  set mood(MoodType v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMood() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMood() => clearField(2);
 }
 
 class Passcode extends $pb.GeneratedMessage {

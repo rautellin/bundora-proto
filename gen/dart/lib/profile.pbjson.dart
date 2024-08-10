@@ -48,6 +48,21 @@ final $typed_data.Uint8List characterTypeDescriptor = $convert.base64Decode(
     'Cg1DaGFyYWN0ZXJUeXBlEh4KGkNIQVJBQ1RFUl9UWVBFX1VOU1BFQ0lGSUVEEAASGgoWQ0hBUk'
     'FDVEVSX1RZUEVfSEVMUElORxABEhsKF0NIQVJBQ1RFUl9UWVBFX0hFTFBMRVNTEAI=');
 
+@$core.Deprecated('Use moodTypeDescriptor instead')
+const MoodType$json = {
+  '1': 'MoodType',
+  '2': [
+    {'1': 'MOOD_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'MOOD_TYPE_GOOD', '2': 1},
+    {'1': 'MOOD_TYPE_BAD', '2': 2},
+  ],
+};
+
+/// Descriptor for `MoodType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List moodTypeDescriptor = $convert.base64Decode(
+    'CghNb29kVHlwZRIZChVNT09EX1RZUEVfVU5TUEVDSUZJRUQQABISCg5NT09EX1RZUEVfR09PRB'
+    'ABEhEKDU1PT0RfVFlQRV9CQUQQAg==');
+
 @$core.Deprecated('Use getProfileRequestDescriptor instead')
 const GetProfileRequest$json = {
   '1': 'GetProfileRequest',
@@ -262,18 +277,20 @@ const ProfileModel$json = {
     {'1': 'character_type', '3': 2, '4': 1, '5': 14, '6': '.CharacterType', '10': 'characterType'},
     {'1': 'onboarding_completed', '3': 3, '4': 1, '5': 8, '10': 'onboardingCompleted'},
     {'1': 'fcm_token', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'fcmToken', '17': true},
-    {'1': 'partner_id', '3': 5, '4': 1, '5': 9, '9': 1, '10': 'partnerId', '17': true},
+    {'1': 'partner', '3': 5, '4': 1, '5': 11, '6': '.PartnerModel', '9': 1, '10': 'partner', '17': true},
     {'1': 'name', '3': 6, '4': 1, '5': 9, '9': 2, '10': 'name', '17': true},
     {'1': 'avatar_type', '3': 7, '4': 1, '5': 14, '6': '.AvatarType', '10': 'avatarType'},
     {'1': 'created_at', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
     {'1': 'updated_at', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
     {'1': 'deleted_at', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'deletedAt'},
     {'1': 'deleted', '3': 11, '4': 1, '5': 8, '10': 'deleted'},
+    {'1': 'mood', '3': 12, '4': 1, '5': 14, '6': '.MoodType', '9': 3, '10': 'mood', '17': true},
   ],
   '8': [
     {'1': '_fcm_token'},
-    {'1': '_partner_id'},
+    {'1': '_partner'},
     {'1': '_name'},
+    {'1': '_mood'},
   ],
 };
 
@@ -282,13 +299,28 @@ final $typed_data.Uint8List profileModelDescriptor = $convert.base64Decode(
     'CgxQcm9maWxlTW9kZWwSDgoCaWQYASABKAlSAmlkEjUKDmNoYXJhY3Rlcl90eXBlGAIgASgOMg'
     '4uQ2hhcmFjdGVyVHlwZVINY2hhcmFjdGVyVHlwZRIxChRvbmJvYXJkaW5nX2NvbXBsZXRlZBgD'
     'IAEoCFITb25ib2FyZGluZ0NvbXBsZXRlZBIgCglmY21fdG9rZW4YBCABKAlIAFIIZmNtVG9rZW'
-    '6IAQESIgoKcGFydG5lcl9pZBgFIAEoCUgBUglwYXJ0bmVySWSIAQESFwoEbmFtZRgGIAEoCUgC'
-    'UgRuYW1liAEBEiwKC2F2YXRhcl90eXBlGAcgASgOMgsuQXZhdGFyVHlwZVIKYXZhdGFyVHlwZR'
-    'I5CgpjcmVhdGVkX2F0GAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRl'
-    'ZEF0EjkKCnVwZGF0ZWRfYXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cG'
-    'RhdGVkQXQSOQoKZGVsZXRlZF9hdBgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBS'
-    'CWRlbGV0ZWRBdBIYCgdkZWxldGVkGAsgASgIUgdkZWxldGVkQgwKCl9mY21fdG9rZW5CDQoLX3'
-    'BhcnRuZXJfaWRCBwoFX25hbWU=');
+    '6IAQESLAoHcGFydG5lchgFIAEoCzINLlBhcnRuZXJNb2RlbEgBUgdwYXJ0bmVyiAEBEhcKBG5h'
+    'bWUYBiABKAlIAlIEbmFtZYgBARIsCgthdmF0YXJfdHlwZRgHIAEoDjILLkF2YXRhclR5cGVSCm'
+    'F2YXRhclR5cGUSOQoKY3JlYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh'
+    'bXBSCWNyZWF0ZWRBdBI5Cgp1cGRhdGVkX2F0GAkgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbW'
+    'VzdGFtcFIJdXBkYXRlZEF0EjkKCmRlbGV0ZWRfYXQYCiABKAsyGi5nb29nbGUucHJvdG9idWYu'
+    'VGltZXN0YW1wUglkZWxldGVkQXQSGAoHZGVsZXRlZBgLIAEoCFIHZGVsZXRlZBIiCgRtb29kGA'
+    'wgASgOMgkuTW9vZFR5cGVIA1IEbW9vZIgBAUIMCgpfZmNtX3Rva2VuQgoKCF9wYXJ0bmVyQgcK'
+    'BV9uYW1lQgcKBV9tb29k');
+
+@$core.Deprecated('Use partnerModelDescriptor instead')
+const PartnerModel$json = {
+  '1': 'PartnerModel',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'mood', '3': 2, '4': 1, '5': 14, '6': '.MoodType', '10': 'mood'},
+  ],
+};
+
+/// Descriptor for `PartnerModel`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List partnerModelDescriptor = $convert.base64Decode(
+    'CgxQYXJ0bmVyTW9kZWwSDgoCaWQYASABKAlSAmlkEh0KBG1vb2QYAiABKA4yCS5Nb29kVHlwZV'
+    'IEbW9vZA==');
 
 @$core.Deprecated('Use passcodeDescriptor instead')
 const Passcode$json = {

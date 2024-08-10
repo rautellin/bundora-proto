@@ -55,5 +55,22 @@ class CharacterType extends $pb.ProtobufEnum {
   const CharacterType._($core.int v, $core.String n) : super(v, n);
 }
 
+class MoodType extends $pb.ProtobufEnum {
+  static const MoodType MOOD_TYPE_UNSPECIFIED = MoodType._(0, _omitEnumNames ? '' : 'MOOD_TYPE_UNSPECIFIED');
+  static const MoodType MOOD_TYPE_GOOD = MoodType._(1, _omitEnumNames ? '' : 'MOOD_TYPE_GOOD');
+  static const MoodType MOOD_TYPE_BAD = MoodType._(2, _omitEnumNames ? '' : 'MOOD_TYPE_BAD');
+
+  static const $core.List<MoodType> values = <MoodType> [
+    MOOD_TYPE_UNSPECIFIED,
+    MOOD_TYPE_GOOD,
+    MOOD_TYPE_BAD,
+  ];
+
+  static final $core.Map<$core.int, MoodType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static MoodType? valueOf($core.int value) => _byValue[value];
+
+  const MoodType._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');
