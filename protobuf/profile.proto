@@ -82,13 +82,19 @@ message ProfileModel {
     CharacterType character_type = 2;
     bool onboarding_completed = 3;
     optional string fcm_token = 4;
-    optional string partner_id = 5;
+    optional PartnerModel partner = 5;
     optional string name = 6;
     AvatarType avatar_type = 7;
     google.protobuf.Timestamp created_at = 8;
     google.protobuf.Timestamp updated_at = 9;
     google.protobuf.Timestamp deleted_at = 10;
     bool deleted = 11;
+    optional MoodType mood = 12;
+}
+
+message PartnerModel {
+    string id = 1;
+    MoodType mood = 2;
 }
 
 message Passcode {
@@ -111,6 +117,12 @@ enum CharacterType {
     CHARACTER_TYPE_UNSPECIFIED = 0;
     CHARACTER_TYPE_HELPING = 1;
     CHARACTER_TYPE_HELPLESS = 2;
+}
+
+enum MoodType {
+    MOOD_TYPE_UNSPECIFIED = 0;
+    MOOD_TYPE_GOOD = 1;
+    MOOD_TYPE_BAD = 2;
 }
 
 
