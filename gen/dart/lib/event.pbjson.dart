@@ -38,6 +38,7 @@ const EventType$json = {
     {'1': 'EVENT_TYPE_ON_MY_MIND', '2': 18},
     {'1': 'EVENT_TYPE_COMPLIMENT', '2': 19},
     {'1': 'EVENT_TYPE_RANDOM', '2': 20},
+    {'1': 'EVENT_TYPE_ON_THE_ROAD', '2': 21},
   ],
 };
 
@@ -52,7 +53,7 @@ final $typed_data.Uint8List eventTypeDescriptor = $convert.base64Decode(
     'UEVfQ09NSU5HEA0SGQoVRVZFTlRfVFlQRV9SRUFEWV9TT09OEA4SGQoVRVZFTlRfVFlQRV9ORU'
     'VEX1NQQUNFEA8SFgoSRVZFTlRfVFlQRV9BUlJJVkVEEBASEwoPRVZFTlRfVFlQRV9NT09EEBES'
     'GQoVRVZFTlRfVFlQRV9PTl9NWV9NSU5EEBISGQoVRVZFTlRfVFlQRV9DT01QTElNRU5UEBMSFQ'
-    'oRRVZFTlRfVFlQRV9SQU5ET00QFA==');
+    'oRRVZFTlRfVFlQRV9SQU5ET00QFBIaChZFVkVOVF9UWVBFX09OX1RIRV9ST0FEEBU=');
 
 @$core.Deprecated('Use getEventsRequestDescriptor instead')
 const GetEventsRequest$json = {
