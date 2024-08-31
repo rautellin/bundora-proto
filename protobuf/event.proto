@@ -55,6 +55,13 @@ message EventCreationResponse {
     string body = 2;
 }
 
+message ExtendedEventModel {
+    EventModel event = 1;
+    string title = 2;
+    string subtitle = 3;
+    string body = 4;
+}
+
 message EventModel {
     string id = 1;
     EventType type = 2;
@@ -71,13 +78,6 @@ message EventModel {
     optional string reaction = 13;
     optional Mood mood = 14;
     bool enhanced = 15;
-}
-
-message ExtendedEventModel {
-    EventModel event = 1;
-    string title = 2;
-    string subtitle = 3;
-    string body = 4;
 }
 
 enum EventType {

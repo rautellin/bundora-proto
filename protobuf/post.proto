@@ -91,6 +91,7 @@ enum PostType {
     POST_TYPE_PROMPT = 2;
 }
 
+// TODO: rename to TagType
 enum Tag {
     TAG_UNSPECIFIED = 0;
     TAG_WORK = 1;
@@ -113,6 +114,7 @@ enum Tag {
     TAG_ENTERTAINMENT = 18;
 }
 
+// TODO: rename to MoodType
 enum Mood {
     MOOD_UNSPECIFIED = 0;
     MOOD_DEPRESSED = 1;
