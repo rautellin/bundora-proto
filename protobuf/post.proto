@@ -27,8 +27,8 @@ message CreatePostRequest {
     optional string title = 2;
     string message = 3;
     optional string prompt = 4;
-    repeated Tag tags = 5;
-    optional Mood mood = 6;
+    repeated TagType tags = 5;
+    optional MoodType mood = 6;
 }
 
 message CreatePostResponse {
@@ -47,8 +47,8 @@ message UpdatePostRequest {
     string id = 1;
     optional string title = 2;
     optional string message = 3;
-    optional Mood mood = 4;
-    repeated Tag tags = 5;
+    optional MoodType mood = 4;
+    repeated TagType tags = 5;
 }
 
 message UpdatePostResponse {
@@ -72,8 +72,8 @@ message PostModel {
     optional string title = 6;
     string message = 7;
     optional string prompt = 8;
-    repeated Tag tags = 9;
-    optional Mood mood = 10;
+    repeated TagType tags = 9;
+    optional MoodType mood = 10;
     bool seen = 11;
     bool deleted = 12;
     google.protobuf.Timestamp updated_at = 13;
@@ -91,8 +91,7 @@ enum PostType {
     POST_TYPE_PROMPT = 2;
 }
 
-// TODO: rename to TagType
-enum Tag {
+enum TagType {
     TAG_UNSPECIFIED = 0;
     TAG_WORK = 1;
     TAG_LOVE = 2;
@@ -114,8 +113,7 @@ enum Tag {
     TAG_ENTERTAINMENT = 18;
 }
 
-// TODO: rename to MoodType
-enum Mood {
+enum MoodType {
     MOOD_UNSPECIFIED = 0;
     MOOD_DEPRESSED = 1;
     MOOD_FRUSTRATED = 2;

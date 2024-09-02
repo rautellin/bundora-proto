@@ -23,7 +23,7 @@ message CreateEventRequest {
     EventType type = 1;
     optional string message = 2;
     bool enhanced = 3;
-    optional Mood mood = 4;
+    optional MoodType mood = 4;
 }
 
 message CreateEventResponse {
@@ -76,7 +76,7 @@ message EventModel {
     google.protobuf.Timestamp updated_at = 11;
     google.protobuf.Timestamp deleted_at = 12;
     optional string reaction = 13;
-    optional Mood mood = 14;
+    optional MoodType mood = 14;
     bool enhanced = 15;
 }
 
