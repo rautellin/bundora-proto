@@ -17,7 +17,7 @@ for var in required_env_vars:
 PROTO_DIR = "./protobuf"
 
 # Configuration file to store all generated SQL commands
-CONFIG_SQL_FILE = "database_config.sql"
+CONFIG_SQL_FILE = "create_tables_with_enums.sql"
 
 # Clear the configuration SQL file if it exists
 with open(CONFIG_SQL_FILE, 'w') as f:
@@ -60,7 +60,7 @@ for proto_file in os.listdir(PROTO_DIR):
 
 # Append the table creation SQL to the configuration file
 with open(CONFIG_SQL_FILE, 'a') as f:
-    with open('create_tables.sql', 'r') as create_tables:
+    with open('tables.sql', 'r') as create_tables:
         f.write(create_tables.read())
 
 print(f"Configuration SQL file created successfully: {CONFIG_SQL_FILE}")

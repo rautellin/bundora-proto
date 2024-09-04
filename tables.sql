@@ -1,12 +1,13 @@
 CREATE TABLE features (
-    id UUID PRIMARY KEY,
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     name TEXT NOT NULL,
     description TEXT,
     created_at TIMESTAMPTZ NOT NULL
 );
 
 CREATE TABLE profiles (
-    id UUID PRIMARY KEY,
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    firebase_id VARCHAR UNIQUE NOT NULL,
     created_at TIMESTAMPTZ NOT NULL,
     updated_at TIMESTAMPTZ,
     deleted_at TIMESTAMPTZ,
@@ -19,7 +20,7 @@ CREATE TABLE profiles (
 );
 
 CREATE TABLE tokens (
-    id UUID PRIMARY KEY,
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     created_at TIMESTAMPTZ NOT NULL,
     updated_at TIMESTAMPTZ,
     token TEXT NOT NULL,
@@ -27,7 +28,7 @@ CREATE TABLE tokens (
 );
 
 CREATE TABLE events (
-    id UUID PRIMARY KEY,
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     created_at TIMESTAMPTZ NOT NULL,
     updated_at TIMESTAMPTZ,
     deleted_at TIMESTAMPTZ,
@@ -44,7 +45,7 @@ CREATE TABLE events (
 );
 
 CREATE TABLE posts (
-    id UUID PRIMARY KEY,
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     created_at TIMESTAMPTZ NOT NULL,
     updated_at TIMESTAMPTZ,
     deleted_at TIMESTAMPTZ,
@@ -59,7 +60,7 @@ CREATE TABLE posts (
 );
 
 CREATE TABLE passcodes (
-    id UUID PRIMARY KEY,
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     created_at TIMESTAMPTZ NOT NULL,
     code TEXT NOT NULL,
     created_by UUID NOT NULL REFERENCES profiles(id)
