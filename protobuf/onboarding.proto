@@ -17,7 +17,7 @@ message GetOnboardingStatusResponse {
 }
 
 message SetOnboardingStatusRequest {
-    OnboardingType type = 1;
+    FeatureType type = 1;
 }
 
 message SetOnboardingStatusResponse {
@@ -25,13 +25,13 @@ message SetOnboardingStatusResponse {
 }
 
 message OnboardingStatus {
-    OnboardingType type = 1;
+    FeatureType type = 1;
     google.protobuf.Timestamp updated_at = 3;
     bool onboarded = 5;
 }
 
-/// [OnboardingType] refers to the different types of features that require onboarding
-enum OnboardingType {
+/// [FeatureType] refers to the different types of features that require onboarding
+enum FeatureType {
     ONBOARDING_TYPE_UNKNOWN = 0;
     ONBOARDING_TYPE_CREATE_PROFILE = 1;
     ONBOARDING_TYPE_CONNECT_PROFILE = 2;

@@ -39,20 +39,18 @@ CHARACTER_TYPE_MAPPING = {
 
 # Function to convert Firestore timestamp to PostgreSQL TIMESTAMPTZ format
 def convert_timestamp(firestore_timestamp):
-    if firestore_timestamp:
-        return datetime.utcfromtimestamp(firestore_timestamp.timestamp())
+    if firestore_timestamp is None:
+        return None
+    if isinstance(firestore_timestamp, datetime):
+        return firestore_timestamp
     return None
 
+# Function to map Firestore data to initial SQL insert statements
 # Function to map Firestore data to initial SQL insert statements
 def map_to_initial_sql(profile):
     firebase_id = profile['Id']
 
-    # Handle CreatedAt: set to now if None
     created_at = convert_timestamp(profile.get('CreatedAt'))
-    if created_at is None:
-        created_at = datetime.utcnow()
-
-    # Handle UpdatedAt and DeletedAt: keep as NULL if None
     updated_at = convert_timestamp(profile.get('UpdatedAt'))
     deleted_at = convert_timestamp(profile.get('DeletedAt'))
 
@@ -68,11 +66,11 @@ def map_to_initial_sql(profile):
     sql = f"""
     INSERT INTO profiles (firebase_id, created_at, updated_at, deleted_at, onboarding_completed, name, character_type, avatar_type, current_mood)
     VALUES ('{firebase_id}', 
-            '{created_at}'::timestamptz, 
-            {'NULL' if updated_at is None else "'" + str(updated_at) + "'::timestamptz"}, 
-            {'NULL' if deleted_at is None else "'" + str(deleted_at) + "'::timestamptz"}, 
+            {'NULL' if created_at is None else f"'{created_at}'::timestamptz"}, 
+            {'NULL' if updated_at is None else f"'{updated_at}'::timestamptz"}, 
+            {'NULL' if deleted_at is None else f"'{deleted_at}'::timestamptz"}, 
             {onboarding_completed}, 
-            {'NULL' if name is None else "'" + name + "'"}, 
+            {'NULL' if name is None else f"'{name}'"}, 
             '{character_type}', 
             '{avatar_type}', 
             '{current_mood}'
@@ -80,6 +78,7 @@ def map_to_initial_sql(profile):
     RETURNING id;
     """
     return sql
+
 
 # Function to map Firestore data to update partner_id relationship
 def map_to_update_sql(profile, new_id, partner_firebase_id):
